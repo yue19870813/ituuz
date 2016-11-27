@@ -5,9 +5,9 @@
 # Site
 title: ituuz
 subtitle:
-description:
-author: yue
-language:
+description: 积土而为山，积水而为海。
+author: ituuz
+language: zh-Hans
 timezone:
 
 # URL
@@ -64,6 +64,11 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+avatar: /uploads/avatar.png
+## duoshuo
+duoshuo_shortname: ituuz
+## baidu_analytics
+baidu_analytics: f8f404eab4896771d7002e461ae69012
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
