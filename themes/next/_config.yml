@@ -71,7 +71,7 @@ links:
 
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
 wechatpay: /uploads/wechat_charge.jpg
-#alipay: /path/to/alipay-reward-image
+alipay: /uploads/alipay_charge.jpg
 
 
 # ---------------------------------------------------------------
