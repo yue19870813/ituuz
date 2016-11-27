@@ -1,7 +1,8 @@
 ---
 title: WebService复杂类型数据传输-dom4j方式
 date: 2016-11-27 19:39:57
-tags:
+tags: ［WebService,java］
+categories: java
 ---
 WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。
 
