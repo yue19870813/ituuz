@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ExtJS," />
+  <meta name="keywords" content="cocos2d-x,性能优化," />
 
 
 
@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="ExtJS是一款基于Ajax的web客户端框架，有着更加和漂亮友好的界面，今天起我就开始学习ExtJS了，下面我把我学习的过程与大家分享。">
+<meta name="description" content="在游行开发的中后期所有的团队基本都会遇到两个通性问题：卡顿和崩溃。造成卡顿也就是迪奥帧的原因主要是CPU计算量和GPU渲染压力过大。造成程序崩溃的原因基本也是两种情况，一种是代码错误造成的崩溃，另一种是我们主要讨论的内存过高造成的崩溃。下面就对游戏中遇到的这两个问题进行讨论，讨论的游戏主要是针对2D游戏，当然很多情况是2D和3D游戏中共同存在的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ExtJS初级教程之ExtJS Tree(一)">
-<meta property="og:url" content="http://ituuz.com/2016/11/27/Tree-1/index.html">
+<meta property="og:title" content="cocos2d-x游戏中的性能优化和内存优化">
+<meta property="og:url" content="http://ituuz.com/2017/01/06/cocos2dx-xingneng/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="ExtJS是一款基于Ajax的web客户端框架，有着更加和漂亮友好的界面，今天起我就开始学习ExtJS了，下面我把我学习的过程与大家分享。">
-<meta property="og:updated_time" content="2016-11-27T13:08:28.000Z">
+<meta property="og:description" content="在游行开发的中后期所有的团队基本都会遇到两个通性问题：卡顿和崩溃。造成卡顿也就是迪奥帧的原因主要是CPU计算量和GPU渲染压力过大。造成程序崩溃的原因基本也是两种情况，一种是代码错误造成的崩溃，另一种是我们主要讨论的内存过高造成的崩溃。下面就对游戏中遇到的这两个问题进行讨论，讨论的游戏主要是针对2D游戏，当然很多情况是2D和3D游戏中共同存在的。">
+<meta property="og:updated_time" content="2017-01-06T15:26:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ExtJS初级教程之ExtJS Tree(一)">
-<meta name="twitter:description" content="ExtJS是一款基于Ajax的web客户端框架，有着更加和漂亮友好的界面，今天起我就开始学习ExtJS了，下面我把我学习的过程与大家分享。">
+<meta name="twitter:title" content="cocos2d-x游戏中的性能优化和内存优化">
+<meta name="twitter:description" content="在游行开发的中后期所有的团队基本都会遇到两个通性问题：卡顿和崩溃。造成卡顿也就是迪奥帧的原因主要是CPU计算量和GPU渲染压力过大。造成程序崩溃的原因基本也是两种情况，一种是代码错误造成的崩溃，另一种是我们主要讨论的内存过高造成的崩溃。下面就对游戏中遇到的这两个问题进行讨论，讨论的游戏主要是针对2D游戏，当然很多情况是2D和3D游戏中共同存在的。">
 
 
 
@@ -117,7 +117,7 @@
   };
 </script>
 
-  <title> ExtJS初级教程之ExtJS Tree(一) | ituuz </title>
+  <title> cocos2d-x游戏中的性能优化和内存优化 | ituuz </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +277,7 @@
             
             
               
-                ExtJS初级教程之ExtJS Tree(一)
+                cocos2d-x游戏中的性能优化和内存优化
               
             
           </h1>
@@ -289,8 +289,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-27T20:51:18+08:00" content="2016-11-27">
-              2016-11-27
+            <time itemprop="dateCreated" datetime="2017-01-06T23:14:36+08:00" content="2017-01-06">
+              2017-01-06
             </time>
           </span>
 
@@ -303,8 +303,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/cocos2d-x/" itemprop="url" rel="index">
+                    <span itemprop="name">cocos2d-x</span>
                   </a>
                 </span>
 
@@ -319,8 +319,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/27/Tree-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/Tree-1/" itemprop="commentsCount"></span>
+                <a href="/2017/01/06/cocos2dx-xingneng/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/06/cocos2dx-xingneng/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,7 +330,7 @@
 
           
           
-             <span id="/2016/11/27/Tree-1/" class="leancloud_visitors" data-flag-title="ExtJS初级教程之ExtJS Tree(一)">
+             <span id="/2017/01/06/cocos2dx-xingneng/" class="leancloud_visitors" data-flag-title="cocos2d-x游戏中的性能优化和内存优化">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,19 +352,19 @@
       
 
       
-        <p>ExtJS是一款基于Ajax的web客户端框架，有着更加和漂亮友好的界面，今天起我就开始学习ExtJS了，下面我把我学习的过程与大家分享。<a id="more"></a>  </p>
-<p>我先学习我最近用到ExtJS Tree。下面我们开始写我们的第一个静态树。<br>1、首先导入ExtJS提供的js和css文件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"../script/resources/css/ext-all.css"</span> /&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/JavaScript"</span> <span class="attr">src</span>=<span class="string">"../script/adapter/ext/ext-base.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../script/ext-all.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../script/locale/ext-lang-zh_CN.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>注意导入顺序，这些文件都可以在extjs的源码包里找到。<br>2、首先我们先要创建一个空的树面板，此时页面上是神马都显示不出来的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Tree面板  </span></div><div class="line"><span class="keyword">var</span> tree = <span class="keyword">new</span> Ext.tree.TreePanel(&#123;  </div><div class="line"> <span class="comment">//指定添加到的div  </span></div><div class="line"> el:<span class="string">'tree-div'</span>,  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>页面上应该有div的标签，因为我们写的树即将安插到这里。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id = <span class="string">"tree-div"</span> &gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>3、下面我们先创建一个根节点显示在页面上<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Tree面板  </span></div><div class="line"><span class="keyword">var</span> tree = <span class="keyword">new</span> Ext.tree.TreePanel(&#123;  </div><div class="line"> <span class="comment">//指定添加到的div  </span></div><div class="line"> el:<span class="string">'tree-div'</span>,  </div><div class="line">&#125;);  </div><div class="line"><span class="keyword">var</span> root = Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'跟节点'</span>&#125;);  </div><div class="line">tree.setRootNode(root);  </div><div class="line">tree.render();</div></pre></td></tr></table></figure></p>
-<p>这样页面上就不会是一个空树了，应该显示的是一颗带有一个根节点的树。<br>4、最后我们按照上面的思路创建一个有层次的静态树。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//普通的静态树  </span></div><div class="line"><span class="keyword">var</span> tree = <span class="keyword">new</span> Ext.tree.TreePanel(&#123;  </div><div class="line"> <span class="attr">el</span>:<span class="string">'tree-div'</span>  </div><div class="line">&#125;);  </div><div class="line"><span class="comment">//创建根节点  </span></div><div class="line"><span class="keyword">var</span> root = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'AllShengFen'</span>&#125;);  </div><div class="line"><span class="comment">//创建父节点  </span></div><div class="line"><span class="keyword">var</span> shengfen1 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'HeiLongJiang'</span>&#125;);  </div><div class="line"><span class="keyword">var</span> shengfen2 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'LiaoNing'</span>&#125;);  </div><div class="line"><span class="keyword">var</span> city1 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'harbin'</span>&#125;);  </div><div class="line"><span class="keyword">var</span> city2 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'daqiang'</span>&#125;);  </div><div class="line"><span class="keyword">var</span> city3 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'shenyang'</span>&#125;);  </div><div class="line"><span class="keyword">var</span> city4 = <span class="keyword">new</span> Ext.tree.TreeNode(&#123;<span class="attr">text</span>:<span class="string">'dalian'</span>&#125;);  </div><div class="line"><span class="comment">//将子节点添加到父节点中  </span></div><div class="line">shengfen1.appendChild(city1);  </div><div class="line">shengfen1.appendChild(city2);  </div><div class="line">shengfen2.appendChild(city3);  </div><div class="line">shengfen2.appendChild(city4);  </div><div class="line"><span class="comment">//将子节点添加到父节点中  </span></div><div class="line">root.appendChild(shengfen1);  </div><div class="line">root.appendChild(shengfen2);  </div><div class="line"><span class="comment">//将root节点设置为根节点  </span></div><div class="line">tree.setRootNode(root);  </div><div class="line"><span class="comment">//使这棵树显示在div标签中  </span></div><div class="line">tree.render();</div></pre></td></tr></table></figure></p>
-<p>这样一棵完整的树就应该显示在页面上了。  </p>
-<p>但是我们大多数用的都不是写死的静态树而是要根据不同数据生成不同的树，接下来我们就看看怎么读取服务器端的文件来生成ExtJS Tree。<br>1、创建一个data1.txt文件，内容是一个json字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[  </div><div class="line"> &#123;<span class="attr">text</span>:<span class="string">'非叶子节点'</span>&#125;,  </div><div class="line"> &#123;<span class="attr">text</span>:<span class="string">'叶子节点'</span>,<span class="attr">leaf</span>:<span class="literal">true</span>&#125;  </div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p>2、TreeLoader 导入数据的URL。我们需要一个类能够帮我们找到要加载的文件，这个类就是TreeLoader。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Tree面板  </span></div><div class="line"><span class="keyword">var</span> tree = <span class="keyword">new</span> Ext.tree.TreePanel(&#123;  </div><div class="line"> <span class="comment">//指定添加到的div  </span></div><div class="line"> el:<span class="string">'tree-div'</span>,  </div><div class="line"> <span class="comment">//导入数据的URL  </span></div><div class="line"> loader:<span class="keyword">new</span> Ext.tree.TreeLoader(&#123;<span class="attr">dataUrl</span>:<span class="string">'../js/data1.txt'</span>&#125;)  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>3、但此时我们不能够再用Ext.tree.TreeNode来创建根节点了，用它创建根节点的话在页面上我们就只能看见跟节点。这是因为它不支持ajax，不能加载data.txt的数据，所以此时我们就用到了AsyncTreeNode了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建根节点，使用AsyncTreeNode能够加载外部数据  </span></div><div class="line"><span class="keyword">var</span> root = <span class="keyword">new</span> Ext.tree.AsyncTreeNode(&#123;<span class="attr">text</span>:<span class="string">'gen'</span>&#125;);  </div><div class="line"><span class="comment">//设置root为根节点  </span></div><div class="line">tree.setRootNode(root);  </div><div class="line"><span class="comment">//将树显示在div标签上  </span></div><div class="line">tree.render();  </div><div class="line"><span class="comment">//第一个true是自动展开所有字节点，第二个true是以动画效果展开树  </span></div><div class="line">root.expand(<span class="literal">true</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
-<p>但此时我们发现，页面上的树开始无限的展开了。当我们将root.expand(true,true)删掉后，打开页面是不自动展开了，但是当我们点击展开的时候还是会无限的展开下去，这是因为AsyncTreeNode能够重新加载它下面的非叶子节点，我们加载的data1.txt里面的数据有一个节点是非叶子节点，所以AsyncTreeNode会再次的把它当做根节点，重新加载数据。所以我们应该给它一个所有节点的最后都是叶子节点的数据文件data2.txt。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[  </div><div class="line">  &#123;text:'computer',children:[  </div><div class="line">    &#123;text:'&lt;a href="http://lib.csdn.net/base/17" class='replace_word' title="Java EE知识库" target='_blank' style='color:#df3434; font-weight:bold;'&gt;Java&lt;/a&gt;',leaf:true&#125;,  </div><div class="line">    &#123;text:'c++',children:[  </div><div class="line">      &#123;text:'thinking',leaf:true&#125;,  </div><div class="line">      &#123;text:'yyyyy',leaf:true&#125;  </div><div class="line">    ]&#125;,  </div><div class="line">  &#123;text:'asp',leaf:true&#125;   </div><div class="line">  ]&#125;,  </div><div class="line">  &#123;text:'jsp',children:[  </div><div class="line">    &#123;text:'dadf',leaf:true&#125;,  </div><div class="line">    &#123;text:'ddddddd',leaf:true&#125;  </div><div class="line">  ]&#125;  </div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p>此时我们将加载的数据源改为data2.txt。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Tree面板  </span></div><div class="line"><span class="keyword">var</span> tree = <span class="keyword">new</span> Ext.tree.TreePanel(&#123;  </div><div class="line"> <span class="comment">//指定添加到的div  </span></div><div class="line"> el:<span class="string">'tree-div'</span>,  </div><div class="line"> <span class="comment">//导入数据的URL  </span></div><div class="line"> loader:<span class="keyword">new</span> Ext.tree.TreeLoader(&#123;<span class="attr">dataUrl</span>:<span class="string">'../js/data1.txt'</span>&#125;)  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>这时我们生成的树就不是无限展开的了。<br>今天就这些，下次我们再研究从servlet中获得Json数据来生成ExtJS树。</p>
+        <p>在游行开发的中后期所有的团队基本都会遇到两个通性问题：卡顿和崩溃。造成卡顿也就是迪奥帧的原因主要是CPU计算量和GPU渲染压力过大。造成程序崩溃的原因基本也是两种情况，一种是代码错误造成的崩溃，另一种是我们主要讨论的内存过高造成的崩溃。下面就对游戏中遇到的这两个问题进行讨论，讨论的游戏主要是针对2D游戏，当然很多情况是2D和3D游戏中共同存在的。<a id="more"></a></p>
+<ul>
+<li><strong>载入纹理时按照从大到小的顺序，并且分帧加载。</strong>因为cocos2dx中加载一张纹理，要占用两倍的纹理空间，多余的内存会在这帧结束时释放掉，所以从大到小，分帧加载的策略可以高效的使用内存防止内存峰值过高造成崩溃。需要注意的是避免使用超大纹理。</li>
+<li><strong>资源格式的选择。</strong>主要有3个因素会影响纹理内存，即纹理格式（压缩还是非压缩）、颜色深度和大小。我们可以使用PVR格式纹理减少内存使用。推荐纹理格式为pvr.ccz。纹理使用的每种颜色位数越多，图像质量越好，但是越耗内存。所以我们可以使用颜色深度为RGB4444的纹理代替RGB8888，这样内存消耗会降低一半。如果图片不需要透明通道就不要加上透明通道，这样还可以节省内存的使用。同时pvr格式的纹理在上传到gpu时的速度也要比其他格式更快一些。</li>
+<li><strong>减少绘制调用和上传gpu压力。</strong>首先纹理需要上传到gpu中渲染绘制，越小的纹理上传的速度越快，所以要控制避免有较大的纹理一次上传到显存中，上面说过pvr格式的纹理上传速度会快些，同时大量的纹理上传会造成程序瞬间卡顿，因为纹理上传是占用主线程的，所以低一点中的分帧加载在这里也适用。还有就是绘制的压力，同屏中显示对象的数量会影响绘制的性能，所以在合理的情况下要尽量减少显示对象的数量。同时我们要尽量将散图打到一张整图中，因为在cocos2dx引擎的底层中，在同一张纹理上的显示对象只会调用一次绘制命令，相当于BatchNode。这里需要特别注意的是减少绘制要打到整图中和为了加快纹理上传速度要减小纹理大小是个相悖的条件，所以我们要根据实际情况来衡量这两点。一般情况下每帧上传一张1024*1024的rgba8888格式的纹理是不会出现卡顿的，所以建议每次上传不要超过这个大小。如果是rgb4444的纹理那么大小会减少一半，上传会更快一些。</li>
+<li><strong>降低UI复杂度。</strong>降低复杂度有很多方式，第一种方式是减少显示对象数量，比如拿文本框来说，经常在游戏中会有显示金币的地方，例如：“金币：99”。有很多人在ui里会将标题和数量分开，定义两个文本框，这里如果没有特殊表现的话，就应该合并成一个文本框，这样就减少了一个对象的绘制。同理有很多东西都可以减少，例如Sprite等，项目中具体情况具体对待。第二种方式是降低UI树的复杂度，上一点中减少数量也会达到一个降低UIU树复杂度的效果，在这个同时，我们还要尽量降低UI树的深度，降低树的深度可以有效的提高绘制遍历的速度，在设计ui的时候，我们往往为了易于管理，会创建很多空面板，或节点，来达到管理ui中各个部件的作用，但是有时我们会增加的过于复杂，这里尽量降低这种复杂度就可以提高绘制效率。最后我们还要控制资源的规格，首先游戏中很多ui是通用的，比如通用的按钮，图标，面板等，我们打到一张贴图上，作为通用资源常驻内存，然后每个ui独特的资源单独打成贴图，在使用的时候加载到内存中，使用结束后释放掉。</li>
+<li><strong>UI设计的时候要提高UI通用资源的使用率。</strong>优化资源到最小，比如使用九宫格图片，采用旋转缩放等丰富资源表现力等。</li>
+<li><strong>动画文件的处理。</strong>动画一般有两种选择，帧动画和骨骼动画。帧动画的优点就是运算不耗性能，并且表现较好，缺点就是当帧数较多时，资源量比较大，并且占用内存较高，所以不太适合做过于复杂的动画，比如动作和技能较多的ARPG角色如果纯用帧动画来实现，会使用很多资源，在加载时就不能加载过多的角色，这样就局限了游戏的设计，同场景角色数量不能过多。与之相对应的就是骨骼动画，骨骼动画的特点就是节省资源，一套骨骼可以做很多套动作，新增动作也不会对文件大小有明显的增加，缺点也比较明显，就是因为骨骼动画是通过计算，然后进行旋转，位移等实现的，所以当动画比较复杂，骨骼数量较多时，计算量就会很大，对CPU的计算增加了压力，压力过大时就会掉帧卡顿。当团队技术较好，并且美术程序沟通配合默契的团队可以采用帧动画与骨骼动画相结合的方案。美术在设计时动作大部分采用骨骼，局部需要表现效果的地方使用帧动画到处的贴图来实现，美术人员在设计时要充分考虑到资源利用，利用旋转缩放功能丰富动画，同时还要考虑骨骼数量、节点深度等队性能等影响。</li>
+<li><strong>游戏音效的规格及优化。</strong>游戏音效在使用中也有很多问题，音效占用的资源空间、运行时内存和加载效率等。首先需要考虑使用资源的格式，在各个平台下，资源格式的支持也都不同，平台及支持的常见文件格式如下：<br>Android ：mp3, mid, oggg, wav<br>iOS ：mac, caf, mp3, m4a, wav<br>Windows ： mid, mp3, wav<br>通常我在项目中会针对不同平台加载不通资源，一般android常用oggg，iOS中常用caf，windows下一般都是调试用的，也没怎么优化过，直接用的mp3格式。同时音效资源也需要处理，音频优化,3个因素会影响音频文件的内存使用，即音频文件数据格式、比特率及采样率。推荐使用MP3数据格式的音频文件，因为Android平台和iOS平台均支持MP3格式，此外MP3格式经过压缩和硬件加速。背景音乐文件大小应该低于800KB，最简单的方法就是减少背景音乐时间然后重复播放。音频文件采样率大约在96-128kbps为佳，比特率44kHz就够了。</li>
+<li><strong>游戏逻辑的相关优化。</strong>在代码中，不要在主循环中做复杂的逻辑处理，例如for循环更新、查找等，可以利用缓冲等技术，解决和优化在主循环中每帧的效能。部分不重要的逻辑，或者要求即时反馈不高的逻辑可以适当的采取抽帧，也就是不是每帧都进行运算和刷新，这样可以降低很多运算量。同时游戏的玩法逻辑也有很多可以优化的地方，比如射击游戏的子弹可以做缓存，减少频繁的创建和销毁对象；RPG游戏中的地图可以做成异步分块加载，不显示的可以不去加载渲染等。</li>
+<li><strong>代码级别的优化。</strong>这点比较简单，在编写程序时，算法最优，并且不要有内存泄漏等。</li>
+<li><strong>最后就是引擎级别的优化。</strong>我们使用的是cocos2dx进行的项目开发，在该引擎中，存在的bug、性能等问题也有很多可以优化的地方。在我们项目中，就修改过spine的内存泄漏问题、ui加载速度问题、还有关于对象拷贝的性能问题等。修改引擎要对引擎比较了解，并且修改后引擎的版本再次升级是还要把修改合并过去，这里也建议大家发现问题可以到引擎的Github上提交request。如果对渲染比较了解的还可以对渲染级别进行优化。</li>
+</ul>
 
       
     </div>
@@ -412,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ExtJS/" rel="tag">#ExtJS</a>
+            <a href="/tags/cocos2d-x-性能优化/" rel="tag">#cocos2d-x,性能优化</a>
           
         </div>
       
@@ -421,17 +421,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/27/Java多线程实现生产者与消费者/" rel="next" title="Java多线程实现生产者与消费者">
-                <i class="fa fa-chevron-left"></i> Java多线程实现生产者与消费者
+              <a href="/2016/12/01/design-single/" rel="next" title="设计模式在游戏开发中的应用之单例模式">
+                <i class="fa fa-chevron-left"></i> 设计模式在游戏开发中的应用之单例模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/27/Tree-2/" rel="prev" title="ExtJS初级教程之ExtJS Tree(二)">
-                ExtJS初级教程之ExtJS Tree(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -457,8 +453,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/27/Tree-1/"
-           data-title="ExtJS初级教程之ExtJS Tree(一)" data-url="http://ituuz.com/2016/11/27/Tree-1/">
+      <div class="ds-thread" data-thread-key="2017/01/06/cocos2dx-xingneng/"
+           data-title="cocos2d-x游戏中的性能优化和内存优化" data-url="http://ituuz.com/2017/01/06/cocos2dx-xingneng/">
       </div>
     
   </div>
