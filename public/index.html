@@ -279,6 +279,172 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/09/QtNotes/" itemprop="url">
+                  Qt学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-09T20:07:29+08:00" content="2017-02-09">
+              2017-02-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/09/QtNotes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/09/QtNotes/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/09/QtNotes/" class="leancloud_visitors" data-flag-title="Qt学习笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前几天项目需要一个编辑器，现学现卖边查文档边用Qt写了个简单的编辑器供项目使用，编写过程中记录了一些笔记，都是些没有系统性的知识点。</p>
+<ul>
+<li><p>在Qt中固定窗口大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//将最大窗口与最小窗口设置大小相同</div><div class="line">setMinimumSize(1280, 720);</div><div class="line">setMaximumSize(1280, 720);</div></pre></td></tr></table></figure>
+</li>
+<li><p>QString转char*</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">QString name = &quot;test&quot;;</div><div class="line">QByteArray ba = name.toLatin1();</div><div class="line">char *mm = ba.data();</div><div class="line">qDebug(mm);</div></pre></td></tr></table></figure>
+</li>
+<li><p>输入对话框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">QString name = QInputDialog::getText(this, tr(&quot;title&quot;) ,tr(&quot;Please input&quot;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>提示框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">QMessageBox::about(NULL, &quot;Warning&quot;, &quot;Filename cannot be empty!&quot;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>C1083: Cannot open include file: ‘QAxObject’: No such file or directory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#include &lt;ActiveQt/QAxWidget&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">QString openFilename = QFileDialog::getExistingDirectory(</div><div class="line">                this,</div><div class="line">                tr(&quot;Open fish table&quot;),</div><div class="line">                &quot;&quot;,</div><div class="line">                QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">QString openFilename = QFileDialog::getOpenFileName(</div><div class="line">                this,</div><div class="line">                tr(&quot;Open fish table&quot;),</div><div class="line">                &quot;&quot;,</div><div class="line">                tr(&quot;Config Files (*.xlsx)&quot;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建按钮不显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">auto btn = new QPushButton(this);</div><div class="line">btn-&gt;setText(&quot;OK&quot;);</div><div class="line">btn-&gt;move(100, 100);</div><div class="line">btn-&gt;show();    //一定要调用show()才会显示</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置鼠标样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setCursor(QCursor(Qt::OpenHandCursor));</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建json串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">QJsonObject json;</div><div class="line">json.insert(&quot;name&quot;, &quot;test&quot;);</div><div class="line">json.insert(&quot;version&quot;, &quot;1.0.1&quot;);</div><div class="line"></div><div class="line">QJsonDocument document;</div><div class="line">document.setObject(json);</div><div class="line">QByteArray byte_array = document.toJson(QJsonDocument::Compact);</div><div class="line">QString json_str(byte_array);</div></pre></td></tr></table></figure>
+</li>
+<li><p>解析json串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">QJsonParseError error;</div><div class="line">QJsonDocument jsonDocument = QJsonDocument::fromJson(json.toUtf8(),&amp;error);</div><div class="line">if (error.error == QJsonParseError::NoError) &#123;</div><div class="line">    if (jsonDocument.isObject()) &#123;</div><div class="line">        QVariantMap result = jsonDocument.toVariant().toMap();</div><div class="line">        resPath = result[&quot;resPath&quot;].toString();</div><div class="line">        fishTable = result[&quot;fishTable&quot;].toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>发布打包<br>1.首先使用Qt Creator发布Release版本。<br>2.将Release目录下的.exe文件单独copy到一个目录中。<br>3.命令行进入该目录执行your Qt path\bin\windeployqt project.exe<br>4.全选生成的依赖文件，打包成rar压缩文件project.rar。<br>5.打开你压缩的project.rar压缩包，点击菜单栏的解压格式，高级自解压选项。<br>6.设置—-解压后运行里写入project.exe（写你要执行的文件）。<br>7.模式—-打钩解包到临时文件夹，安全模式选择全部隐藏。<br>8.更新—-更新方式，解压并更新文件；覆盖凡是，覆盖所有文件。<br>9.文本和图标——可改可不改。<br>10.然后确定就可以生成exe可执行文件了。  </p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/02/js-closure/" itemprop="url">
                   JS闭包总结
                 </a>
@@ -1439,137 +1605,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/27/Tree-3/" itemprop="url">
-                  xtJS初级教程之ExtJS Tree(三)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-27T22:33:05+08:00" content="2016-11-27">
-              2016-11-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/27/Tree-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/Tree-3/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/11/27/Tree-3/" class="leancloud_visitors" data-flag-title="xtJS初级教程之ExtJS Tree(三)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前两次我介绍了静态树和根据数据库加载的数据生成的树，今天我就把ExtJS Tree这剩的一些主要的东西说一说，剩下的主要就是：树的事件处理、可编辑的树和可拖拽的树，最后再实现一下异步加载的树。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/27/Tree-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1615,7 +1650,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1632,7 +1667,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
