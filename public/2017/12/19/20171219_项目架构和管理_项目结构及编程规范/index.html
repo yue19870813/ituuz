@@ -1,0 +1,938 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="编程规范," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="项目结构提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏项目架构及管理：项目结构及编程规范">
+<meta property="og:url" content="http://ituuz.com/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/index.html">
+<meta property="og:site_name" content="ituuz">
+<meta property="og:description" content="项目结构提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。">
+<meta property="og:updated_time" content="2017-12-19T14:05:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="游戏项目架构及管理：项目结构及编程规范">
+<meta name="twitter:description" content="项目结构提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 游戏项目架构及管理：项目结构及编程规范 | ituuz </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f8f404eab4896771d7002e461ae69012";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ituuz</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                游戏项目架构及管理：项目结构及编程规范
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-19T15:03:31+08:00" content="2017-12-19">
+              2017-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/架构管理/" itemprop="url" rel="index">
+                    <span itemprop="name">架构管理</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" class="leancloud_visitors" data-flag-title="游戏项目架构及管理：项目结构及编程规范">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。<br><a id="more"></a><br>先说项目结构。项目结构非常重要，有的项目结构非常混乱，别说是新加入团队的新人，就是熟悉项目的人也不能迅速的找到一个功能所在的位置，这样的目录结构就是非常糟糕的了，熟悉项目的人都很难第一时间找到想要的东西，更别说其他人了，这为新加入团队的人增加了熟悉项目的难度，同时在项目不断庞大的后期维护中也越发的难以控制，维护成本越来越高，而这种情况往往随着时间的推移，混乱程度越来越高。而清晰规范的目录结构则不同，它可以让开发人员规范自己的代码，可以快速的找到想要找的功能，新人也可以快速了解项目，这给后期的维护和工作交接等降低了很多成本。同时清晰和规范的目录结构也能约束开发过程的不规范。下面列举两个客户端的项目结构，单并不是唯一，也不是最优：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//以MVC为分层的目录结构</div><div class="line">root -- core</div><div class="line">     -- game -- model</div><div class="line">             -- view</div><div class="line">             -- control</div><div class="line">     -- platform</div><div class="line"></div><div class="line">//以功能为分层来管理目录结构</div><div class="line">root -- core</div><div class="line">     -- game -- shop -- model</div><div class="line">                     -- view</div><div class="line">                     -- control</div><div class="line">             -- task -- model </div><div class="line">                     -- view</div><div class="line">                     -- control</div><div class="line">     -- platform</div></pre></td></tr></table></figure></p>
+<p>上面两种结构中是常用的两种管理方式，core是项目中使用的核心库，都是从业务逻辑中抽象出来可以复用的类库；game是游戏的业务逻辑目录，主要了两种管理方式都是体现在这里；platform是游戏外平台渠道相关的逻辑，是对外的业务目录。第一种通过设计来管理目录的这种方式适合项目规模不大，业务较少的项目，这种形式就非常简单明了，但是规模较大、业务较多的项目就不适合了，继续用这种方式管理，就会造成每个目录下臃肿并且业务逻辑显着冗余，这时适合第二种通过业务逻辑来管理目录的这种方式。</p>
+<p>除了项目内的目录结构外，还有项目外的整个工程目录结构也要管理清晰，这个涉及到后面各个部门间的协作沟通，以及后期不同版本的维护等。多个游戏版本开发中，有很多管理方式，一般常见的有主线开发打支线和支线开发合并到主线上这两种。比如主线开发就是有一个版本作为主线版本，其他所有版本的内容都现在主线版本中开发，再同步到其他支线版本中，其他支线版本再针对各自的需求制作各自特殊的修改。主线版本中版保证了各版本中共性的部分可以同步，例如在某个支线版本中发现了一个bug，不仅要在这个支线版本中改掉，还需要同步到主线版本中并验证，如果主线版本中也存在相同的问题，那么其他从主线版中打出去的分支版本也都要进行同步的修改。在这些个版本中，无论主线还是支线，除了代码的同步外，还有游戏配置、资源源文件等也要同步维护。这些负责的功能管理都需要项目的工程目录合理清晰，否则会越来越乱，越来越臃肿，难以管理。</p>
+<p>项目结构看似简单，实质上有很多东西值得讨论，同时也有很多项目组并不重视这点，小型的项目可以能还好，中大型项目如果不重视这点，尤其是到上线维护后，版本过多弊端就会明显，所以项目之初就要考虑好这些问题。</p>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h4><p>命名规范的意义不用多说，很多开发者应该或多或少都应该感受过优秀的命名规范带来的益处或者糟糕的命名规范带来的痛苦。命名规范和上一节讨论的项目结构一样，能够为项目带来客观的正向收益，下面就仔细的聊一下命名规范。</p>
+<h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h4><p>首先先讨论一下命名规范的原则。其实命名规范并没有一个统一的标准，每个公司甚至每个项目规范可能都不一样，但这不是问题，只要我们遵守几个原则去定义规范就好了，下面几个原则点是我个人的总结，有不对或者不全面的请指出。</p>
+<ul>
+<li>简单：命名要尽量简单，用简短的命名来表达语义，而不用很复杂的词组，当然如果这个变量所表达的意思就是很复杂，那么也不要强制把它简写，能看懂毕竟比简单要重要的多。</li>
+<li>明确：明确就是指能够看懂所表达的意思，并且没有多重语义。上一点提到过，明确要比简单重要。</li>
+<li>统一：这点非常重要，在实际开发中这点总被忽视，而且也带来了很多问题。比如对点券这个变量的命名，有人命名成cash，有人命名成money，甚至还有ticket，这在其他人阅读代码时就造成了很大的困扰，会认为他们是三个东西。所以这种变量命名一定要统一，并且是全局统一，不仅在客户端或者服务器，二是整个项目，包括前后端以及策划文档等。</li>
+</ul>
+<h4 id="条目"><a href="#条目" class="headerlink" title="条目"></a>条目</h4><p>这里罗列一下哪些东西需要命名规范，前两类在各种编程入门、进阶等书籍或者很多地方都说到了，所以前两点就不细说了。</p>
+<ul>
+<li>项目名、文件名。</li>
+<li>包名、类名、函数名、变量名。</li>
+<li>项目中的资源名。资源命名除了能体现是什么功能外，还要体现出资源类型，所在目录等。最好是单独拿出一个资源时，能快速的知道这是什么资源、在哪里、什么功能等。</li>
+<li>模版生成的代码命名。工具自动生成的模版代码在项目中很常见，这类代码一般是不允许直接手动修改的，所以这部分代码除了遵守基准的命名规则外，还要能体现出它是模版代码，在使用或者引用时能让使用者或者阅读代码的人能够知道这部分代码是不能直接修改的。</li>
+<li>文档、日志。提到命名规范时，大部分人可能首先想到并且只想到的都是编写代码中的命名规范，其实除了编码外其它很多东西也是需要命名的。比如，比较重要的一部分就是文档，文档中对一些名词的命名也要规范统一，否则后期理解维护成本会较高。</li>
+</ul>
+<h4 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h4><p>这里简单说几条经验，规范这个东西越早提出越好。当然对应一个新团队来说，可能没有这些积累，但是早期应该有一个大概的规范框架，在项目开发过程中不断完善和修改，慢慢就积累下来了。还有关于命名统一这点，项目可以做一个通用名词对照表，放在一个大家都可以方便查看的地方共享，由大家来维护。最后再次强调命名规范的重要性。</p>
+<h4 id="参考推荐用名"><a href="#参考推荐用名" class="headerlink" title="参考推荐用名"></a>参考推荐用名</h4><p>这里有个常用短语命名大家可以参考：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>命名</th>
+<th>名称</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>搜索</td>
+<td>search</td>
+<td>按钮</td>
+<td>button(btn)</td>
+</tr>
+<tr>
+<td>菜单栏</td>
+<td>tab</td>
+<td>背景</td>
+<td>BG</td>
+</tr>
+<tr>
+<td>用户</td>
+<td>user</td>
+<td>刷新</td>
+<td>refresh</td>
+</tr>
+<tr>
+<td>图片</td>
+<td>image</td>
+<td>广告</td>
+<td>banner</td>
+</tr>
+<tr>
+<td>注册</td>
+<td>register</td>
+<td>链接</td>
+<td>link</td>
+</tr>
+<tr>
+<td>导航栏</td>
+<td>nav</td>
+<td>图标</td>
+<td>icon</td>
+</tr>
+<tr>
+<td>个人资料</td>
+<td>profile</td>
+<td>弹出</td>
+<td>pop</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>delete</td>
+<td>下载</td>
+<td>download</td>
+</tr>
+<tr>
+<td>登陆</td>
+<td>login</td>
+<td>标题</td>
+<td>title</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>note</td>
+<td>返回</td>
+<td>back</td>
+</tr>
+<tr>
+<td>编辑</td>
+<td>edit</td>
+<td>内容</td>
+<td>content</td>
+</tr>
+<tr>
+<td>左、右、中</td>
+<td>left、right、center</td>
+<td>标志</td>
+<td>logo</td>
+</tr>
+<tr>
+<td>提示信息</td>
+<td>msg    </td>
+</tr>
+<tr>
+<td>状态（选中）</td>
+<td>selected</td>
+<td>状态（不可点）</td>
+<td>disabled</td>
+</tr>
+<tr>
+<td>状态（默认）</td>
+<td>default</td>
+<td>状态（按下）</td>
+<td>pressed</td>
+</tr>
+</tbody>
+</table>
+<p>参考推荐用名<a href="http://www.jianshu.com/p/126dc658d763" target="_blank" rel="external">：http://www.jianshu.com/p/126dc658d763</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/编程规范/" rel="tag">#编程规范</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/14/20171214_项目架构和管理_网络通信/" rel="next" title="游戏项目架构及管理：网络通信">
+                <i class="fa fa-chevron-left"></i> 游戏项目架构及管理：网络通信
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/12/19/20171219_项目架构和管理_项目结构及编程规范/"
+           data-title="游戏项目架构及管理：项目结构及编程规范" data-url="http://ituuz.com/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="ituuz" />
+          <p class="site-author-name" itemprop="name">ituuz</p>
+          <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yue19870813" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/208379888" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ituuz.com/" title="ituuz" target="_blank">ituuz</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构"><span class="nav-number">1.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名规范"><span class="nav-number">2.</span> <span class="nav-text">命名规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#意义"><span class="nav-number">2.1.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原则"><span class="nav-number">2.2.</span> <span class="nav-text">原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条目"><span class="nav-number">2.3.</span> <span class="nav-text">条目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经验"><span class="nav-number">2.4.</span> <span class="nav-text">经验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考推荐用名"><span class="nav-number">2.5.</span> <span class="nav-text">参考推荐用名</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ituuz</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ituuz"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz", "69E2dOAap1HDttCnug7ReKzn");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
