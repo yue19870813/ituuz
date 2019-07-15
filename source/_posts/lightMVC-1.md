@@ -1,11 +1,11 @@
 ---
-title: <lightMVC for cocos creator>轻量级游戏开发框架
+title: lightMVC:轻量级游戏开发框架(for cocos creator)
 date: 2019-07-15 23:16:46
 tags: mvc
 categories: javascript
 ---
 
-简易轻量级MVC框架，适用于中小型项目使用。后续会拓展lightMVC_ex内容来适应大型项目的开发。这套轻量级MVC框架可以帮助开发者组织代码，以及业务结构，让项目更好维护和拓展，提高开发效率。examples目录下有完整的例子Demo。
+简易轻量级MVC框架，适用于中小型cocos creator项目使用。后续会拓展lightMVC_ex内容来适应大型项目的开发。这套轻量级MVC框架可以帮助开发者组织代码，以及业务结构，让项目更好维护和拓展，提高开发效率。examples目录下有完整的例子Demo。
 #### 架构图
 ![架构图](/images/mvc.png)
 <!--more-->
