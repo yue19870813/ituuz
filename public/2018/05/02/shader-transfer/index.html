@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,21 +69,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="shader," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="shader,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -91,14 +91,16 @@
 
 
 <meta name="description" content="在cocos creator中用shader实现图片的渐变切换功能介绍很多时候我们需要使用在场景中进行背景切换，或者图片的过渡等，需要一下过渡的效果，很多引擎都没有提供这种切换效果，使用遮罩来实现效果也并不是很好，所以这里使用shader来实现一下这个效果。本文中的shader是基于cocos creator来实现的，其中使用了cocos内置的变量，不过shader是基于标准的GLSL语言写的，很">
+<meta name="keywords" content="shader">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在cocos creator中用shader实现图片的渐变切换">
 <meta property="og:url" content="http://ituuz.com/2018/05/02/shader-transfer/index.html">
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="在cocos creator中用shader实现图片的渐变切换功能介绍很多时候我们需要使用在场景中进行背景切换，或者图片的过渡等，需要一下过渡的效果，很多引擎都没有提供这种切换效果，使用遮罩来实现效果也并不是很好，所以这里使用shader来实现一下这个效果。本文中的shader是基于cocos creator来实现的，其中使用了cocos内置的变量，不过shader是基于标准的GLSL语言写的，很">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ituuz.com/images/shader-transfer-1.gif">
 <meta property="og:image" content="http://ituuz.com/images/shader-transfer-2.gif">
-<meta property="og:updated_time" content="2018-05-08T15:47:28.000Z">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在cocos creator中用shader实现图片的渐变切换">
 <meta name="twitter:description" content="在cocos creator中用shader实现图片的渐变切换功能介绍很多时候我们需要使用在场景中进行背景切换，或者图片的过渡等，需要一下过渡的效果，很多引擎都没有提供这种切换效果，使用遮罩来实现效果也并不是很好，所以这里使用shader来实现一下这个效果。本文中的shader是基于cocos creator来实现的，其中使用了cocos内置的变量，不过shader是基于标准的GLSL语言写的，很">
@@ -159,7 +161,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -186,7 +188,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -196,7 +198,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -206,7 +208,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -216,7 +218,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -226,7 +228,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -236,7 +238,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -298,7 +300,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -358,7 +360,7 @@
         <h1 id="在cocos-creator中用shader实现图片的渐变切换"><a href="#在cocos-creator中用shader实现图片的渐变切换" class="headerlink" title="在cocos creator中用shader实现图片的渐变切换"></a>在cocos creator中用shader实现图片的渐变切换</h1><h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>很多时候我们需要使用在场景中进行背景切换，或者图片的过渡等，需要一下过渡的效果，很多引擎都没有提供这种切换效果，使用遮罩来实现效果也并不是很好，所以这里使用shader来实现一下这个效果。本文中的shader是基于cocos creator来实现的，其中使用了cocos内置的变量，不过shader是基于标准的GLSL语言写的，很容易移植到其他引擎或者平台的。</p>
 <h2 id="效果图如下"><a href="#效果图如下" class="headerlink" title="效果图如下"></a>效果图如下</h2><p><img src="/images/shader-transfer-1.gif" alt="shader"><br><img src="/images/shader-transfer-2.gif" alt="shader"><br><a id="more"></a></p>
 <h2 id="shader实现方案"><a href="#shader实现方案" class="headerlink" title="shader实现方案"></a>shader实现方案</h2><p>在图片中选取一条垂直竖线，竖线左边透明度逐渐变高，同时在update中不断调整竖线的位置，从最左边移动到最右边就实现了一个渐变的过渡切换效果，透明度渐变程度和渐变移动速度，包括渐变方向都可以自己修改参数调整。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line">// 顶点着色器，这里什么修改也不做。</div><div class="line">public static TRANSFER_VERT:string = `</div><div class="line">    attribute vec4 a_position;</div><div class="line">    attribute vec2 a_texCoord;</div><div class="line">    attribute vec4 a_color;</div><div class="line">    varying vec4 v_fragmentColor; </div><div class="line">    varying vec2 v_texCoord; </div><div class="line">    void main() </div><div class="line">    &#123; </div><div class="line">        gl_Position = CC_PMatrix * a_position;</div><div class="line">        v_fragmentColor = a_color; </div><div class="line">        v_texCoord = a_texCoord; </div><div class="line">    &#125;</div><div class="line">    `;</div><div class="line"></div><div class="line">// 片段着色器，主要逻辑都是在片段着色器上实现</div><div class="line">public static TRANSFER_FRAG:string = `</div><div class="line">    #ifdef GL_ES</div><div class="line">    precision lowp float;</div><div class="line">    #endif</div><div class="line">    </div><div class="line">	/**</div><div class="line">	 * Uniform是一种从CPU中的应用向GPU中的着色器发送数据的方式，并且它是全局的，也就是说我们可以在代码中来修改这个变量。 </div><div class="line">	 * 这里我们使用这个特性来定义一个time，time值决定我们上面说的垂直竖线的位置，再通过外部访问来修改time的值，来达到移动的目的。</div><div class="line">	 */</div><div class="line">    uniform float time;</div><div class="line"></div><div class="line">    varying vec4 v_fragmentColor;</div><div class="line">    varying vec2 v_texCoord;</div><div class="line">    void main()</div><div class="line">    &#123;</div><div class="line">        vec4 c = v_fragmentColor * texture2D(CC_Texture0, v_texCoord);</div><div class="line">        gl_FragColor = c;</div><div class="line"></div><div class="line">        float temp = v_texCoord.x - time;</div><div class="line">        if (temp &lt;= 0.0) &#123;</div><div class="line">            float temp2 = abs(temp);</div><div class="line">            if (temp2 &lt;= 0.2) &#123;</div><div class="line">                gl_FragColor.w = 1.0 - temp2/0.2;</div><div class="line">            &#125; else &#123;</div><div class="line">                gl_FragColor.w = 0.0;</div><div class="line">            &#125;</div><div class="line">        &#125; else &#123;</div><div class="line">            gl_FragColor.w = 1.0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    `;</div><div class="line">	</div><div class="line">// 下面开始是cocos的代码，来测试shader。</div><div class="line">private _program:any;</div><div class="line">private _time:number = 0;</div><div class="line">    </div><div class="line">start () &#123;</div><div class="line">    this.testShader();</div><div class="line">&#125;</div><div class="line"></div><div class="line">testShader() &#123;</div><div class="line">    let bgSp:cc.Sprite = this.bgNode.getChildByName(&quot;bg&quot;).getComponent(cc.Sprite);</div><div class="line">    this._program = new cc.GLProgram();</div><div class="line">    </div><div class="line">    if (cc.sys.isNative) &#123;  </div><div class="line">        this._program.initWithString(StoryHandlerScript.TRANSFER_VERT, StoryHandlerScript.TRANSFER_FRAG);</div><div class="line">    &#125; else &#123;  </div><div class="line">        this._program.initWithVertexShaderByteArray(StoryHandlerScript.TRANSFER_VERT, StoryHandlerScript.TRANSFER_FRAG);</div><div class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_POSITION, cc.macro.VERTEX_ATTRIB_POSITION);  </div><div class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_COLOR, cc.macro.VERTEX_ATTRIB_COLOR);  </div><div class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_TEX_COORD, cc.macro.VERTEX_ATTRIB_TEX_COORDS);  </div><div class="line">    &#125;</div><div class="line">    this._program.link();  </div><div class="line">    this._program.updateUniforms();</div><div class="line">    this._program.use();</div><div class="line"></div><div class="line">    if (cc.sys.isNative) &#123;  </div><div class="line">        var glProgram_state = cc.GLProgramState.getOrCreateWithGLProgram(this._program);</div><div class="line">        glProgram_state.setUniformFloat( &quot;time&quot;, this._time );    </div><div class="line">    &#125; else &#123;</div><div class="line">        let time = this._program.getUniformLocationForName(&quot;time&quot;);</div><div class="line">        this._program.setUniformLocationWith1f(time, this._time);</div><div class="line">    &#125;</div><div class="line">    bgSp._sgNode.setShaderProgram(this._program);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 在update里来修改time的值</div><div class="line">update(dt)&#123;</div><div class="line">    this._time += 0.02;</div><div class="line">    if (this._program) &#123;</div><div class="line">        this._program.use();</div><div class="line">        if (cc.sys.isNative) &#123;</div><div class="line">            var glProgram_state = cc.GLProgramState.getOrCreateWithGLProgram(this._program);</div><div class="line">            glProgram_state.setUniformFloat( &quot;time&quot;, this._time );    </div><div class="line">        &#125; else &#123;</div><div class="line">            let time = this._program.getUniformLocationForName(&quot;time&quot;);</div><div class="line">            this._program.setUniformLocationWith1f(time, this._time);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">// 顶点着色器，这里什么修改也不做。</span><br><span class="line">public static TRANSFER_VERT:string = `</span><br><span class="line">    attribute vec4 a_position;</span><br><span class="line">    attribute vec2 a_texCoord;</span><br><span class="line">    attribute vec4 a_color;</span><br><span class="line">    varying vec4 v_fragmentColor; </span><br><span class="line">    varying vec2 v_texCoord; </span><br><span class="line">    void main() </span><br><span class="line">    &#123; </span><br><span class="line">        gl_Position = CC_PMatrix * a_position;</span><br><span class="line">        v_fragmentColor = a_color; </span><br><span class="line">        v_texCoord = a_texCoord; </span><br><span class="line">    &#125;</span><br><span class="line">    `;</span><br><span class="line"></span><br><span class="line">// 片段着色器，主要逻辑都是在片段着色器上实现</span><br><span class="line">public static TRANSFER_FRAG:string = `</span><br><span class="line">    #ifdef GL_ES</span><br><span class="line">    precision lowp float;</span><br><span class="line">    #endif</span><br><span class="line">    </span><br><span class="line">	/**</span><br><span class="line">	 * Uniform是一种从CPU中的应用向GPU中的着色器发送数据的方式，并且它是全局的，也就是说我们可以在代码中来修改这个变量。 </span><br><span class="line">	 * 这里我们使用这个特性来定义一个time，time值决定我们上面说的垂直竖线的位置，再通过外部访问来修改time的值，来达到移动的目的。</span><br><span class="line">	 */</span><br><span class="line">    uniform float time;</span><br><span class="line"></span><br><span class="line">    varying vec4 v_fragmentColor;</span><br><span class="line">    varying vec2 v_texCoord;</span><br><span class="line">    void main()</span><br><span class="line">    &#123;</span><br><span class="line">        vec4 c = v_fragmentColor * texture2D(CC_Texture0, v_texCoord);</span><br><span class="line">        gl_FragColor = c;</span><br><span class="line"></span><br><span class="line">        float temp = v_texCoord.x - time;</span><br><span class="line">        if (temp &lt;= 0.0) &#123;</span><br><span class="line">            float temp2 = abs(temp);</span><br><span class="line">            if (temp2 &lt;= 0.2) &#123;</span><br><span class="line">                gl_FragColor.w = 1.0 - temp2/0.2;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                gl_FragColor.w = 0.0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            gl_FragColor.w = 1.0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    `;</span><br><span class="line">	</span><br><span class="line">// 下面开始是cocos的代码，来测试shader。</span><br><span class="line">private _program:any;</span><br><span class="line">private _time:number = 0;</span><br><span class="line">    </span><br><span class="line">start () &#123;</span><br><span class="line">    this.testShader();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testShader() &#123;</span><br><span class="line">    let bgSp:cc.Sprite = this.bgNode.getChildByName(&quot;bg&quot;).getComponent(cc.Sprite);</span><br><span class="line">    this._program = new cc.GLProgram();</span><br><span class="line">    </span><br><span class="line">    if (cc.sys.isNative) &#123;  </span><br><span class="line">        this._program.initWithString(StoryHandlerScript.TRANSFER_VERT, StoryHandlerScript.TRANSFER_FRAG);</span><br><span class="line">    &#125; else &#123;  </span><br><span class="line">        this._program.initWithVertexShaderByteArray(StoryHandlerScript.TRANSFER_VERT, StoryHandlerScript.TRANSFER_FRAG);</span><br><span class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_POSITION, cc.macro.VERTEX_ATTRIB_POSITION);  </span><br><span class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_COLOR, cc.macro.VERTEX_ATTRIB_COLOR);  </span><br><span class="line">        this._program.addAttribute(cc.macro.ATTRIBUTE_NAME_TEX_COORD, cc.macro.VERTEX_ATTRIB_TEX_COORDS);  </span><br><span class="line">    &#125;</span><br><span class="line">    this._program.link();  </span><br><span class="line">    this._program.updateUniforms();</span><br><span class="line">    this._program.use();</span><br><span class="line"></span><br><span class="line">    if (cc.sys.isNative) &#123;  </span><br><span class="line">        var glProgram_state = cc.GLProgramState.getOrCreateWithGLProgram(this._program);</span><br><span class="line">        glProgram_state.setUniformFloat( &quot;time&quot;, this._time );    </span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        let time = this._program.getUniformLocationForName(&quot;time&quot;);</span><br><span class="line">        this._program.setUniformLocationWith1f(time, this._time);</span><br><span class="line">    &#125;</span><br><span class="line">    bgSp._sgNode.setShaderProgram(this._program);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在update里来修改time的值</span><br><span class="line">update(dt)&#123;</span><br><span class="line">    this._time += 0.02;</span><br><span class="line">    if (this._program) &#123;</span><br><span class="line">        this._program.use();</span><br><span class="line">        if (cc.sys.isNative) &#123;</span><br><span class="line">            var glProgram_state = cc.GLProgramState.getOrCreateWithGLProgram(this._program);</span><br><span class="line">            glProgram_state.setUniformFloat( &quot;time&quot;, this._time );    </span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            let time = this._program.getUniformLocationForName(&quot;time&quot;);</span><br><span class="line">            this._program.setUniformLocationWith1f(time, this._time);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上就是所有的代码实现，逻辑很简单，同时有一些简单的注释，应该很好理解。</p>
 
       
@@ -368,7 +370,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -386,13 +388,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -424,6 +426,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/01/javascript-propertype/" rel="prev" title="javascript原型与继承">
+                javascript原型与继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -448,8 +454,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/05/02/shader-transfer/"
-           data-title="在cocos creator中用shader实现图片的渐变切换" data-url="http://ituuz.com/2018/05/02/shader-transfer/">
+      <div class="ds-thread" data-thread-key="2018/05/02/shader-transfer/" data-title="在cocos creator中用shader实现图片的渐变切换" data-url="http://ituuz.com/2018/05/02/shader-transfer/">
       </div>
     
   </div>
@@ -474,7 +479,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -485,16 +490,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -511,7 +514,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -590,10 +593,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

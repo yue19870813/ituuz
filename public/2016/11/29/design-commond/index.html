@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,21 +69,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="命令模式," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="命令模式,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -91,13 +91,15 @@
 
 
 <meta name="description" content="设计模式在一些大型的软件系统中非常常用，用来处理复杂的结构和逻辑。游戏其实也是一个软件系统，也会有庞大的系统，复杂的逻辑关系，对设计模式的合理使用可以帮助我们更好的去组织各个系统模块，优化逻辑关系，使之可以更好的维护和拓展。本文对常用的设计模式在游戏中的应用进行讨论，而不对设计模式的原理进行过多的阐述了。本文的例子代码也是伪代码，不能够运行。">
+<meta name="keywords" content="命令模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式在游戏开发中的应用之命令模式">
 <meta property="og:url" content="http://ituuz.com/2016/11/29/design-commond/index.html">
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="设计模式在一些大型的软件系统中非常常用，用来处理复杂的结构和逻辑。游戏其实也是一个软件系统，也会有庞大的系统，复杂的逻辑关系，对设计模式的合理使用可以帮助我们更好的去组织各个系统模块，优化逻辑关系，使之可以更好的维护和拓展。本文对常用的设计模式在游戏中的应用进行讨论，而不对设计模式的原理进行过多的阐述了。本文的例子代码也是伪代码，不能够运行。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ituuz.com/images/design_1_commond.png">
-<meta property="og:updated_time" content="2016-12-01T14:17:00.000Z">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式在游戏开发中的应用之命令模式">
 <meta name="twitter:description" content="设计模式在一些大型的软件系统中非常常用，用来处理复杂的结构和逻辑。游戏其实也是一个软件系统，也会有庞大的系统，复杂的逻辑关系，对设计模式的合理使用可以帮助我们更好的去组织各个系统模块，优化逻辑关系，使之可以更好的维护和拓展。本文对常用的设计模式在游戏中的应用进行讨论，而不对设计模式的原理进行过多的阐述了。本文的例子代码也是伪代码，不能够运行。">
@@ -158,7 +160,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -185,7 +187,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -195,7 +197,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -205,7 +207,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -215,7 +217,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -225,7 +227,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -235,7 +237,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -297,7 +299,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -357,17 +359,17 @@
         <p>设计模式在一些大型的软件系统中非常常用，用来处理复杂的结构和逻辑。游戏其实也是一个软件系统，也会有庞大的系统，复杂的逻辑关系，对设计模式的合理使用可以帮助我们更好的去组织各个系统模块，优化逻辑关系，使之可以更好的维护和拓展。本文对常用的设计模式在游戏中的应用进行讨论，而不对设计模式的原理进行过多的阐述了。本文的例子代码也是伪代码，不能够运行。<a id="more"></a></p>
 <h1 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h1><h2 id="通俗的定义"><a href="#通俗的定义" class="headerlink" title="通俗的定义"></a>通俗的定义</h2><p>将一组行为抽象为对象，使用不同的组合方式来执行命令，以实现解耦。本文介绍的命令模式可能与GoF上的稍有不同，是我自己对游戏开发中设计模式应用的理解。  </p>
 <h2 id="结构图："><a href="#结构图：" class="headerlink" title="结构图："></a>结构图：</h2><p><img src="/images/design_1_commond.png" alt="commond"></p>
-<h2 id="游戏开发中的使用"><a href="#游戏开发中的使用" class="headerlink" title="游戏开发中的使用"></a>游戏开发中的使用</h2><p>考虑以下场景，假如我们在设计一款RPG游戏，在野外地图肯定会有野怪，野怪会有一些AI逻辑，我们打算设计一套合理的怪物模块。大概如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//怪物基类  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Monster</span> </span>&#123;  </div><div class="line">    <span class="comment">//行走巡逻  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">walk</span><span class="params">()</span></span>;  </div><div class="line">    <span class="comment">//攻击  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">attack</span><span class="params">()</span></span>;  </div><div class="line">    <span class="comment">//逃跑  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">escape</span><span class="params">()</span></span>;  </div><div class="line">&#125;</div><div class="line">``` 大体设计包含了怪物行走、攻击和逃跑三个通用的行为特征。很快策划提出了新需求，要加入精英怪物类型，并且精英怪物有他自己独特的逻辑。嗯，幸好我们抽象出了怪物基类，只要继承过来，再增加新的行为即可，新增的精英怪物如下：</div><div class="line">``` java</div><div class="line"><span class="comment">//精英怪物  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">EliteMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </div><div class="line">    <span class="comment">//精英怪物独有的行为  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">eliteBehavior</span><span class="params">()</span>  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这样就很快的实现了新的需求，EliteMonster继承了Monster基础行为，并且增加了新的行为。接着没过多久策划又提出我们要有BOSS，是的，游戏怎么能没有BOSS呢，好吧我们来添加，毕竟我们设计好了基础行为，只要继承过来，在添加新的行为就好了：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//BOSS  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BossMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </div><div class="line">    <span class="comment">//BOSS独有的行为  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">bossBehavior</span><span class="params">()</span>  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>看来我们的代码还是挺健壮的，每次都可以快速的增加新的怪物。但是紧接着新都修改需求提出来了：我们要让BOSS拥有精英怪物的行为。怎么办？还好，我们的程序足够健壮，修改一下继承关系就好了，我们让BossMonster来继承EliteMonster，虽然修改继承关系看起来很危险，但是我们还是完美的解决了问题，BOSS拥有了新的行为。经过一段时间，我们有设计了新的怪物：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//普通怪物  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SimpleMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </div><div class="line">    <span class="comment">//普通怪物独有的行为  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">simpleBehavior</span><span class="params">()</span>  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="游戏开发中的使用"><a href="#游戏开发中的使用" class="headerlink" title="游戏开发中的使用"></a>游戏开发中的使用</h2><p>考虑以下场景，假如我们在设计一款RPG游戏，在野外地图肯定会有野怪，野怪会有一些AI逻辑，我们打算设计一套合理的怪物模块。大概如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//怪物基类  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Monster</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//行走巡逻  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">walk</span><span class="params">()</span></span>;  </span><br><span class="line">    <span class="comment">//攻击  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">attack</span><span class="params">()</span></span>;  </span><br><span class="line">    <span class="comment">//逃跑  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">escape</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;</span><br><span class="line">``` 大体设计包含了怪物行走、攻击和逃跑三个通用的行为特征。很快策划提出了新需求，要加入精英怪物类型，并且精英怪物有他自己独特的逻辑。嗯，幸好我们抽象出了怪物基类，只要继承过来，再增加新的行为即可，新增的精英怪物如下：</span><br><span class="line">``` java</span><br><span class="line"><span class="comment">//精英怪物  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EliteMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//精英怪物独有的行为  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">eliteBehavior</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样就很快的实现了新的需求，EliteMonster继承了Monster基础行为，并且增加了新的行为。接着没过多久策划又提出我们要有BOSS，是的，游戏怎么能没有BOSS呢，好吧我们来添加，毕竟我们设计好了基础行为，只要继承过来，在添加新的行为就好了：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//BOSS  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BossMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//BOSS独有的行为  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">bossBehavior</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>看来我们的代码还是挺健壮的，每次都可以快速的增加新的怪物。但是紧接着新都修改需求提出来了：我们要让BOSS拥有精英怪物的行为。怎么办？还好，我们的程序足够健壮，修改一下继承关系就好了，我们让BossMonster来继承EliteMonster，虽然修改继承关系看起来很危险，但是我们还是完美的解决了问题，BOSS拥有了新的行为。经过一段时间，我们有设计了新的怪物：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//普通怪物  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SimpleMonster</span> <span class="keyword">extends</span> <span class="title">Monster</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//普通怪物独有的行为  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">simpleBehavior</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>这时不幸的消息传来了：我们想让BOSS同时拥有精英怪物和普通怪物的行为！现在我们有几种解决方案：</p>
 <ul>
 <li>把精英怪物的行为和普通怪物的行为，封装到Monster里，作为基础行为，但是这样的话，就是所有怪物都会继承这两种行为，这种多余的基础是我们不想看到的。</li>
 <li>就是把SimpleMonster的行为复制一份给BOSS，让BOSS在继承EliteMonster的同时拥有SimpleMonster的行为，但是这样就会有代码的冗余，后面我们修改这种行为的时候就要在两个地方修改。</li>
 <li>期望你使用的语言可以多继承。然而多继承并不是一个好的特性和方案。</li>
 </ul>
-<p>这时我们想一想，算了，代码冗余就冗余一下吧，毕竟大多数需求我们还是可以很好的实现的。就在我们觉得可以满足需求时，更糟糕的需求又提交过来了：我们需要挂机功能，玩家的角色需要实现一部分AI功能，这时就麻烦了，我们怎么调整这个继承关系，让Player继承谁？看起来继承谁都不太合理。这时我们就要思考一下到底该怎么设计行为这部分，才能让我们适应各种需求的改动。看一下下面这种设计：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//游戏中行为对象的基类  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">GameActor</span> </span>&#123;  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//玩家对象  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Player</span> <span class="keyword">extends</span> <span class="title">GameActor</span> </span>&#123;  </div><div class="line">  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//命令抽象接口  </span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICommond</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//攻击命令  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AttackCommond</span> </span>&#123;  </div><div class="line">    <span class="comment">//参数可以是任何一个行为对象  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//执行命令的类  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommondInvoke</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">addCommond</span><span class="params">(ICommond commond)</span></span>;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">()</span></span>;  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//创建一个玩家对象  </span></div><div class="line">Player p = <span class="keyword">new</span> Player();  </div><div class="line"><span class="comment">//创建一个攻击命令  </span></div><div class="line">ICommond attackCommond = <span class="keyword">new</span> AttackCommond(p);  </div><div class="line"><span class="comment">//让玩家执行攻击命令  </span></div><div class="line">CommondInvoke invoke = <span class="keyword">new</span> CommondInvoke();  </div><div class="line">invoke.addCommond(attackCommond);  </div><div class="line">invoke.execute()</div></pre></td></tr></table></figure></p>
-<p>行为对象都继承GameActor，可以随时增加新的对象。行为命令需要传入一个行为对象来执行行为动作，这里命令与对象进行了解耦，命令与对象可以随意增加与组合。CommondInvoke也可以进一步优化，可以执行多条命令，可以倒序或顺序执行，可以同步或异步，甚至可以随时添加、删除和修改。多个命令的组合也是命令模式的一个特点。此外命令模式还可以处理事务回滚：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//命令抽象接口  </span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICommond</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </div><div class="line">    <span class="comment">//撤销函数  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">undo</span><span class="params">()</span></span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这时我们想一想，算了，代码冗余就冗余一下吧，毕竟大多数需求我们还是可以很好的实现的。就在我们觉得可以满足需求时，更糟糕的需求又提交过来了：我们需要挂机功能，玩家的角色需要实现一部分AI功能，这时就麻烦了，我们怎么调整这个继承关系，让Player继承谁？看起来继承谁都不太合理。这时我们就要思考一下到底该怎么设计行为这部分，才能让我们适应各种需求的改动。看一下下面这种设计：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//游戏中行为对象的基类  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GameActor</span> </span>&#123;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//玩家对象  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Player</span> <span class="keyword">extends</span> <span class="title">GameActor</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//命令抽象接口  </span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICommond</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//攻击命令  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AttackCommond</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//参数可以是任何一个行为对象  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//执行命令的类  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommondInvoke</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">addCommond</span><span class="params">(ICommond commond)</span></span>;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//创建一个玩家对象  </span></span><br><span class="line">Player p = <span class="keyword">new</span> Player();  </span><br><span class="line"><span class="comment">//创建一个攻击命令  </span></span><br><span class="line">ICommond attackCommond = <span class="keyword">new</span> AttackCommond(p);  </span><br><span class="line"><span class="comment">//让玩家执行攻击命令  </span></span><br><span class="line">CommondInvoke invoke = <span class="keyword">new</span> CommondInvoke();  </span><br><span class="line">invoke.addCommond(attackCommond);  </span><br><span class="line">invoke.execute()</span><br></pre></td></tr></table></figure></p>
+<p>行为对象都继承GameActor，可以随时增加新的对象。行为命令需要传入一个行为对象来执行行为动作，这里命令与对象进行了解耦，命令与对象可以随意增加与组合。CommondInvoke也可以进一步优化，可以执行多条命令，可以倒序或顺序执行，可以同步或异步，甚至可以随时添加、删除和修改。多个命令的组合也是命令模式的一个特点。此外命令模式还可以处理事务回滚：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//命令抽象接口  </span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICommond</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">execute</span><span class="params">(GameActor ga)</span></span>;  </span><br><span class="line">    <span class="comment">//撤销函数  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">undo</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>事务回滚这个特性在服务器中比较常用，比如玩家的一次购买行为，肯定是要保障金钱扣除，道具添加同时打成，否则就算是事务失败，要把修改的内容还原，这时就可以调用undo进行回滚。命令模式暂时介绍这些，下一篇会介绍观察者模式。</p>
 
       
@@ -377,7 +379,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -395,13 +397,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -461,8 +463,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/29/design-commond/"
-           data-title="设计模式在游戏开发中的应用之命令模式" data-url="http://ituuz.com/2016/11/29/design-commond/">
+      <div class="ds-thread" data-thread-key="2016/11/29/design-commond/" data-title="设计模式在游戏开发中的应用之命令模式" data-url="http://ituuz.com/2016/11/29/design-commond/">
       </div>
     
   </div>
@@ -487,7 +488,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -498,16 +499,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -524,7 +523,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -603,10 +602,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

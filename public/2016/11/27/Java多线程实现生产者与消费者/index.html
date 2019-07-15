@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,21 +69,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="多线程," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="多线程,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -91,12 +91,14 @@
 
 
 <meta name="description" content="生产者与消费者问题是指创建一组“生产者”线程和一组“消费者”线程，让他们进行同步互斥的运行，生产者生产一个产品，消费者就消费掉一个产品，下面我就用Java的多线程来实现这个课题。">
+<meta name="keywords" content="多线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java多线程实现生产者与消费者">
 <meta property="og:url" content="http://ituuz.com/2016/11/27/Java多线程实现生产者与消费者/index.html">
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="生产者与消费者问题是指创建一组“生产者”线程和一组“消费者”线程，让他们进行同步互斥的运行，生产者生产一个产品，消费者就消费掉一个产品，下面我就用Java的多线程来实现这个课题。">
-<meta property="og:updated_time" content="2016-11-27T12:41:27.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多线程实现生产者与消费者">
 <meta name="twitter:description" content="生产者与消费者问题是指创建一组“生产者”线程和一组“消费者”线程，让他们进行同步互斥的运行，生产者生产一个产品，消费者就消费掉一个产品，下面我就用Java的多线程来实现这个课题。">
@@ -156,7 +158,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -183,7 +185,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -193,7 +195,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -203,7 +205,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -213,7 +215,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -223,7 +225,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -233,7 +235,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -295,7 +297,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -352,11 +354,11 @@
       
 
       
-        <p>生产者与消费者问题是指创建一组“生产者”线程和一组“消费者”线程，让他们进行同步互斥的运行，生产者生产一个产品，消费者就消费掉一个产品，下面我就用Java的多线程来实现这个课题。<a id="more"></a>本例子的ChuShi代表生产者，XiaoFei代表消费者。首先是生产者厨师的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> thread;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChuShi</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;  </div><div class="line">      </div><div class="line">    <span class="keyword">private</span> GongNeng g;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChuShi</span><span class="params">(GongNeng g)</span></span>&#123;    </div><div class="line">        <span class="keyword">this</span>.g = g;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">for</span>(;;)&#123;  </div><div class="line">              </div><div class="line">            g.lao();  </div><div class="line">              </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后是消费者的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> thread;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XiaoFei</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;  </div><div class="line">      </div><div class="line">    <span class="keyword">private</span> GongNeng g;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">XiaoFei</span><span class="params">(GongNeng g)</span></span>&#123;  </div><div class="line">          </div><div class="line">        <span class="keyword">this</span>.g = g;  </div><div class="line">          </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">for</span>(;;)&#123;  </div><div class="line">                  </div><div class="line">            g.chi();  </div><div class="line">              </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接着是封装了生产者的生产方法和消费者的消费方法的类，该类中的方法要使用synchronized关键字，就可以使run方法同步，也就是说，对于同一个Java类的对象实例，run方法同时只能被一个线程调用，并当前的run执行完后，才能被其他的线程调用。需要注意的是每个线程run()方法调用的synchronized修饰的方法必须是一个实例的方法才能保证同步，所以这个里将生产者和消费者的功能封装在一个实例中，在将他们的实例分别传给生产者和消费者，这样他们就能够同步了，下面是同步的方法代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> thread;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GongNeng</span> </span>&#123;  </div><div class="line">    <span class="keyword">private</span> Bing b;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GongNeng</span><span class="params">(Bing b)</span></span>&#123;      </div><div class="line">        <span class="keyword">this</span>.b = b;   </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">lao</span><span class="params">()</span></span>&#123;  </div><div class="line">          </div><div class="line">        <span class="keyword">if</span>(b.getBing()&lt;<span class="number">10</span>)&#123;  </div><div class="line">              </div><div class="line">            <span class="keyword">try</span> &#123;  </div><div class="line">                Thread.sleep(<span class="number">1500</span>);  </div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </div><div class="line">                <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">                e.printStackTrace();  </div><div class="line">            &#125;  </div><div class="line">              </div><div class="line">            System.out.println(Thread.currentThread()+  </div><div class="line">                  </div><div class="line">            <span class="string">":厨师烙了一张饼，盘里还剩"</span>+(b.getBing()+<span class="number">1</span>)+<span class="string">"张饼"</span>);  </div><div class="line">              </div><div class="line">            b.setBing(b.getBing()+<span class="number">1</span>);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">chi</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">if</span>(b.getBing()&gt;<span class="number">0</span>)&#123;  </div><div class="line">              </div><div class="line">            <span class="keyword">try</span> &#123;  </div><div class="line">                Thread.sleep(<span class="number">2000</span>);  </div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </div><div class="line">                <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">                e.printStackTrace();  </div><div class="line">            &#125;  </div><div class="line">            System.out.println(Thread.currentThread()+  </div><div class="line">                  </div><div class="line">            <span class="string">":消费者吃了一张饼，盘里还剩"</span>+(b.getBing()-<span class="number">1</span>)+<span class="string">"张饼"</span>);  </div><div class="line">              </div><div class="line">            b.setBing(b.getBing()-<span class="number">1</span>);  </div><div class="line">              </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>还有他们对一个消费品进行同步的操作，在这里我们用的是饼：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> thread;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bing</span> </span>&#123;  </div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> bing = <span class="number">10</span>;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getBing</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> bing;  </div><div class="line">    &#125;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBing</span><span class="params">(<span class="keyword">int</span> bing)</span> </span>&#123;  </div><div class="line">        <span class="keyword">this</span>.bing = bing;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>下面是主入口方法进行测试：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> thread;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">          </div><div class="line">        <span class="comment">//创建饼的实例  </span></div><div class="line">        Bing b = <span class="keyword">new</span> Bing();  </div><div class="line">        <span class="comment">//创建同步的吃饼和烙饼实例  </span></div><div class="line">        GongNeng g = <span class="keyword">new</span> GongNeng(b);  </div><div class="line">        <span class="comment">//创建线程两个消费者两个生产者  </span></div><div class="line">        ChuShi c1 = <span class="keyword">new</span> ChuShi(g);  </div><div class="line">        ChuShi c2 = <span class="keyword">new</span> ChuShi(g);  </div><div class="line">        XiaoFei x1 = <span class="keyword">new</span> XiaoFei(g);  </div><div class="line">        XiaoFei x2 = <span class="keyword">new</span> XiaoFei(g);  </div><div class="line">          </div><div class="line">        <span class="comment">//启动线程  </span></div><div class="line">        c1.start();  </div><div class="line">        c2.start();  </div><div class="line">        x1.start();  </div><div class="line">        x2.start();  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>生产者与消费者问题是指创建一组“生产者”线程和一组“消费者”线程，让他们进行同步互斥的运行，生产者生产一个产品，消费者就消费掉一个产品，下面我就用Java的多线程来实现这个课题。<a id="more"></a>本例子的ChuShi代表生产者，XiaoFei代表消费者。首先是生产者厨师的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChuShi</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">private</span> GongNeng g;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChuShi</span><span class="params">(GongNeng g)</span></span>&#123;    </span><br><span class="line">        <span class="keyword">this</span>.g = g;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;  </span><br><span class="line">        <span class="keyword">for</span>(;;)&#123;  </span><br><span class="line">              </span><br><span class="line">            g.lao();  </span><br><span class="line">              </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后是消费者的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XiaoFei</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">private</span> GongNeng g;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">XiaoFei</span><span class="params">(GongNeng g)</span></span>&#123;  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">this</span>.g = g;  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;  </span><br><span class="line">        <span class="keyword">for</span>(;;)&#123;  </span><br><span class="line">                  </span><br><span class="line">            g.chi();  </span><br><span class="line">              </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着是封装了生产者的生产方法和消费者的消费方法的类，该类中的方法要使用synchronized关键字，就可以使run方法同步，也就是说，对于同一个Java类的对象实例，run方法同时只能被一个线程调用，并当前的run执行完后，才能被其他的线程调用。需要注意的是每个线程run()方法调用的synchronized修饰的方法必须是一个实例的方法才能保证同步，所以这个里将生产者和消费者的功能封装在一个实例中，在将他们的实例分别传给生产者和消费者，这样他们就能够同步了，下面是同步的方法代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GongNeng</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> Bing b;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GongNeng</span><span class="params">(Bing b)</span></span>&#123;      </span><br><span class="line">        <span class="keyword">this</span>.b = b;   </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">lao</span><span class="params">()</span></span>&#123;  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">if</span>(b.getBing()&lt;<span class="number">10</span>)&#123;  </span><br><span class="line">              </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                Thread.sleep(<span class="number">1500</span>);  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block  </span></span><br><span class="line">                e.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">              </span><br><span class="line">            System.out.println(Thread.currentThread()+  </span><br><span class="line">                  </span><br><span class="line">            <span class="string">":厨师烙了一张饼，盘里还剩"</span>+(b.getBing()+<span class="number">1</span>)+<span class="string">"张饼"</span>);  </span><br><span class="line">              </span><br><span class="line">            b.setBing(b.getBing()+<span class="number">1</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">chi</span><span class="params">()</span></span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(b.getBing()&gt;<span class="number">0</span>)&#123;  </span><br><span class="line">              </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                Thread.sleep(<span class="number">2000</span>);  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block  </span></span><br><span class="line">                e.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">            System.out.println(Thread.currentThread()+  </span><br><span class="line">                  </span><br><span class="line">            <span class="string">":消费者吃了一张饼，盘里还剩"</span>+(b.getBing()-<span class="number">1</span>)+<span class="string">"张饼"</span>);  </span><br><span class="line">              </span><br><span class="line">            b.setBing(b.getBing()-<span class="number">1</span>);  </span><br><span class="line">              </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还有他们对一个消费品进行同步的操作，在这里我们用的是饼：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bing</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> bing = <span class="number">10</span>;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getBing</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> bing;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBing</span><span class="params">(<span class="keyword">int</span> bing)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.bing = bing;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面是主入口方法进行测试：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">          </span><br><span class="line">        <span class="comment">//创建饼的实例  </span></span><br><span class="line">        Bing b = <span class="keyword">new</span> Bing();  </span><br><span class="line">        <span class="comment">//创建同步的吃饼和烙饼实例  </span></span><br><span class="line">        GongNeng g = <span class="keyword">new</span> GongNeng(b);  </span><br><span class="line">        <span class="comment">//创建线程两个消费者两个生产者  </span></span><br><span class="line">        ChuShi c1 = <span class="keyword">new</span> ChuShi(g);  </span><br><span class="line">        ChuShi c2 = <span class="keyword">new</span> ChuShi(g);  </span><br><span class="line">        XiaoFei x1 = <span class="keyword">new</span> XiaoFei(g);  </span><br><span class="line">        XiaoFei x2 = <span class="keyword">new</span> XiaoFei(g);  </span><br><span class="line">          </span><br><span class="line">        <span class="comment">//启动线程  </span></span><br><span class="line">        c1.start();  </span><br><span class="line">        c2.start();  </span><br><span class="line">        x1.start();  </span><br><span class="line">        x2.start();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p> 这个例子就模拟了生产与消费的问题。</p>
 
       
@@ -366,7 +368,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -384,13 +386,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -450,8 +452,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/27/Java多线程实现生产者与消费者/"
-           data-title="Java多线程实现生产者与消费者" data-url="http://ituuz.com/2016/11/27/Java多线程实现生产者与消费者/">
+      <div class="ds-thread" data-thread-key="2016/11/27/Java多线程实现生产者与消费者/" data-title="Java多线程实现生产者与消费者" data-url="http://ituuz.com/2016/11/27/Java多线程实现生产者与消费者/">
       </div>
     
   </div>
@@ -476,7 +477,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -487,16 +488,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -513,7 +512,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -592,10 +591,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

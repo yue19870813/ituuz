@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,40 +69,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="［WebService,java］," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="［WebService,java］,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。
-当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
+<meta name="description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。 当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
+<meta name="keywords" content="［WebService,java］">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WebService复杂类型数据传输-dom4j方式">
 <meta property="og:url" content="http://ituuz.com/2016/11/27/WebService复杂类型数据传输-dom4j方式/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。
-当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
-<meta property="og:updated_time" content="2016-11-27T12:12:44.000Z">
+<meta property="og:description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。 当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebService复杂类型数据传输-dom4j方式">
-<meta name="twitter:description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。
-当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
+<meta name="twitter:description" content="WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。 当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在">
 
 
 
@@ -159,7 +158,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -186,7 +185,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -196,7 +195,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -206,7 +205,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -216,7 +215,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -226,7 +225,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -236,7 +235,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -298,7 +297,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -356,9 +355,9 @@
 
       
         <p>WebService在传递数据的时候只能传递字符串，当我们返回一些简单的字符串时我们可以直接返回，但是当我们想返回比如List，Map等复杂类型的数据时拼接字符串就是个很麻烦的工作，这时我们就用到了dom4j这个工具。</p>
-<p>当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在客户端再利用dom4j解释。<br><a id="more"></a><br>假如我们从数据库中查询的是一个Student对象，该对象有name和agel两个属性，我们将大量的Student对象储存在List中。下面我们想利用dom4j把List数据变成如下格式的xml文件类型的字符串：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  </div><div class="line">   <span class="tag">&lt;<span class="name">root</span>&gt;</span>  </div><div class="line">       <span class="tag">&lt;<span class="name">student</span>&gt;</span>  </div><div class="line">           <span class="tag">&lt;<span class="name">name</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </div><div class="line">           <span class="tag">&lt;<span class="name">age</span>&gt;</span>26<span class="tag">&lt;/<span class="name">age</span>&gt;</span>  </div><div class="line">       <span class="tag">&lt;/<span class="name">student</span>&gt;</span>  </div><div class="line">       <span class="tag">&lt;<span class="name">student</span>&gt;</span>  </div><div class="line">           <span class="tag">&lt;<span class="name">name</span>&gt;</span>赵四<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </div><div class="line">           <span class="tag">&lt;<span class="name">age</span>&gt;</span>34<span class="tag">&lt;/<span class="name">age</span>&gt;</span>  </div><div class="line">       <span class="tag">&lt;/<span class="name">student</span>&gt;</span>  </div><div class="line">   <span class="tag">&lt;/<span class="name">root</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>webservice端Java代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.List;  </div><div class="line"><span class="keyword">import</span> org.dom4j.Document;  </div><div class="line"><span class="keyword">import</span> org.dom4j.DocumentHelper;  </div><div class="line"><span class="keyword">import</span> org.dom4j.Element;  </div><div class="line"><span class="keyword">import</span> org.dom4j.io.OutputFormat;  </div><div class="line"><span class="keyword">import</span> vo.UnitPO;  </div><div class="line"><span class="keyword">import</span> DAO.unitDao;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Service02</span> </span>&#123;     </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">method</span><span class="params">()</span></span>&#123;  </div><div class="line">         </div><div class="line">        Document document = DocumentHelper.createDocument();  </div><div class="line">        Element root = document.addElement(<span class="string">"root"</span>);  </div><div class="line">         </div><div class="line">        Element stuElement = <span class="keyword">null</span>;  </div><div class="line">        Element nameElement = <span class="keyword">null</span>;  </div><div class="line">        Element ageElement = <span class="keyword">null</span>;  </div><div class="line">         </div><div class="line">        <span class="comment">//第一个student节点  </span></div><div class="line">        stuElement = root.addElement(<span class="string">"student"</span>);  </div><div class="line">        <span class="comment">//添加两个子节点  </span></div><div class="line">        nameElement = stuElement.addElement(<span class="string">"name"</span>);  </div><div class="line">        ageElement = stuElement.addElement(<span class="string">"age"</span>);     </div><div class="line">        <span class="comment">//向两个子节点中添加文本内容  </span></div><div class="line">        nameElement.addText(<span class="string">"张三"</span>);  </div><div class="line">        ageElement.addText(<span class="string">"26"</span>);  </div><div class="line">         </div><div class="line">        <span class="comment">//同理第二个student节点  </span></div><div class="line">        stuElement = root.addElement(<span class="string">"student"</span>);         </div><div class="line">        nameElement = stuElement.addElement(<span class="string">"name"</span>);  </div><div class="line">        ageElement = stuElement.addElement(<span class="string">"age"</span>);     </div><div class="line">        nameElement.addText(<span class="string">"赵四"</span>);  </div><div class="line">        ageElement.addText(<span class="string">"34"</span>);  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            OutputFormat format = OutputFormat.createPrettyPrint();  </div><div class="line">            <span class="comment">// 设置XML文件的编码格式  </span></div><div class="line">            format.setEncoding(<span class="string">"UTF-8"</span>);  </div><div class="line">            <span class="keyword">return</span> document.asXML();  </div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </div><div class="line">            System.out.println(e.getMessage());  </div><div class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这样就将我们想传送的复杂数据变成了xml格式是字符串，下面在客户端就可以解释出我们想要的数据了。client端java代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.StringReader;  </div><div class="line"><span class="keyword">import</span> java.util.List;  </div><div class="line"><span class="keyword">import</span> org.dom4j.Document;  </div><div class="line"><span class="keyword">import</span> org.dom4j.Element;  </div><div class="line"><span class="keyword">import</span> org.dom4j.io.SAXReader;  </div><div class="line"><span class="keyword">import</span> webservice.Service02Proxy;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;         </div><div class="line">        <span class="keyword">try</span>&#123;  </div><div class="line">            <span class="comment">//创建代理类  </span></div><div class="line">            Service02Proxy proxy = <span class="keyword">new</span> Service02Proxy();  </div><div class="line">            <span class="comment">//接受传过来的XML字符串  </span></div><div class="line">            String str = proxy.method();  </div><div class="line">            <span class="comment">//解释该字符串  </span></div><div class="line">            StringReader read = <span class="keyword">new</span> StringReader(str);  </div><div class="line">            SAXReader reader = <span class="keyword">new</span> SAXReader();  </div><div class="line">            Document doc = reader.read(read);   </div><div class="line">            Element root = doc.getRootElement();  </div><div class="line">            <span class="comment">//该节点由多个student构成，所以返回值是List类型  </span></div><div class="line">            List list = root.elements(<span class="string">"student"</span>);   </div><div class="line">             </div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; list.size();i++)&#123;  </div><div class="line">                 </div><div class="line">                Element student = (Element)list.get(i);  </div><div class="line">                Element name = student.element(<span class="string">"name"</span>);  </div><div class="line">                Element age = student.element(<span class="string">"age"</span>);  </div><div class="line">                 </div><div class="line">                <span class="comment">//打印得到的数据  </span></div><div class="line">                System.out.println(name.getTextTrim()+<span class="string">":"</span>+age.getTextTrim());  </div><div class="line">                 </div><div class="line">            &#125;  </div><div class="line">     </div><div class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;  </div><div class="line">             </div><div class="line">            e.printStackTrace();  </div><div class="line">             </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当我们从数据库中查询出很多个对象类型时，我们一般都存放在List中。像这种数据就很难用拼接字符串的形式进行传递。我的解决办法就是利用dom4j把它写成一个xml格式的字符串，然后在客户端再利用dom4j解释。<br><a id="more"></a><br>假如我们从数据库中查询的是一个Student对象，该对象有name和agel两个属性，我们将大量的Student对象储存在List中。下面我们想利用dom4j把List数据变成如下格式的xml文件类型的字符串：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">root</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;<span class="name">student</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">name</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">age</span>&gt;</span>26<span class="tag">&lt;/<span class="name">age</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;/<span class="name">student</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;<span class="name">student</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">name</span>&gt;</span>赵四<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">           <span class="tag">&lt;<span class="name">age</span>&gt;</span>34<span class="tag">&lt;/<span class="name">age</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;/<span class="name">student</span>&gt;</span>  </span><br><span class="line">   <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>webservice端Java代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.List;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.Document;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.DocumentHelper;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.Element;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.io.OutputFormat;  </span><br><span class="line"><span class="keyword">import</span> vo.UnitPO;  </span><br><span class="line"><span class="keyword">import</span> DAO.unitDao;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Service02</span> </span>&#123;     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">method</span><span class="params">()</span></span>&#123;  </span><br><span class="line">         </span><br><span class="line">        Document document = DocumentHelper.createDocument();  </span><br><span class="line">        Element root = document.addElement(<span class="string">"root"</span>);  </span><br><span class="line">         </span><br><span class="line">        Element stuElement = <span class="keyword">null</span>;  </span><br><span class="line">        Element nameElement = <span class="keyword">null</span>;  </span><br><span class="line">        Element ageElement = <span class="keyword">null</span>;  </span><br><span class="line">         </span><br><span class="line">        <span class="comment">//第一个student节点  </span></span><br><span class="line">        stuElement = root.addElement(<span class="string">"student"</span>);  </span><br><span class="line">        <span class="comment">//添加两个子节点  </span></span><br><span class="line">        nameElement = stuElement.addElement(<span class="string">"name"</span>);  </span><br><span class="line">        ageElement = stuElement.addElement(<span class="string">"age"</span>);     </span><br><span class="line">        <span class="comment">//向两个子节点中添加文本内容  </span></span><br><span class="line">        nameElement.addText(<span class="string">"张三"</span>);  </span><br><span class="line">        ageElement.addText(<span class="string">"26"</span>);  </span><br><span class="line">         </span><br><span class="line">        <span class="comment">//同理第二个student节点  </span></span><br><span class="line">        stuElement = root.addElement(<span class="string">"student"</span>);         </span><br><span class="line">        nameElement = stuElement.addElement(<span class="string">"name"</span>);  </span><br><span class="line">        ageElement = stuElement.addElement(<span class="string">"age"</span>);     </span><br><span class="line">        nameElement.addText(<span class="string">"赵四"</span>);  </span><br><span class="line">        ageElement.addText(<span class="string">"34"</span>);  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            OutputFormat format = OutputFormat.createPrettyPrint();  </span><br><span class="line">            <span class="comment">// 设置XML文件的编码格式  </span></span><br><span class="line">            format.setEncoding(<span class="string">"UTF-8"</span>);  </span><br><span class="line">            <span class="keyword">return</span> document.asXML();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">            System.out.println(e.getMessage());  </span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就将我们想传送的复杂数据变成了xml格式是字符串，下面在客户端就可以解释出我们想要的数据了。client端java代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.StringReader;  </span><br><span class="line"><span class="keyword">import</span> java.util.List;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.Document;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.Element;  </span><br><span class="line"><span class="keyword">import</span> org.dom4j.io.SAXReader;  </span><br><span class="line"><span class="keyword">import</span> webservice.Service02Proxy;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;         </span><br><span class="line">        <span class="keyword">try</span>&#123;  </span><br><span class="line">            <span class="comment">//创建代理类  </span></span><br><span class="line">            Service02Proxy proxy = <span class="keyword">new</span> Service02Proxy();  </span><br><span class="line">            <span class="comment">//接受传过来的XML字符串  </span></span><br><span class="line">            String str = proxy.method();  </span><br><span class="line">            <span class="comment">//解释该字符串  </span></span><br><span class="line">            StringReader read = <span class="keyword">new</span> StringReader(str);  </span><br><span class="line">            SAXReader reader = <span class="keyword">new</span> SAXReader();  </span><br><span class="line">            Document doc = reader.read(read);   </span><br><span class="line">            Element root = doc.getRootElement();  </span><br><span class="line">            <span class="comment">//该节点由多个student构成，所以返回值是List类型  </span></span><br><span class="line">            List list = root.elements(<span class="string">"student"</span>);   </span><br><span class="line">             </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; list.size();i++)&#123;  </span><br><span class="line">                 </span><br><span class="line">                Element student = (Element)list.get(i);  </span><br><span class="line">                Element name = student.element(<span class="string">"name"</span>);  </span><br><span class="line">                Element age = student.element(<span class="string">"age"</span>);  </span><br><span class="line">                 </span><br><span class="line">                <span class="comment">//打印得到的数据  </span></span><br><span class="line">                System.out.println(name.getTextTrim()+<span class="string">":"</span>+age.getTextTrim());  </span><br><span class="line">                 </span><br><span class="line">            &#125;  </span><br><span class="line">     </span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;  </span><br><span class="line">             </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">             </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>控制台输出为：</p>
 <blockquote>
 <p><strong>张三:26<br>赵四:34 </strong></p>
@@ -372,7 +371,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -390,13 +389,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -456,8 +455,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/27/WebService复杂类型数据传输-dom4j方式/"
-           data-title="WebService复杂类型数据传输-dom4j方式" data-url="http://ituuz.com/2016/11/27/WebService复杂类型数据传输-dom4j方式/">
+      <div class="ds-thread" data-thread-key="2016/11/27/WebService复杂类型数据传输-dom4j方式/" data-title="WebService复杂类型数据传输-dom4j方式" data-url="http://ituuz.com/2016/11/27/WebService复杂类型数据传输-dom4j方式/">
       </div>
     
   </div>
@@ -482,7 +480,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -493,16 +491,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -519,7 +515,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,10 +594,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

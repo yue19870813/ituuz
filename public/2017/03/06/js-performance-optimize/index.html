@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,61 +69,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript,性能优化," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="javascript,性能优化,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="JavaScript性能优化总结
-+=运算符比+运算符效率高。
-数字转换成字符串
-1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()
-
-展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。
-
-减值迭代:在循环中，减值要比增值效率高。
-12345678//增值迭代f">
+<meta name="description" content="JavaScript性能优化总结 +=运算符比+运算符效率高。 数字转换成字符串 1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()  展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。  减值迭代:在循环中，减值要比增值效率高。 12345678//增值迭代f">
+<meta name="keywords" content="javascript,性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript性能优化总结">
 <meta property="og:url" content="http://ituuz.com/2017/03/06/js-performance-optimize/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="JavaScript性能优化总结
-+=运算符比+运算符效率高。
-数字转换成字符串
-1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()
-
-展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。
-
-减值迭代:在循环中，减值要比增值效率高。
-12345678//增值迭代f">
-<meta property="og:updated_time" content="2017-10-29T09:10:58.000Z">
+<meta property="og:description" content="JavaScript性能优化总结 +=运算符比+运算符效率高。 数字转换成字符串 1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()  展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。  减值迭代:在循环中，减值要比增值效率高。 12345678//增值迭代f">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript性能优化总结">
-<meta name="twitter:description" content="JavaScript性能优化总结
-+=运算符比+运算符效率高。
-数字转换成字符串
-1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()
-
-展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。
-
-减值迭代:在循环中，减值要比增值效率高。
-12345678//增值迭代f">
+<meta name="twitter:description" content="JavaScript性能优化总结 +=运算符比+运算符效率高。 数字转换成字符串 1(&amp;quot;&amp;quot; +) &amp;gt; String() &amp;gt; .toString() &amp;gt; new String()  展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。  减值迭代:在循环中，减值要比增值效率高。 12345678//增值迭代f">
 
 
 
@@ -180,7 +158,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -207,7 +185,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -217,7 +195,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -227,7 +205,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -237,7 +215,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -247,7 +225,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -257,7 +235,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -319,7 +297,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -379,32 +357,32 @@
         <h3 id="JavaScript性能优化总结"><a href="#JavaScript性能优化总结" class="headerlink" title="JavaScript性能优化总结"></a>JavaScript性能优化总结</h3><ul>
 <li>+=运算符比+运算符效率高。</li>
 <li><p>数字转换成字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&quot;&quot; +) &gt; String() &gt; .toString() &gt; new String()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&quot;&quot; +) &gt; String() &gt; .toString() &gt; new String()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>展开循环：当循环次数是确定的，消除循环并使用多次函数调用，虽然会让代码看起来不够高端，但是速度往往会更快。</p>
 </li>
 <li><p>减值迭代:在循环中，减值要比增值效率高。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//增值迭代</div><div class="line">for (var i = 0; i &lt; 1000; i++) &#123;</div><div class="line">    //TODO ...</div><div class="line">&#125;</div><div class="line">//减值迭代较优</div><div class="line">for (var i = 999; i &gt;=0; i--) &#123;</div><div class="line">    //TODO ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//增值迭代</span><br><span class="line">for (var i = 0; i &lt; 1000; i++) &#123;</span><br><span class="line">    //TODO ...</span><br><span class="line">&#125;</span><br><span class="line">//减值迭代较优</span><br><span class="line">for (var i = 999; i &gt;=0; i--) &#123;</span><br><span class="line">    //TODO ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用switch优于if：在分支大于2并且允许使用switch的时候用switch的效率是很高的，因为switch是随机访问的。</p>
 </li>
 <li><p>重复值:任何在多处用到的值都应该抽取为一个常量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var result = (obj.value.value2 + obj.value.value3)*obj.value.value1;</div><div class="line">//较优的写法</div><div class="line">var value = obj.value;</div><div class="line">var result = (value.value2 + value.value3)*value.value1;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var result = (obj.value.value2 + obj.value.value3)*obj.value.value1;</span><br><span class="line">//较优的写法</span><br><span class="line">var value = obj.value;</span><br><span class="line">var result = (value.value2 + value.value3)*value.value1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>遍历数组时，缓存数组长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var len = arr.length;</div><div class="line">for (var i = len - 1; i &gt; 0; i--) &#123;</div><div class="line">    //TODO ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var len = arr.length;</span><br><span class="line">for (var i = len - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    //TODO ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>释放对象：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//对象</div><div class="line">obj = null  </div><div class="line">对象属性：delete obj.myproperty  </div><div class="line">数组item：使用数组的splice方法释放数组中不用的item</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//对象</span><br><span class="line">obj = null  </span><br><span class="line">对象属性：delete obj.myproperty  </span><br><span class="line">数组item：使用数组的splice方法释放数组中不用的item</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>位运算较快：&amp;、|、!、&gt;&gt;、&lt;&lt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//按位与(&amp;):判断一个数是奇数还是偶数</div><div class="line">if (n &amp; 1) &#123;</div><div class="line">    console.log(&quot;n是奇数&quot;);</div><div class="line">&#125; else &#123;</div><div class="line">    console.log(&quot;n是偶数&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//按位或(|):对浮点数向下求整</div><div class="line">var num = 1.1 | 0; // 1</div><div class="line"></div><div class="line">//左移(&lt;&lt;) </div><div class="line">var num = 2 &lt;&lt; 1; // 4</div><div class="line">//右移(&gt;&gt;)</div><div class="line">var num = 64 &gt;&gt; 1; // 32</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//按位与(&amp;):判断一个数是奇数还是偶数</span><br><span class="line">if (n &amp; 1) &#123;</span><br><span class="line">    console.log(&quot;n是奇数&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    console.log(&quot;n是偶数&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//按位或(|):对浮点数向下求整</span><br><span class="line">var num = 1.1 | 0; // 1</span><br><span class="line"></span><br><span class="line">//左移(&lt;&lt;) </span><br><span class="line">var num = 2 &lt;&lt; 1; // 4</span><br><span class="line">//右移(&gt;&gt;)</span><br><span class="line">var num = 64 &gt;&gt; 1; // 32</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>巧用||和&amp;&amp;布尔运算符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if (myobj) &#123;</div><div class="line">    doSomething(myobj);</div><div class="line">&#125;</div><div class="line">//可以替换为：</div><div class="line">myobj &amp;&amp; doSomething(myobj);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (myobj) &#123;</span><br><span class="line">    doSomething(myobj);</span><br><span class="line">&#125;</span><br><span class="line">//可以替换为：</span><br><span class="line">myobj &amp;&amp; doSomething(myobj);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>避免与null进行比较</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (obj == null) &#123;</div><div class="line">    //todo</div><div class="line">&#125;</div><div class="line">//替换为</div><div class="line">if (!obj) &#123;</div><div class="line">    //todo</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (obj == null) &#123;</span><br><span class="line">    //todo</span><br><span class="line">&#125;</span><br><span class="line">//替换为</span><br><span class="line">if (!obj) &#123;</span><br><span class="line">    //todo</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -415,7 +393,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -433,13 +411,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -499,8 +477,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/06/js-performance-optimize/"
-           data-title="JavaScript性能优化总结" data-url="http://ituuz.com/2017/03/06/js-performance-optimize/">
+      <div class="ds-thread" data-thread-key="2017/03/06/js-performance-optimize/" data-title="JavaScript性能优化总结" data-url="http://ituuz.com/2017/03/06/js-performance-optimize/">
       </div>
     
   </div>
@@ -525,7 +502,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -536,16 +513,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -562,7 +537,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -641,10 +616,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

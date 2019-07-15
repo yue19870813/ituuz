@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -69,41 +69,40 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="观察者模式," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="观察者模式,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。
-结构图如下">
+<meta name="description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。 结构图如下">
+<meta name="keywords" content="观察者模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式在游戏开发中的应用之观察者模式">
 <meta property="og:url" content="http://ituuz.com/2016/12/01/design-observer/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。
-结构图如下">
+<meta property="og:description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。 结构图如下">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ituuz.com/images/design_2_observer.png">
-<meta property="og:updated_time" content="2016-12-01T14:59:40.000Z">
+<meta property="og:updated_time" content="2019-07-01T12:35:47.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式在游戏开发中的应用之观察者模式">
-<meta name="twitter:description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。
-结构图如下">
+<meta name="twitter:description" content="观察者模式通俗的定义触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。 结构图如下">
 <meta name="twitter:image" content="http://ituuz.com/images/design_2_observer.png">
 
 
@@ -161,7 +160,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">ituuz</span>
       <span class="logo-line-after"><i></i></span>
@@ -188,7 +187,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -198,7 +197,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -208,7 +207,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -218,7 +217,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -228,7 +227,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -238,7 +237,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -300,7 +299,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -359,9 +358,9 @@
       
         <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><h2 id="通俗的定义"><a href="#通俗的定义" class="headerlink" title="通俗的定义"></a>通俗的定义</h2><p>触发事件的一方不关心谁来处理，处理事件的一方不关心事件是从哪里来的。观察者模式就是让观察者与被观察者彻底解耦。</p>
 <h2 id="结构图如下"><a href="#结构图如下" class="headerlink" title="结构图如下"></a>结构图如下</h2><p><img src="/images/design_2_observer.png" alt="observer"><br><a id="more"></a></p>
-<h2 id="游戏开发中的使用"><a href="#游戏开发中的使用" class="headerlink" title="游戏开发中的使用"></a>游戏开发中的使用</h2><p>当我们设计一个成就系统的时候，往往要在各个系统都要增加判断，比如杀死某种怪物多少只，新手往往可能这么写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> KILL_1009_COUNT = <span class="number">0</span>;  </div><div class="line">main () &#123;  </div><div class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></div><div class="line">    <span class="keyword">int</span> id = killMonster();  </div><div class="line">    <span class="comment">//如果杀死的怪物是1009那么数量加一，超过100次达成成就  </span></div><div class="line">    <span class="keyword">if</span> (id == <span class="string">"1009"</span>) &#123;  </div><div class="line">        KILL_1009_COUNT++;  </div><div class="line">        <span class="keyword">if</span> (KILL_1009_COUNT &gt; <span class="number">100</span>) &#123;  </div><div class="line">            print(<span class="string">"达成成就！杀死1009怪物100次！"</span>);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果这样写下去，后果将不堪设想：各个类直接将会超级耦合，成就判断将会蔓延到整个项目的每个角落！观察者模式就是为了解决这个问题而出现的。观察者模式让代码彻底解耦，还是上面的那个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">main () &#123;  </div><div class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></div><div class="line">    <span class="keyword">int</span> id = killMonster();  </div><div class="line">    <span class="comment">//发送消息，杀死怪物，并将杀死的怪物id一起发送  </span></div><div class="line">    notify(EVENT_KILL_MONSTER, id);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这样代码的各个功能就不用关心成就相关的逻辑，只是通知我做了这样一件事情就可以了。同样，游戏中这样的例子到处都是，比如增加经验时，我们发送增加经验的消息，接收消息的地方来处理到底升没升级，因为可以增加经验的地方有很多，这样我们就不用导出判断是否升级了。下面看一下观察者的实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//处理观察者与被观察者  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Notification</span> </span>&#123;  </div><div class="line">    <span class="comment">//一个可变的观察者列表  </span></div><div class="line">    <span class="keyword">private</span> List observerList = <span class="keyword">null</span>;  </div><div class="line">    <span class="comment">//该类是单例（后面我们会单独讲单例模式）  </span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Notification _instance = <span class="keyword">null</span>;     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">if</span> (_instance == <span class="keyword">null</span>) &#123;  </div><div class="line">            _instance = <span class="keyword">new</span> Notification();  </div><div class="line">            <span class="comment">//初始化列表容器  </span></div><div class="line">            observerList = <span class="keyword">new</span> ArrayList();  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> _instance;  </div><div class="line">    &#125;  </div><div class="line">    <span class="comment">//添加观察者  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addObserver</span><span class="params">(Observer obs)</span> </span>&#123;  </div><div class="line">        <span class="keyword">if</span> (!observerList.isExistobs &#123;  </div><div class="line">            observerList.add(obs);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    <span class="comment">//删除观察者  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer obs)</span> </span>&#123;  </div><div class="line">        observerList.remove(obs);  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="comment">//广播消息  </span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMsg</span><span class="params">(String event, ..)</span> </span>&#123;  </div><div class="line">        <span class="keyword">for</span> (Observer obs : observerList) &#123;  </div><div class="line">            <span class="keyword">if</span> (obs.event == event) &#123;  </div><div class="line">                obs.onNotify(..);  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="comment">//观察者基类  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Observer</span> </span>&#123;  </div><div class="line">    String event;  </div><div class="line">    <span class="comment">//接收消息函数，event是消息类型，后面是参数  </span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onNotify</span><span class="params">(..)</span>  </span></div><div class="line">    <span class="comment">//添加观察者  </span></div><div class="line">    <span class="keyword">void</span> <span class="title">addObserver</span><span class="params">(String event)</span> &#123;  </div><div class="line">        event = event;  </div><div class="line">        Notification.getInstance().addObserver(<span class="keyword">this</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="comment">//杀怪成就观察者  </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AchievementObserver</span> <span class="keyword">extends</span> <span class="title">Observer</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onNotify</span><span class="params">(id)</span> </span>&#123;  </div><div class="line">        <span class="keyword">if</span> (id == <span class="number">1009</span>) &#123;  </div><div class="line">            <span class="comment">//处理杀1009怪的成就逻辑  </span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id == <span class="number">1010</span>) &#123;  </div><div class="line">            <span class="comment">//处理杀1010怪的成就逻辑  </span></div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">main () &#123;  </div><div class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></div><div class="line">    <span class="keyword">int</span> id = killMonster();  </div><div class="line">    <span class="comment">//发送消息，杀死怪物，并将杀死的怪物id一起发送  </span></div><div class="line">    Notification.getInstance().sendMsg(EVENT_KILL_MONSTER, id);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="游戏开发中的使用"><a href="#游戏开发中的使用" class="headerlink" title="游戏开发中的使用"></a>游戏开发中的使用</h2><p>当我们设计一个成就系统的时候，往往要在各个系统都要增加判断，比如杀死某种怪物多少只，新手往往可能这么写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> KILL_1009_COUNT = <span class="number">0</span>;  </span><br><span class="line">main () &#123;  </span><br><span class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></span><br><span class="line">    <span class="keyword">int</span> id = killMonster();  </span><br><span class="line">    <span class="comment">//如果杀死的怪物是1009那么数量加一，超过100次达成成就  </span></span><br><span class="line">    <span class="keyword">if</span> (id == <span class="string">"1009"</span>) &#123;  </span><br><span class="line">        KILL_1009_COUNT++;  </span><br><span class="line">        <span class="keyword">if</span> (KILL_1009_COUNT &gt; <span class="number">100</span>) &#123;  </span><br><span class="line">            print(<span class="string">"达成成就！杀死1009怪物100次！"</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果这样写下去，后果将不堪设想：各个类直接将会超级耦合，成就判断将会蔓延到整个项目的每个角落！观察者模式就是为了解决这个问题而出现的。观察者模式让代码彻底解耦，还是上面的那个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main () &#123;  </span><br><span class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></span><br><span class="line">    <span class="keyword">int</span> id = killMonster();  </span><br><span class="line">    <span class="comment">//发送消息，杀死怪物，并将杀死的怪物id一起发送  </span></span><br><span class="line">    notify(EVENT_KILL_MONSTER, id);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样代码的各个功能就不用关心成就相关的逻辑，只是通知我做了这样一件事情就可以了。同样，游戏中这样的例子到处都是，比如增加经验时，我们发送增加经验的消息，接收消息的地方来处理到底升没升级，因为可以增加经验的地方有很多，这样我们就不用导出判断是否升级了。下面看一下观察者的实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//处理观察者与被观察者  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Notification</span> </span>&#123;  </span><br><span class="line">    <span class="comment">//一个可变的观察者列表  </span></span><br><span class="line">    <span class="keyword">private</span> List observerList = <span class="keyword">null</span>;  </span><br><span class="line">    <span class="comment">//该类是单例（后面我们会单独讲单例模式）  </span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Notification _instance = <span class="keyword">null</span>;     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (_instance == <span class="keyword">null</span>) &#123;  </span><br><span class="line">            _instance = <span class="keyword">new</span> Notification();  </span><br><span class="line">            <span class="comment">//初始化列表容器  </span></span><br><span class="line">            observerList = <span class="keyword">new</span> ArrayList();  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> _instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//添加观察者  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addObserver</span><span class="params">(Observer obs)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (!observerList.isExistobs &#123;  </span><br><span class="line">            observerList.add(obs);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//删除观察者  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer obs)</span> </span>&#123;  </span><br><span class="line">        observerList.remove(obs);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//广播消息  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMsg</span><span class="params">(String event, ..)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">for</span> (Observer obs : observerList) &#123;  </span><br><span class="line">            <span class="keyword">if</span> (obs.event == event) &#123;  </span><br><span class="line">                obs.onNotify(..);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//观察者基类  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Observer</span> </span>&#123;  </span><br><span class="line">    String event;  </span><br><span class="line">    <span class="comment">//接收消息函数，event是消息类型，后面是参数  </span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onNotify</span><span class="params">(..)</span>  </span></span><br><span class="line"><span class="function">    <span class="comment">//添加观察者  </span></span></span><br><span class="line"><span class="function">    <span class="keyword">void</span> <span class="title">addObserver</span><span class="params">(String event)</span> </span>&#123;  </span><br><span class="line">        event = event;  </span><br><span class="line">        Notification.getInstance().addObserver(<span class="keyword">this</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//杀怪成就观察者  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AchievementObserver</span> <span class="keyword">extends</span> <span class="title">Observer</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onNotify</span><span class="params">(id)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (id == <span class="number">1009</span>) &#123;  </span><br><span class="line">            <span class="comment">//处理杀1009怪的成就逻辑  </span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id == <span class="number">1010</span>) &#123;  </span><br><span class="line">            <span class="comment">//处理杀1010怪的成就逻辑  </span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">main () &#123;  </span><br><span class="line">    <span class="comment">//killMonster是杀死一个怪物，返回杀死怪物的id  </span></span><br><span class="line">    <span class="keyword">int</span> id = killMonster();  </span><br><span class="line">    <span class="comment">//发送消息，杀死怪物，并将杀死的怪物id一起发送  </span></span><br><span class="line">    Notification.getInstance().sendMsg(EVENT_KILL_MONSTER, id);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后在写一个成就管理类来管理各种成就观察者，这样各个成就直接也可以解耦。</p>
 <h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
 <li>引用销毁问题：这个问题容易造成内存泄漏，就是在这个观察者不再使用时，一定记得将其remove，否则这个观察者一直在引用着，不会被释放。</li>
@@ -376,7 +375,7 @@
       
         
 <div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
     <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
 
@@ -394,13 +393,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -460,8 +459,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/01/design-observer/"
-           data-title="设计模式在游戏开发中的应用之观察者模式" data-url="http://ituuz.com/2016/12/01/design-observer/">
+      <div class="ds-thread" data-thread-key="2016/12/01/design-observer/" data-title="设计模式在游戏开发中的应用之观察者模式" data-url="http://ituuz.com/2016/12/01/design-observer/">
       </div>
     
   </div>
@@ -486,7 +484,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -497,16 +495,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="ituuz" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
           <p class="site-author-name" itemprop="name">ituuz</p>
           <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -523,7 +519,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -602,10 +598,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
