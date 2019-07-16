@@ -206,3 +206,6 @@ this.sendNoti(Notification.UPDATE_EXP_FINISH);
 lightMVC目前仅适合中小型项目使用，过于复杂的大型项目可能应付起来就会有些吃力，不过后续会继续维护并拓展到lightMVC_ex中来支持大型项目开发，lightMVC会始终保持简单轻量。  
 
 最后框架中有什么问题或者需要改进的问题欢迎反馈。
+
+---
+[项目地址：https://github.com/yue19870813/lightMVC](https://github.com/yue19870813/lightMVC)
