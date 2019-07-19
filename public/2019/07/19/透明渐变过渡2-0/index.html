@@ -1,0 +1,829 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="shader,cocos creator,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="​之前写了个透明过渡动画实现是基于Cocos Creator 1.x的，鉴于现在大多数开发者都使用2.x了，并且2.x与1.x中shader的使用方式有很大的不同，这里就把这个效果移植到2.x中。原文链接：cocos creator 1.x透明渐变效果实现效果图如下：">
+<meta name="keywords" content="shader,cocos creator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocos Creator 2.x透明渐变效果实现">
+<meta property="og:url" content="http://ituuz.com/2019/07/19/透明渐变过渡2-0/index.html">
+<meta property="og:site_name" content="ituuz">
+<meta property="og:description" content="​之前写了个透明过渡动画实现是基于Cocos Creator 1.x的，鉴于现在大多数开发者都使用2.x了，并且2.x与1.x中shader的使用方式有很大的不同，这里就把这个效果移植到2.x中。原文链接：cocos creator 1.x透明渐变效果实现效果图如下：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ituuz.com/images/cats.gif">
+<meta property="og:image" content="http://ituuz.com/images/2222.jpg">
+<meta property="og:image" content="http://ituuz.com/images/111.png">
+<meta property="og:image" content="http://ituuz.com/images/files.png">
+<meta property="og:image" content="http://ituuz.com/images/ineditor.png">
+<meta property="og:image" content="http://ituuz.com/images/code.png">
+<meta property="og:image" content="http://ituuz.com/images/12132.png">
+<meta property="og:image" content="http://ituuz.com/images/shader-transfer-1.gif">
+<meta property="og:updated_time" content="2019-07-19T15:42:55.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cocos Creator 2.x透明渐变效果实现">
+<meta name="twitter:description" content="​之前写了个透明过渡动画实现是基于Cocos Creator 1.x的，鉴于现在大多数开发者都使用2.x了，并且2.x与1.x中shader的使用方式有很大的不同，这里就把这个效果移植到2.x中。原文链接：cocos creator 1.x透明渐变效果实现效果图如下：">
+<meta name="twitter:image" content="http://ituuz.com/images/cats.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Cocos Creator 2.x透明渐变效果实现 | ituuz </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f8f404eab4896771d7002e461ae69012";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ituuz</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Cocos Creator 2.x透明渐变效果实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-07-19T23:21:08+08:00" content="2019-07-19">
+              2019-07-19
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/cocos-creator/" itemprop="url" rel="index">
+                    <span itemprop="name">cocos creator</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/07/19/透明渐变过渡2-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/07/19/透明渐变过渡2-0/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/07/19/透明渐变过渡2-0/" class="leancloud_visitors" data-flag-title="Cocos Creator 2.x透明渐变效果实现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>​之前写了个透明过渡动画实现是基于Cocos Creator 1.x的，鉴于现在大多数开发者都使用2.x了，并且2.x与1.x中shader的使用方式有很大的不同，这里就把这个效果移植到2.x中。<a href="http://ituuz.com/2018/05/02/shader-transfer/"><em>原文链接：cocos creator 1.x透明渐变效果实现</em></a><br>效果图如下：<br><img src="/images/cats.gif" alt="cat"><a id="more"></a><br>在Cocos Creator 2.1中首先要先创建两个文件，分别是Material(材质)和Effect(特效)文件，创建方法如下图：<br><img src="/images/2222.jpg" alt="2222"><br>创建完成效果就是这两个文件：<br><img src="/images/111.png" alt="111"><br>在文件系统中分别是如下两个文件：<br><img src="/images/files.png" alt="files"><br>在编辑器中选中mtl材质文件，effect选择我们自己创建的effect，钩上USE_TEXTURE选项，如下图所示：<br><img src="/images/ineditor.png" alt="ineditor"><br>然后打开特效文件，我们shader的逻辑就是在这个文件里编写，打开文件，里面的内容不用删除，我们只修改frag shader部分就可以了，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：当前版本的格式是实验性的，之后还会进行修改。</span></span><br><span class="line"><span class="comment">// 后续版本的格式不保证兼容当前格式，可能需要手动升级到最新版本。，</span></span><br><span class="line">%&#123;</span><br><span class="line">  techniques: [</span><br><span class="line">    &#123;</span><br><span class="line">      passes: [</span><br><span class="line">        &#123;</span><br><span class="line">          vert: vs</span><br><span class="line">          frag: fs</span><br><span class="line">          cullMode: none</span><br><span class="line">          blend: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">      layer: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">  properties: &#123;</span><br><span class="line">    texture: &#123;</span><br><span class="line">      type: sampler2D</span><br><span class="line">      value: <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    alphaThreshold: &#123;</span><br><span class="line">      type: number</span><br><span class="line">​      value: <span class="number">0.5</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">%&#125;</span><br><span class="line">%% vs &#123;</span><br><span class="line">​</span><br><span class="line">precision highp float;</span><br><span class="line">uniform mat4 cc_matViewProj;</span><br><span class="line">#if _USE_MODEL</span><br><span class="line">  uniform mat4 cc_matWorld;</span><br><span class="line">#endif</span><br><span class="line">attribute vec3 a_position;</span><br><span class="line">attribute lowp vec4 a_color;</span><br><span class="line">#if USE_TEXTURE</span><br><span class="line">  attribute mediump vec2 a_uv0;</span><br><span class="line">  varying mediump vec2 v_uv0;</span><br><span class="line">#endif</span><br><span class="line">varying lowp vec4 v_color;</span><br><span class="line"><span class="keyword">void</span> main () &#123;</span><br><span class="line">  mat4 mvp;</span><br><span class="line">  #if _USE_MODEL</span><br><span class="line">    mvp = cc_matViewProj * cc_matWorld;</span><br><span class="line">  #else</span><br><span class="line">    mvp = cc_matViewProj;</span><br><span class="line">  #endif</span><br><span class="line">  #if USE_TEXTURE</span><br><span class="line">    v_uv0 = a_uv0;</span><br><span class="line">  #endif</span><br><span class="line">  v_color = a_color;</span><br><span class="line">  gl_Position = mvp * vec4(a_position, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">%% fs &#123;</span><br><span class="line">precision highp float;</span><br><span class="line">#if USE_TEXTURE</span><br><span class="line">  uniform sampler2D texture;</span><br><span class="line">  varying mediump vec2 v_uv0;</span><br><span class="line">#endif</span><br><span class="line">uniform float time;</span><br><span class="line">#include &lt;alpha-test&gt;</span><br><span class="line">varying lowp vec4 v_color;</span><br><span class="line"><span class="keyword">void</span> main () &#123;</span><br><span class="line">  vec4 color = v_color;</span><br><span class="line">  #if USE_TEXTURE</span><br><span class="line">    color *= texture2D(texture, v_uv0);</span><br><span class="line">    #if _USE_ETC1_TEXTURE</span><br><span class="line">      color.a *= texture2D(texture, v_uv0 + vec2(<span class="number">0</span>, <span class="number">0.5</span>)).r;</span><br><span class="line">    #endif</span><br><span class="line">  #endif</span><br><span class="line">​</span><br><span class="line">  ALPHA_TEST(color);</span><br><span class="line">  gl_FragColor = color;</span><br><span class="line">  <span class="comment">// 这里是新增的逻辑代码</span></span><br><span class="line">  float temp = v_uv0.x - time;</span><br><span class="line">  <span class="keyword">if</span> (temp &lt;= <span class="number">0.0</span>) &#123;</span><br><span class="line">    float temp2 = abs(temp);</span><br><span class="line">    <span class="keyword">if</span> (temp2 &lt;= <span class="number">0.2</span>) &#123;</span><br><span class="line">      gl_FragColor.w = <span class="number">1.0</span> - temp2/<span class="number">0.2</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      gl_FragColor.w = <span class="number">0.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    gl_FragColor.w = <span class="number">1.0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后我们再看业务代码，这里就比1.x中使用起来简单多了：<br><img src="/images/code.png" alt="code"><br>最后我们在编辑器中将它绑定到sprite上，选中要使用特效的sprite节点，将材质属性设置上我们刚刚新写的材质：<br><img src="/images/12132.png" alt="12132"><br>运行就出现开头的效果了，下面再贴出上篇文章的效果图：</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="/images/shader-transfer-1.gif" alt="shader-transfer-1"></h2><p><a href="https://github.com/yue19870813/CocosDemo" target="_blank" rel="noopener">Demo地址:https://github.com/yue19870813/CocosDemo</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat_charge.jpg" alt="ituuz WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay_charge.jpg" alt="ituuz Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/shader/" rel="tag">#shader</a>
+          
+            <a href="/tags/cocos-creator/" rel="tag">#cocos creator</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/15/lightMVC-1/" rel="next" title="lightMVC:轻量级游戏开发框架(for cocos creator)">
+                <i class="fa fa-chevron-left"></i> lightMVC:轻量级游戏开发框架(for cocos creator)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/07/19/透明渐变过渡2-0/" data-title="Cocos Creator 2.x透明渐变效果实现" data-url="http://ituuz.com/2019/07/19/透明渐变过渡2-0/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
+          <p class="site-author-name" itemprop="name">ituuz</p>
+          <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yue19870813" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/208379888" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ituuz.com/" title="ituuz" target="_blank">ituuz</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ituuz</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ituuz"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz", "69E2dOAap1HDttCnug7ReKzn");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
