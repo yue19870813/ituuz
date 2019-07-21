@@ -1,20 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
 
 
 
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -27,54 +32,30 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 
 
-  
-  
-  
-  
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 
-  
-    
-    
-  
 
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 
 
 
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
 
@@ -83,58 +64,68 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
 
-
-
-
-
-
-<meta name="description" content="积土而为山，积水而为海。">
+  <meta name="description" content="积土而为山，积水而为海。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ituuz">
 <meta property="og:url" content="http://ituuz.com/index.html">
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="积土而为山，积水而为海。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ituuz">
 <meta name="twitter:description" content="积土而为山，积水而为海。">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
+
+
+  
+  
+  <link rel="canonical" href="http://ituuz.com/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
 
-  <title> ituuz </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  
+  <title>ituuz</title>
   
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?f8f404eab4896771d7002e461ae69012";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -142,119 +133,199 @@
 
 
 
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">ituuz</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ituuz</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
   </div>
-  <p class="site-subtitle"></p>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+
 
 <nav class="site-nav">
-  
-
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
-            
-            公益404
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home menu-item-active">
 
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
       
     </ul>
   
 
   
+    
+
+  
+
+  
 </nav>
 
- </div>
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -262,13 +333,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/07/19/透明渐变过渡2-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -276,81 +363,108 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/07/19/透明渐变过渡2-0/" itemprop="url">
-                  Cocos Creator 2.x透明渐变效果实现
-                </a>
+                
+                <a href="/2019/07/19/透明渐变过渡2-0/" class="post-title-link" itemprop="url">Cocos Creator 2.x透明渐变效果实现</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2019-07-19T23:21:08+08:00" content="2019-07-19">
-              2019-07-19
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-19 23:21:08 / 修改时间：23:42:55" itemprop="dateCreated datePublished" datetime="2019-07-19T23:21:08+08:00">2019-07-19</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/cocos-creator/" itemprop="url" rel="index">
-                    <span itemprop="name">cocos creator</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cocos-creator/" itemprop="url" rel="index"><span itemprop="name">cocos creator</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/07/19/透明渐变过渡2-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/07/19/透明渐变过渡2-0/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/透明渐变过渡2-0/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2019/07/19/透明渐变过渡2-0/" class="leancloud_visitors" data-flag-title="Cocos Creator 2.x透明渐变效果实现">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2019/07/19/透明渐变过渡2-0/" class="post-meta-item leancloud_visitors" data-flag-title="Cocos Creator 2.x透明渐变效果实现">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -359,24 +473,39 @@
       
         
           <p>​之前写了个透明过渡动画实现是基于Cocos Creator 1.x的，鉴于现在大多数开发者都使用2.x了，并且2.x与1.x中shader的使用方式有很大的不同，这里就把这个效果移植到2.x中。<a href="http://ituuz.com/2018/05/02/shader-transfer/"><em>原文链接：cocos creator 1.x透明渐变效果实现</em></a><br>效果图如下：<br><img src="/images/cats.gif" alt="cat">
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2019/07/19/透明渐变过渡2-0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/19/透明渐变过渡2-0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -386,6 +515,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -393,13 +526,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/07/15/lightMVC-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -407,81 +556,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/07/15/lightMVC-1/" itemprop="url">
-                  lightMVC:轻量级游戏开发框架(for cocos creator)
-                </a>
+                
+                <a href="/2019/07/15/lightMVC-1/" class="post-title-link" itemprop="url">lightMVC:轻量级游戏开发框架(for cocos creator)</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2019-07-15T23:16:46+08:00" content="2019-07-15">
-              2019-07-15
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-15 23:16:46" itemprop="dateCreated datePublished" datetime="2019-07-15T23:16:46+08:00">2019-07-15</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-16 00:41:07" itemprop="dateModified" datetime="2019-07-16T00:41:07+08:00">2019-07-16</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/07/15/lightMVC-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/07/15/lightMVC-1/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/lightMVC-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2019/07/15/lightMVC-1/" class="leancloud_visitors" data-flag-title="lightMVC:轻量级游戏开发框架(for cocos creator)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2019/07/15/lightMVC-1/" class="post-meta-item leancloud_visitors" data-flag-title="lightMVC:轻量级游戏开发框架(for cocos creator)">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -491,24 +677,39 @@
         
           <p>简易轻量级MVC框架，适用于中小型cocos creator项目使用。后续会拓展lightMVC_ex内容来适应大型项目的开发。这套轻量级MVC框架可以帮助开发者组织代码，以及业务结构，让项目更好维护和拓展，提高开发效率。examples目录下有完整的例子Demo。</p>
 <h4 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h4><p><img src="/images/mvc.png" alt="架构图"><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2019/07/15/lightMVC-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/15/lightMVC-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -518,6 +719,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -525,13 +730,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/07/01/javascript-propertype/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -539,81 +760,108 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/07/01/javascript-propertype/" itemprop="url">
-                  javascript原型与继承
-                </a>
+                
+                <a href="/2019/07/01/javascript-propertype/" class="post-title-link" itemprop="url">javascript原型与继承</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2019-07-01T20:08:01+08:00" content="2019-07-01">
-              2019-07-01
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-01 20:08:01 / 修改时间：21:00:53" itemprop="dateCreated datePublished" datetime="2019-07-01T20:08:01+08:00">2019-07-01</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/07/01/javascript-propertype/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/07/01/javascript-propertype/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/01/javascript-propertype/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2019/07/01/javascript-propertype/" class="leancloud_visitors" data-flag-title="javascript原型与继承">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2019/07/01/javascript-propertype/" class="post-meta-item leancloud_visitors" data-flag-title="javascript原型与继承">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -625,24 +873,39 @@
 <p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（ object ）都有一个私有属性（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( <strong>proto</strong> ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。  </p>
 <p>几乎所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例。  </p>
 <p>尽管这种原型继承通常被认为是 JavaScript 的弱点之一，但是原型继承模型本身实际上比经典模型更强大。例如，在原型模型的基础上构建经典模型相当简单。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2019/07/01/javascript-propertype/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/01/javascript-propertype/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -652,6 +915,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -659,13 +926,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2018/05/02/shader-transfer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -673,81 +956,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2018/05/02/shader-transfer/" itemprop="url">
-                  在cocos creator中用shader实现图片的渐变切换
-                </a>
+                
+                <a href="/2018/05/02/shader-transfer/" class="post-title-link" itemprop="url">在cocos creator中用shader实现图片的渐变切换</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-05-02T20:07:12+08:00" content="2018-05-02">
-              2018-05-02
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-02 20:07:12" itemprop="dateCreated datePublished" datetime="2018-05-02T20:07:12+08:00">2018-05-02</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/shader/" itemprop="url" rel="index">
-                    <span itemprop="name">shader</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/shader/" itemprop="url" rel="index"><span itemprop="name">shader</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/05/02/shader-transfer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/02/shader-transfer/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/02/shader-transfer/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2018/05/02/shader-transfer/" class="leancloud_visitors" data-flag-title="在cocos creator中用shader实现图片的渐变切换">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2018/05/02/shader-transfer/" class="post-meta-item leancloud_visitors" data-flag-title="在cocos creator中用shader实现图片的渐变切换">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -757,24 +1077,39 @@
         
           <h1 id="在cocos-creator中用shader实现图片的渐变切换"><a href="#在cocos-creator中用shader实现图片的渐变切换" class="headerlink" title="在cocos creator中用shader实现图片的渐变切换"></a>在cocos creator中用shader实现图片的渐变切换</h1><h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>很多时候我们需要使用在场景中进行背景切换，或者图片的过渡等，需要一下过渡的效果，很多引擎都没有提供这种切换效果，使用遮罩来实现效果也并不是很好，所以这里使用shader来实现一下这个效果。本文中的shader是基于cocos creator来实现的，其中使用了cocos内置的变量，不过shader是基于标准的GLSL语言写的，很容易移植到其他引擎或者平台的。</p>
 <h2 id="效果图如下"><a href="#效果图如下" class="headerlink" title="效果图如下"></a>效果图如下</h2><p><img src="/images/shader-transfer-1.gif" alt="shader"><br><img src="/images/shader-transfer-2.gif" alt="shader"><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2018/05/02/shader-transfer/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/02/shader-transfer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -784,6 +1119,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -791,13 +1130,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -805,81 +1160,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" itemprop="url">
-                  游戏项目架构及管理：项目结构及编程规范
-                </a>
+                
+                <a href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" class="post-title-link" itemprop="url">游戏项目架构及管理：项目结构及编程规范</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-19T15:03:31+08:00" content="2017-12-19">
-              2017-12-19
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-19 15:03:31" itemprop="dateCreated datePublished" datetime="2017-12-19T15:03:31+08:00">2017-12-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/架构管理/" itemprop="url" rel="index">
-                    <span itemprop="name">架构管理</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" class="leancloud_visitors" data-flag-title="游戏项目架构及管理：项目结构及编程规范">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：项目结构及编程规范">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -888,24 +1280,39 @@
       
         
           <h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -915,6 +1322,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -922,13 +1333,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/12/14/20171214_项目架构和管理_网络通信/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -936,81 +1363,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/12/14/20171214_项目架构和管理_网络通信/" itemprop="url">
-                  游戏项目架构及管理：网络通信
-                </a>
+                
+                <a href="/2017/12/14/20171214_项目架构和管理_网络通信/" class="post-title-link" itemprop="url">游戏项目架构及管理：网络通信</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-14T11:18:36+08:00" content="2017-12-14">
-              2017-12-14
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-14 11:18:36" itemprop="dateCreated datePublished" datetime="2017-12-14T11:18:36+08:00">2017-12-14</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/架构管理/" itemprop="url" rel="index">
-                    <span itemprop="name">架构管理</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/12/14/20171214_项目架构和管理_网络通信/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/14/20171214_项目架构和管理_网络通信/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/14/20171214_项目架构和管理_网络通信/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/12/14/20171214_项目架构和管理_网络通信/" class="leancloud_visitors" data-flag-title="游戏项目架构及管理：网络通信">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/12/14/20171214_项目架构和管理_网络通信/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：网络通信">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1019,24 +1483,39 @@
       
         
           <h2 id="网络通信"><a href="#网络通信" class="headerlink" title="网络通信"></a>网络通信</h2><p>在项目最开始阶段主要需要考虑的还有网络通信模块，当然如果你做的是单机游戏就可以跳过这部分了。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/12/14/20171214_项目架构和管理_网络通信/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/12/14/20171214_项目架构和管理_网络通信/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1046,6 +1525,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1053,13 +1536,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -1067,81 +1566,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/11/23/20171123_项目架构和管理_引擎选择/" itemprop="url">
-                  游戏项目架构及管理：引擎选择
-                </a>
+                
+                <a href="/2017/11/23/20171123_项目架构和管理_引擎选择/" class="post-title-link" itemprop="url">游戏项目架构及管理：引擎选择</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-23T18:00:36+08:00" content="2017-11-23">
-              2017-11-23
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-23 18:00:36" itemprop="dateCreated datePublished" datetime="2017-11-23T18:00:36+08:00">2017-11-23</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/架构管理/" itemprop="url" rel="index">
-                    <span itemprop="name">架构管理</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/11/23/20171123_项目架构和管理_引擎选择/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/23/20171123_项目架构和管理_引擎选择/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/23/20171123_项目架构和管理_引擎选择/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/11/23/20171123_项目架构和管理_引擎选择/" class="leancloud_visitors" data-flag-title="游戏项目架构及管理：引擎选择">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/11/23/20171123_项目架构和管理_引擎选择/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：引擎选择">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1150,24 +1686,39 @@
       
         
           <h3 id="引擎选择"><a href="#引擎选择" class="headerlink" title="引擎选择"></a>引擎选择</h3><p>游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/11/23/20171123_项目架构和管理_引擎选择/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/11/23/20171123_项目架构和管理_引擎选择/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1177,6 +1728,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1184,13 +1739,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/11/22/20171122_项目架构和管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -1198,81 +1769,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/11/22/20171122_项目架构和管理/" itemprop="url">
-                  游戏项目架构及管理 序
-                </a>
+                
+                <a href="/2017/11/22/20171122_项目架构和管理/" class="post-title-link" itemprop="url">游戏项目架构及管理 序</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-22T18:14:36+08:00" content="2017-11-22">
-              2017-11-22
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-22 18:14:36" itemprop="dateCreated datePublished" datetime="2017-11-22T18:14:36+08:00">2017-11-22</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/架构管理/" itemprop="url" rel="index">
-                    <span itemprop="name">架构管理</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/11/22/20171122_项目架构和管理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/22/20171122_项目架构和管理/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/22/20171122_项目架构和管理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/11/22/20171122_项目架构和管理/" class="leancloud_visitors" data-flag-title="游戏项目架构及管理 序">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/11/22/20171122_项目架构和管理/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理 序">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1282,24 +1890,39 @@
         
           <h1 id="游戏项目架构及管理"><a href="#游戏项目架构及管理" class="headerlink" title="游戏项目架构及管理"></a>游戏项目架构及管理</h1><p>一个项目开发的过程顺不顺利、多人协作效率是否高效、后期拓展及维护成本是否浪费等，都和前期的项目架构有着密不可分的关系。这次就仔细的聊一下项目架构的问题。这里提前声明一下：本篇文章不涉及到具体功能的实现和技术讲解。</p>
 <p>做多了游戏的人，尤其是负责过中大型项目的人都知道，<strong>底层架构很重要</strong>。决定了后期功能修改和维护的成本，以及性能瓶颈等。要搭建一套可以支撑项目快速开发，易于维护，性能出色的底层。项目架构便于与其他人沟通，不同逻辑代码之间的交互，与美术，策划的沟通。框架可以让多人合作更加顺畅，包括策划和美术。同一件事情做到第三遍的时候，它就应该被封装和抽象到底层，或工具。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/11/22/20171122_项目架构和管理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/11/22/20171122_项目架构和管理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1309,6 +1932,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1316,13 +1943,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/08/02/typescript-to-lib/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -1330,81 +1973,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/08/02/typescript-to-lib/" itemprop="url">
-                  使用TypeScript积累自己的类库
-                </a>
+                
+                <a href="/2017/08/02/typescript-to-lib/" class="post-title-link" itemprop="url">使用TypeScript积累自己的类库</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-02T16:04:34+08:00" content="2017-08-02">
-              2017-08-02
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-02 16:04:34" itemprop="dateCreated datePublished" datetime="2017-08-02T16:04:34+08:00">2017-08-02</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/TpyeScript/" itemprop="url" rel="index">
-                    <span itemprop="name">TpyeScript</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TpyeScript/" itemprop="url" rel="index"><span itemprop="name">TpyeScript</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/08/02/typescript-to-lib/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/02/typescript-to-lib/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/08/02/typescript-to-lib/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/08/02/typescript-to-lib/" class="leancloud_visitors" data-flag-title="使用TypeScript积累自己的类库">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/08/02/typescript-to-lib/" class="post-meta-item leancloud_visitors" data-flag-title="使用TypeScript积累自己的类库">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1414,24 +2094,39 @@
         
           <blockquote>
 <p>现在除了Web项目外，很多游戏引擎都支持js，包括Egret、Cocos、Unity等，甚至服务器端也可以用node.js。所以很多时候我们是可以积累一套通用工具库在不同项目间，甚至是不同类型项目、不同引擎间通用，来提高我们的开发效率。但是js的规范性较差，可维护性不强，有很多弊端，采用TypeScript来开发和积累我们的类库是比较好的一种选择。TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。在易用性、可读性和易维护上都有了不小的提高。采用TypeScript来开发可以发布成js文件来使用。下面就简单介绍一下TypeScript的工作流。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/08/02/typescript-to-lib/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/08/02/typescript-to-lib/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </p></blockquote></div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1441,6 +2136,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1448,13 +2147,29 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/07/19/coding-xingge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
 
     
       <header class="post-header">
@@ -1462,81 +2177,118 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/07/19/coding-xingge/" itemprop="url">
-                  编程与性格的关系
-                </a>
+                
+                <a href="/2017/07/19/coding-xingge/" class="post-title-link" itemprop="url">编程与性格的关系</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-07-19T11:19:36+08:00" content="2017-07-19">
-              2017-07-19
-            </time>
-          </span>
 
           
-            <span class="post-category">
-              &nbsp; | &nbsp;
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-19 11:19:36" itemprop="dateCreated datePublished" datetime="2017-07-19T11:19:36+08:00">2017-07-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/经验总结/" itemprop="url" rel="index">
-                    <span itemprop="name">经验总结</span>
-                  </a>
-                </span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/经验总结/" itemprop="url" rel="index"><span itemprop="name">经验总结</span></a></span>
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2017/07/19/coding-xingge/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/19/coding-xingge/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/07/19/coding-xingge/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
           
-          
-             <span id="/2017/07/19/coding-xingge/" class="leancloud_visitors" data-flag-title="编程与性格的关系">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
+            <span id="/2017/07/19/coding-xingge/" class="post-meta-item leancloud_visitors" data-flag-title="编程与性格的关系">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
               </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1610,15 +2362,26 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
-    </div>
+    
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1628,6 +2391,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1636,15 +2403,12 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1666,92 +2430,216 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
-          <p class="site-author-name" itemprop="name">ituuz</p>
-          <p class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</p>
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
+  
+  <p class="site-author-name" itemprop="name">ituuz</p>
+  <div class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/yue19870813" title="GitHub &rarr; https://github.com/yue19870813" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yue19870813@163.com" title="E-Mail &rarr; mailto:yue19870813@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://weibo.com/208379888" title="Weibo &rarr; http://weibo.com/208379888" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://ituuz.com/" title="http://ituuz.com/">ituuz</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+          
+          
         </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">29</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+      </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yue19870813" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/208379888" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://ituuz.com/" title="ituuz" target="_blank">ituuz</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-      </section>
+      
 
       
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
         
@@ -1760,41 +2648,59 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">ituuz</span>
+
+  
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.2.0</div>
+
+
+
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1808,180 +2714,137 @@
 
 
 
-  
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
 
   
   
 
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 
-  
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"ituuz"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
-  
-    
-  
+
 
 
 
 
 
   
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
   
   
 
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+
+  
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz", "69E2dOAap1HDttCnug7ReKzn");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+  
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
+  
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
+  
+  
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
+    appKey: '69E2dOAap1HDttCnug7ReKzn',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+  
+
+  
+
+  
 
 
   

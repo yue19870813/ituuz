@@ -7,7 +7,7 @@ title: ituuz
 subtitle:
 description: 积土而为山，积水而为海。
 author: ituuz
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next-reloaded
 avatar: /uploads/avatar.png
 ## duoshuo
 duoshuo_shortname: ituuz
