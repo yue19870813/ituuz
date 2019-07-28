@@ -155,6 +155,7 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
+  projects: /projects/ || github
   # schedule: /schedule/ || calendar
   # sitemap: /sitemap.xml || sitemap
   commonweal: /404.html || heartbeat
