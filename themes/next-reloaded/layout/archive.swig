@@ -46,7 +46,19 @@
         {# endshow #}
 
         {{ post_template.render(post) }}
-
+        {% if loop.index0 >= 4 && loop.index0 % 4 == 0 %}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ituuz-archive -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4273582562110179"
+            data-ad-slot="1700635929"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        {% endif %}
       {% endfor %}
 
     </div>
