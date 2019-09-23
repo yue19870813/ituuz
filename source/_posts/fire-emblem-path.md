@@ -1,7 +1,7 @@
 ---
 title: cocos creator实现战旗类游戏移动范围效果
 date: 2019-09-21 15:29:44
-tags: [javascript,cocos creator]
+tags: [javascript,cocos creator,游戏设计,战旗,SLG]
 categories: cocos creator
 ---
 最近刚刚把《火焰纹章：风花雪月》三周目通关，作为战旗游戏来讲，无论是核心玩法还是创新的养成GalGame要素，还有让人唏嘘的剧情，作为战旗类游戏的代表，名副其实。感叹之余就想实现一下《火纹》里核心战斗时的效果。下面是火纹里的效果：  
