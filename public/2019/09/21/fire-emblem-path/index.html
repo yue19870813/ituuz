@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4273582562110179",
+    enable_page_level_ads: true
+  });
+</script>
+<div align="center">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-header -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="8660795947" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  <meta name="description" content="最近刚刚把《火焰纹章：风花雪月》三周目通关，作为战旗游戏来讲，无论是核心玩法还是创新的养成GalGame要素，还有让人唏嘘的剧情，作为战旗类游戏的代表，名副其实。感叹之余就想实现一下《火纹》里核心战斗时的效果。下面是火纹里的效果：">
+<meta name="keywords" content="javascript,cocos creator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cocos creator实现战旗类游戏移动范围效果">
+<meta property="og:url" content="http://ituuz.com/2019/09/21/fire-emblem-path/index.html">
+<meta property="og:site_name" content="ituuz">
+<meta property="og:description" content="最近刚刚把《火焰纹章：风花雪月》三周目通关，作为战旗游戏来讲，无论是核心玩法还是创新的养成GalGame要素，还有让人唏嘘的剧情，作为战旗类游戏的代表，名副其实。感叹之余就想实现一下《火纹》里核心战斗时的效果。下面是火纹里的效果：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ituuz.com/images/fhxy.png">
+<meta property="og:image" content="http://ituuz.com/images/myhw.gif">
+<meta property="og:image" content="http://ituuz.com/images/fhxy_001.png">
+<meta property="og:image" content="http://ituuz.com/images/fhxy_002.jpg">
+<meta property="og:updated_time" content="2019-09-23T15:57:34.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cocos creator实现战旗类游戏移动范围效果">
+<meta name="twitter:description" content="最近刚刚把《火焰纹章：风花雪月》三周目通关，作为战旗游戏来讲，无论是核心玩法还是创新的养成GalGame要素，还有让人唏嘘的剧情，作为战旗类游戏的代表，名副其实。感叹之余就想实现一下《火纹》里核心战斗时的效果。下面是火纹里的效果：">
+<meta name="twitter:image" content="http://ituuz.com/images/fhxy.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://ituuz.com/2019/09/21/fire-emblem-path/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>cocos creator实现战旗类游戏移动范围效果 | ituuz</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ituuz</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">专注于游戏开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-projects">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/projects/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>开源项目</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/09/21/fire-emblem-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">cocos creator实现战旗类游戏移动范围效果
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-21 15:29:44" itemprop="dateCreated datePublished" datetime="2019-09-21T15:29:44+08:00">2019-09-21</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-23 23:57:34" itemprop="dateModified" datetime="2019-09-23T23:57:34+08:00">2019-09-23</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cocos-creator/" itemprop="url" rel="index"><span itemprop="name">cocos creator</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/09/21/fire-emblem-path/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/21/fire-emblem-path/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2019/09/21/fire-emblem-path/" class="post-meta-item leancloud_visitors" data-flag-title="cocos creator实现战旗类游戏移动范围效果">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近刚刚把《火焰纹章：风花雪月》三周目通关，作为战旗游戏来讲，无论是核心玩法还是创新的养成GalGame要素，还有让人唏嘘的剧情，作为战旗类游戏的代表，名副其实。感叹之余就想实现一下《火纹》里核心战斗时的效果。下面是火纹里的效果：<br><img src="/images/fhxy.png" alt="fhxy.png"><br><a id="more"></a><br>《火纹》中效果是3D的，但算法逻辑是一样的，所以这里只实现逻辑，用2D来表现了，实现后的效果如下：<br><img src="/images/myhw.gif" alt="fhxy.png"><br>例子中不同颜色的格子代表不同地形，消耗的行动力不同，当鼠标点击某一个格子的时候计算这个格子可以行动的范围，绿色是可行动范围，红色是不可移动的边缘部分。下面我们看一下实现思路。  </p>
+<h4 id="移动逻辑"><a href="#移动逻辑" class="headerlink" title="移动逻辑"></a>移动逻辑</h4><p>首先我们看下图：<br><img src="/images/fhxy_001.png" alt="fhxy_001"><br>假如黑色圆圈是要移动的角色，那么判断移动范围的第一步就是判断上下左右四个格子是否可以行走，根据周边四个格子的地形所消耗的行动力比较角色的行动力，如果行动里足够那么这个格子就可以行走，存入结果；如果行动力不够那么这个格子就不能行走。周边的四个格子都判断完成后，我们看下一轮判断：<br><img src="/images/fhxy_002.jpg" alt="fhxy_001"><br>假如上轮判断中只有两个打对号的格子可以行走，那么我们将这两个格子存入结果，并继续从这两个格子出发，以这两个格子作为新起点继续判断他们周围的格子（上轮判断过的格子可以跳过不用再次判断）是否满足移动条件，以此类推，直到行动力不够再继续移动，那么结果列表里存储的格子就是最终结果了，我们根据结果做地图表现就可以了。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>这里除了基本的实现外还增加了一些拓展功能，方便直接拿来使用，也能为业务逻辑提供便利，比如传入自定义地图数据，地图配置，是否允许行动为0，是否显示不能移动的边缘，以及可以配置角色擅长的地形和不擅长地形等，可以丰富玩法的功能。  </p>
+<p>首先先封装了一个初始化配置的接口，用来初始化地图数据，地形配置，还有拓展的功能做小移动配置。地图配置就是二维的坐标数据，每个坐标存储了当前坐标的地形；地形配置是告诉程序每种地形消耗的行动力是多少；最小移动配置，就是当行动力不足以移动时，是否允许移动一步的配置；<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化地图配置，注意地形类型不要设定为0，推荐为大于0的整数，算法中0作为默认值存在。</span></span><br><span class="line"><span class="comment"> * @param &#123;Map&lt;string, number&gt;&#125; mapData 地图数据，map的key是地图坐标x + “_” + y, value是地面类型；</span></span><br><span class="line"><span class="comment"> * @param &#123;Map&lt;number, number&gt;&#125; mapCfg 地形配置，对应类型消耗的行动力；默认为消耗1行动力地形；</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; minStep 最小移动配置，就是当行动力不足以移动时，是否允许移动一步的配置；</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">initMapConfig(mapData: <span class="built_in">Map</span>&lt;string, number&gt;, mapCfg?: <span class="built_in">Map</span>&lt;number, number&gt;, minStep?: number) &#123;</span><br><span class="line">    <span class="keyword">this</span>._mapData = mapData;</span><br><span class="line">    <span class="keyword">if</span> (mapCfg) &#123;</span><br><span class="line">        <span class="keyword">this</span>._mapCfg = mapCfg;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>._mapCfg = <span class="keyword">new</span> <span class="built_in">Map</span>&lt;number, number&gt;();</span><br><span class="line">        <span class="keyword">this</span>._mapCfg.set(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (minStep) &#123;</span><br><span class="line">        <span class="keyword">this</span>._minStep = minStep;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面这个函数就是我们在业务中控制角色每次要移动前去获取可移动数据的接口了，该接口中首先把角色站的点存入结果列表，作为肯定可以行走的原点开始逐步扫描，最终把扫描结果返回，其中做了是否返回边缘不可行走格子的判断逻辑，需要说明的是这里增加了个targetCfg参数，如参数说明所示，它是用来做角色移动多样化的参数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取移动数据</span></span><br><span class="line"><span class="comment"> * @param &#123;cc.Vec2&#125; pos 移动原点 </span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; limit 行动力</span></span><br><span class="line"><span class="comment"> * @param &#123;Map&lt;number, number&gt;&#125; targetCfg 当前移动对象的配置，用于配置目标擅长或者劣势地形，默认为空(可选)</span></span><br><span class="line"><span class="comment"> * @param &#123;boolean&#125; isShowEdge 是否返回不能移动的边缘数据，默认为不返回(可选)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">getCanMoveData(pos: cc.Vec2, <span class="attr">limit</span>: number, targetCfg?: <span class="built_in">Map</span>&lt;number, number&gt;, <span class="attr">isShowEdge</span>: boolean = <span class="literal">false</span>): MapPos[] &#123;</span><br><span class="line">    <span class="keyword">if</span> (targetCfg) &#123;</span><br><span class="line">        <span class="keyword">this</span>._targetCfg = targetCfg;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>._targetCfg = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 存储可移动坐标的结果数组</span></span><br><span class="line">    <span class="keyword">let</span> resultPos: MapPos[] = [];</span><br><span class="line">    <span class="comment">// 将原点存入结果</span></span><br><span class="line">    <span class="keyword">let</span> center = <span class="keyword">new</span> MapPos(pos.x, pos.y, <span class="number">0</span>, MapPosStatus.CAN_MOVE);</span><br><span class="line">    resultPos.push(center);</span><br><span class="line">    <span class="keyword">let</span> stepCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 逐步判断</span></span><br><span class="line">    <span class="keyword">while</span> (stepCount &lt; limit) &#123;</span><br><span class="line">        start = <span class="keyword">this</span>.scanMap(resultPos, limit, start);</span><br><span class="line">        stepCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 是否显示不可移动的边缘</span></span><br><span class="line">    <span class="keyword">if</span> (isShowEdge) &#123;</span><br><span class="line">        <span class="keyword">let</span> r = resultPos.concat(<span class="keyword">this</span>._canntList);</span><br><span class="line">        <span class="keyword">this</span>._canntList = [];</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> resultPos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面我们看一下扫描地图的函数实现，这里就是我们上面画图来表示的那部分逻辑，分别对目标格子的上下左右进行判断，看是否可以移动，函数里的start是标记上次判断的位置，第二次扫描时直接从上次扫描过的位置开始就可以了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 开始扫描地图</span></span><br><span class="line"><span class="comment"> * @param &#123;MapPos[]&#125; resultPos 结果列表</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; limitStep 行动力</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; start 当前检索的起始位置，优化算法使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">scanMap(resultPos: MapPos[], <span class="attr">limitStep</span>: number, <span class="attr">start</span>: number) &#123;</span><br><span class="line">    <span class="keyword">let</span> len = resultPos.length;</span><br><span class="line">    <span class="keyword">for</span> (; start &lt; resultPos.length; start++) &#123;</span><br><span class="line">        <span class="keyword">let</span> pos = resultPos[start];</span><br><span class="line">        <span class="comment">// 检查四个方向</span></span><br><span class="line">        <span class="keyword">this</span>.checkMapPos(<span class="keyword">new</span> MapPos(pos.x, pos.y - <span class="number">1</span>, pos.limit), resultPos, limitStep);   <span class="comment">// 上</span></span><br><span class="line">        <span class="keyword">this</span>.checkMapPos(<span class="keyword">new</span> MapPos(pos.x, pos.y + <span class="number">1</span>, pos.limit), resultPos, limitStep);   <span class="comment">// 下</span></span><br><span class="line">        <span class="keyword">this</span>.checkMapPos(<span class="keyword">new</span> MapPos(pos.x - <span class="number">1</span>, pos.y, pos.limit), resultPos, limitStep);   <span class="comment">// 左</span></span><br><span class="line">        <span class="keyword">this</span>.checkMapPos(<span class="keyword">new</span> MapPos(pos.x + <span class="number">1</span>, pos.y, pos.limit), resultPos, limitStep);   <span class="comment">// 右</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后我们看一下扫描函数里调用的检查单个格子是否可以移动的逻辑，这里判断了坐标点是否有效、是否已经在结果列表里了、还有行动力是否足够的判断。关于行动力的判断逻辑，这里做了几个功能拓展，一个是地形消耗行动力的配置，一个是角色擅长和不擅长地形的配置，这两个功能都能起到丰富游戏玩法的作用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 检查指定坐标点能否移动</span></span><br><span class="line"><span class="comment"> * @param &#123;MapPos&#125; pos 目标坐标点</span></span><br><span class="line"><span class="comment"> * @param &#123;MapPos[]&#125; resultPos 结果列表</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; limit 行动力</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">checkMapPos(pos: MapPos, <span class="attr">resultPos</span>: MapPos[], <span class="attr">limit</span>: number) &#123;</span><br><span class="line">    <span class="comment">// 判断该点是否有效、是否以加入可行动队列、行动力是否足够</span></span><br><span class="line">    <span class="keyword">if</span> (pos.x &gt; <span class="number">0</span> &amp;&amp; pos.y &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> targetPos = <span class="keyword">this</span>._mapData.get(pos.x + <span class="string">"_"</span> + pos.y);</span><br><span class="line">        <span class="keyword">if</span> (targetPos) &#123;</span><br><span class="line">            <span class="keyword">let</span> newPos = resultPos.find(<span class="function">(<span class="params">p: MapPos</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (p.x === pos.x &amp;&amp; p.y === pos.y);</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span> (!newPos) &#123;</span><br><span class="line">                <span class="keyword">let</span> value = pos.limit + <span class="keyword">this</span>.getStepByType(targetPos) + <span class="keyword">this</span>.getTargetStepByType(targetPos);</span><br><span class="line">                <span class="keyword">if</span> (value &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="comment">// 如果计算的最终步数小于等于0，那么移动最小步数。</span></span><br><span class="line">                    value = <span class="keyword">this</span>._minStep;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (value &lt;= limit) &#123;</span><br><span class="line">                    pos.limit = value;</span><br><span class="line">                    pos.status = MapPosStatus.CAN_MOVE;</span><br><span class="line">                    resultPos.push(pos);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    pos.status = MapPosStatus.CAN_NOT_MOVE;</span><br><span class="line">                    <span class="keyword">this</span>._canntList.push(pos);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"位置:"</span>, pos.x, pos.y, <span class="string">"值为:"</span>, targetPos, <span class="string">"不能移动"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上就是战旗计算可移动范围的核心逻辑了，完整可运行的代码在<a href="https://github.com/yue19870813/CocosDemo" target="_blank" rel="noopener">CocosDemo的FireEmblem例子</a>里查看。由于花费的时间比较短，所以难免出现一些bug等纰漏，如果发现还请指出，谢谢。</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>当我们得到了可移动范围后，如果还想表现移动过程，那么我们可以使用A*算法来实现移动路线的功能。除此之外，战旗类游戏除了本文提到的《火纹》新作这种四向地格移动的形式外，还有《英雄无敌》中六边形六向移动的表现形式，注意思路应该和4向的差不多，后面有机会我会再实现一版6向或者更复杂的8向的来分享给大家。最后再安利一下《火焰纹章：风花雪月》这款作品，真的值得体验一下。</p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
+  <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/wechat_charge.jpg" alt="ituuz 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/alipay_charge.jpg" alt="ituuz 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/cocos-creator/" rel="tag"># cocos creator</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/29/lightmvc/" rel="next" title="lightMVC">
+                <i class="fa fa-chevron-left"></i> lightMVC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-comments -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="5165434330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
+  
+  <p class="site-author-name" itemprop="name">ituuz</p>
+  <div class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/yue19870813" title="GitHub &rarr; https://github.com/yue19870813" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yue19870813@163.com" title="E-Mail &rarr; mailto:yue19870813@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://weibo.com/208379888" title="Weibo &rarr; http://weibo.com/208379888" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://ituuz.com/" title="http://ituuz.com/">ituuz</a>
+        </li>
+      
+    </ul>
+  </div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-sidebar -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="9107289598" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#移动逻辑"><span class="nav-number">1.</span> <span class="nav-text">移动逻辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ituuz</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
+    appKey: '69E2dOAap1HDttCnug7ReKzn',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
