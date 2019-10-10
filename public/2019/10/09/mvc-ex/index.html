@@ -108,18 +108,18 @@
 </script>
 </div>
 
-  <meta name="description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
-<meta name="keywords" content="引擎选择">
+  <meta name="description" content="本节内容是基于ituuz-x框架core中的mvc做的拓展，对mvc中基本接口进行了封装，更加方便规模较大项目进行开发和维护，v2.0中新增加的内容如下：    框架全局可调用的接口 框架初始化 initScene：初始化第一个场景   新增GameMediator基类 gotoScene：运行新场景 addView：打开新UI界面   新增GameScene和GameView基类，对应GameM">
+<meta name="keywords" content="typescript,javascript,js,ituuz-x,cocos框架,mvc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="游戏项目架构及管理：引擎选择">
-<meta property="og:url" content="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/index.html">
+<meta property="og:title" content="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
+<meta property="og:url" content="http://ituuz.com/2019/10/09/mvc-ex/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
+<meta property="og:description" content="本节内容是基于ituuz-x框架core中的mvc做的拓展，对mvc中基本接口进行了封装，更加方便规模较大项目进行开发和维护，v2.0中新增加的内容如下：    框架全局可调用的接口 框架初始化 initScene：初始化第一个场景   新增GameMediator基类 gotoScene：运行新场景 addView：打开新UI界面   新增GameScene和GameView基类，对应GameM">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-01T12:35:47.379Z">
+<meta property="og:updated_time" content="2019-10-10T16:44:30.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="游戏项目架构及管理：引擎选择">
-<meta name="twitter:description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
+<meta name="twitter:title" content="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
+<meta name="twitter:description" content="本节内容是基于ituuz-x框架core中的mvc做的拓展，对mvc中基本接口进行了封装，更加方便规模较大项目进行开发和维护，v2.0中新增加的内容如下：    框架全局可调用的接口 框架初始化 initScene：初始化第一个场景   新增GameMediator基类 gotoScene：运行新场景 addView：打开新UI界面   新增GameScene和GameView基类，对应GameM">
 
 
 
@@ -127,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/">
+  <link rel="canonical" href="http://ituuz.com/2019/10/09/mvc-ex/">
 
 
 
@@ -138,7 +138,7 @@
 </script>
 
   
-  <title>游戏项目架构及管理：引擎选择 | ituuz</title>
+  <title>ituuz-x框架v2.0新增mvc拓展模块[mvc_ex] | ituuz</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/10/09/mvc-ex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ituuz">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">游戏项目架构及管理：引擎选择
+          <h1 class="post-title" itemprop="name headline">ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2017-11-23 18:00:36" itemprop="dateCreated datePublished" datetime="2017-11-23T18:00:36+08:00">2017-11-23</time>
+              <time title="创建时间：2019-10-09 14:18:31" itemprop="dateCreated datePublished" datetime="2019-10-09T14:18:31+08:00">2019-10-09</time>
             </span>
           
 
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
+                <time title="修改时间：2019-10-11 00:44:30" itemprop="dateModified" datetime="2019-10-11T00:44:30+08:00">2019-10-11</time>
               </span>
             
           
@@ -453,7 +453,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ituuz-x/" itemprop="url" rel="index"><span itemprop="name">ituuz-x</span></a></span>
 
                 
                 
@@ -471,8 +471,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/11/23/20171123_项目架构和管理_引擎选择/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/23/20171123_项目架构和管理_引擎选择/" itemprop="commentCount"></span>
+                <a href="/2019/10/09/mvc-ex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/mvc-ex/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -480,7 +480,7 @@
 
           
           
-            <span id="/2017/11/23/20171123_项目架构和管理_引擎选择/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：引擎选择">
+            <span id="/2019/10/09/mvc-ex/" class="post-meta-item leancloud_visitors" data-flag-title="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -515,19 +515,33 @@
       
 
       
-        <h3 id="引擎选择"><a href="#引擎选择" class="headerlink" title="引擎选择"></a>引擎选择</h3><p>游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。<a id="more"></a>一般引擎的选择从下面几个维度来考虑：</p>
+        <p>本节内容是基于<a href="http://ituuz-x.ituuz.com/" target="_blank" rel="noopener">ituuz-x</a>框架<a href="http://ituuz.com/2019/07/15/lightMVC-1/">core中的mvc</a>做的拓展，对mvc中基本接口进行了封装，更加方便规模较大项目进行开发和维护，v2.0中新增加的内容如下：  </p>
 <ul>
-<li>平台的选择：这里我们只考虑手游，不过现在H5游戏的不断流行，所以我们也要考虑H5平台的支持。目前H5平台支持比较好的引擎有Egret、laya和cocos creator，从工具链、性能和易用性上来说Egret更适合做H5平台的游戏，但是cocos creator近期发力不少，无论是从编辑器上还是性能上都有很出色的表现，我很期待它的后续发展。如果想做纯原生平台的游戏那么cocos2d-x和Unity都是不错的选择，这两款引擎占着整个原生游戏市场的80%以上的份额，国内市场份额更高。UE4现在也是很多大团队的选择，搭配技术积累较深厚和美术能力较强的团队可以做出出色的次世代表现的大作。</li>
-<li>2D与3D的选择：游戏立项时一定是可以确定该项目是2D项目还是3D项目，<strong>2D游戏没必要非得使用3D来表现，合理选择2D与3D能让游戏有更好的体验</strong>。目前H5平台上3D技术并不成熟，大多游戏还是采用2D来表现，所以。cocos2d-x在2D游戏开发上有着较大的优势，cocos2d-x比较轻量级、开源、可定制性强，同时2D平台很多解决方案也都很成熟。3D游戏首选Unity，市场上大量的3D游戏都是使用Unity引擎开发的，已经说明了Unity足够优秀。另外画面效果表现更为突出的虚幻也是很多团队的选择。这里有一篇Unity与UE4的对比文章，大家可以看一看（<a href="http://blog.csdn.net/mengyin521/article/details/53507505" target="_blank" rel="noopener">Unity 过度到 Unreal 4 对比参考 非常详细！</a>）。</li>
-<li><p>团队技术基础：这一定也是一定要考虑的，团队最擅长什么类型的游戏、什么引擎和什么编程语言等，都会对后期的开发有着至关重要的影响。上一点我提到：</p>
-<blockquote>
-<p>2D游戏没必要非得使用3D来表现，合理选择2D与3D能让游戏有更好的体验。</p>
-</blockquote>
-<p>  在这个时候就要变通了。比如团队之前有一定Unity的开发经验，并且团队没有人擅长C++开发，那么虽然项目是一款2D项目，比较适合使用cocos2d-x来开发，但是此时的最佳选择还是Unity，使用3D引擎开发2D游戏完全可以，但是让团队重新接受一款新引擎和一个新的编程语言（尤其是C++）是不理智的，后期带来的风险一定会很高。</p>
-</li>
-<li>招聘市场支持：这一点可能很多团队的管理者在立项之初并没有考虑过，其实也是很重要。比如公司想做一款表现较突出的次世代3D游戏，可能比较适合的方案就是选择UE4，但是招聘市场支持是需要去考虑的，能否快速组建出优秀的团队，包括技术、美术和策划，都是要对这个复杂的引擎有经验的，否则还不如采用Unity一样可以做出优秀的画面表现。除了前期的队伍搭建，还有当团队有人离开时是否能迅速招到人补充进来也是很重要的。同理后期的项目优化有可能也需要人才引进。如果选择了个冷门或者使用基数较小的技术或引擎，在人才储备和补充时就会捉襟见肘，严重时更会影响项目进度。</li>
+<li>框架全局可调用的接口<ul>
+<li>框架初始化</li>
+<li>initScene：初始化第一个场景</li>
 </ul>
-<p>当然影响技术的选择肯定不止这些因素，每个公司或者团队都有自己需要考量的因素，能够提炼出来的也希望大家提出来一起讨论。</p>
+</li>
+<li>新增GameMediator基类<ul>
+<li>gotoScene：运行新场景</li>
+<li>addView：打开新UI界面</li>
+</ul>
+</li>
+<li>新增GameScene和GameView基类，对应GameMediator。</li>
+<li>GameView增加图集根据UI模块自动加载功能。<a id="more"></a>
+</li>
+</ul>
+<h3 id="封装框架初始化接口"><a href="#封装框架初始化接口" class="headerlink" title="封装框架初始化接口"></a>封装框架初始化接口</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化框架接口</span></span><br><span class="line"><span class="comment"> * @param &#123;MVC_struct&#125; scene 初始化游戏的第一个场景</span></span><br><span class="line"><span class="comment"> * @param &#123;boolean&#125; debug 框架是否是调试模式</span></span><br><span class="line"><span class="comment"> * @param &#123;cc.Size&#125; designResolution 默认的设计分辨率</span></span><br><span class="line"><span class="comment"> * @param &#123;boolean&#125; fitWidth 是否宽适配</span></span><br><span class="line"><span class="comment"> * @param &#123;boolean&#125; fitHeight 是否高适配</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> start(</span><br><span class="line">        scene: MVC_struct,</span><br><span class="line">        models: &#123;<span class="keyword">new</span> (): BaseModel&#125;[],</span><br><span class="line">        debug: boolean = <span class="literal">true</span>, </span><br><span class="line">        designResolution: cc.Size = cc.size(<span class="number">960</span>, <span class="number">640</span>), </span><br><span class="line">        fitWidth: boolean = <span class="literal">false</span>, </span><br><span class="line">        fitHeight: boolean = <span class="literal">false</span></span><br><span class="line">    ): <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure>
+<p>该接口是在游戏启动时第一时间调用的，作为框架初始化的首要接口。在该接口中重要的是前两个参数，第一个参数是一个MVC_struct类型的结构体，是框架初始化的第一个运行场景。该结构体如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MVC_struct</span> </span>&#123;</span><br><span class="line">    public viewClass: string; <span class="comment">// view类名</span></span><br><span class="line">    public medClass: string;    <span class="comment">// mediator类名</span></span><br><span class="line">    public children: MVC_struct[]; <span class="comment">// 子节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面结构中可以看到，该结构体是对一个模块的封装，由视图层view类名，控制层mediator类名构成，同时还支持子节点嵌套，创建场景或者View时会按照该结构体的节点关系进行创建。在mvc_ex中，运行场景或者打开View模块都是需要传入一个[MVC_struct]结构体作为参数，所以我们业务代码中可以统一在一个文件中定义这些结构体并配置这些模块，方便业务对所有场景或者View模块统一管理和维护。例如我们可以单独在一个文件中做如下配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> readonly MAIN_SCENE: MVC_struct = &#123;</span><br><span class="line">    viewClass: <span class="string">"MainScene"</span>,</span><br><span class="line">    medClass: <span class="string">"MainMediator"</span>,</span><br><span class="line">    children: [</span><br><span class="line">        &#123;</span><br><span class="line">            viewClass: <span class="string">"UIView"</span>,</span><br><span class="line">            medClass: <span class="string">"UIMediator"</span>,</span><br><span class="line">            children: [</span><br><span class="line">                &#123;</span><br><span class="line">                    viewClass: <span class="string">"OpratorView"</span>,</span><br><span class="line">                    medClass: <span class="string">"OpratorMediator"</span>,</span><br><span class="line">                    children: []</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            viewClass: <span class="string">"PlayerView"</span>,</span><br><span class="line">            medClass: <span class="string">"PlayerMediator"</span>,</span><br><span class="line">            children: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样我们可以随时调节各个视图层view的节点关系，同时游戏场景的节点关系也一目了然，哪些类对应哪些模块，在什么层级也都清晰可见。</p>
+<h3 id="GameMediator基类"><a href="#GameMediator基类" class="headerlink" title="GameMediator基类"></a>GameMediator基类</h3><p>GameMediator基类中新增gotoScene：运行新场景和addView：打开新UI界面两个接口，这两个接口中的第一个参数都是MVC_struct结构体，和上面初始化接口一样，可以根据结构体初始化场景或者View；这两个接口的第二个参数是可选的any类型的参数，可以用来将参数透传给要打开的场景或者view。</p>
+<h3 id="GameScene和GameView基类"><a href="#GameScene和GameView基类" class="headerlink" title="GameScene和GameView基类"></a>GameScene和GameView基类</h3><p>这两个基类分别对应场景的视图层和UI的视图层。GameView中新增了两个接口atlasName和setSpriteFrame这两个接口一个是下面要说到的自动加载该模块纹理贴图功能，另一个是使用加载好的纹理设置sprite。</p>
+<h3 id="View模块自动加载图集功能"><a href="#View模块自动加载图集功能" class="headerlink" title="View模块自动加载图集功能"></a>View模块自动加载图集功能</h3><p>上面说到GameView基类新增了个atlasName接口，该接口就是用来配置该模块需要加载的图集资源，声明如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 子类重写来实现资源的加载和释放</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public atlasName(): string[] &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>return的数组中用来配置该模块需要加载的图集资源。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 子类重写来实现资源的加载和释放</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public atlasName(): string[] &#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        <span class="string">"atlas1"</span>,</span><br><span class="line">        <span class="string">"atlas2"</span></span><br><span class="line">    ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样”atlas1”和”atlas2”两个纹理图集就会自动加载了，然后在view中可以直接调用setSpriteFrame接口来为sprite设置纹理信息，该接口的声明如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 为sprite设置纹理</span></span><br><span class="line"><span class="comment"> * @param &#123;cc.Sprite&#125; sprite sprite对象</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; name 纹理名称</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; key 图集key值，如果不传key，则默认使用该UI的第一个图集来设置；</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public setSpriteFrame(sprite: cc.Sprite, <span class="attr">name</span>: string, key?: string): <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>以上就是这次ituuz-x框架更新的内容，有问题可以直接留言反馈或者给我发邮件，如果感到有用就关注我的公众号吧。</p>
+<p><a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">github地址：https://github.com/yue19870813/ituuz-x</a></p>
 
       
     </div>
@@ -597,7 +611,17 @@
         
         <div class="post-tags">
           
-            <a href="/tags/引擎选择/" rel="tag"># 引擎选择</a>
+            <a href="/tags/typescript/" rel="tag"># typescript</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/ituuz-x/" rel="tag"># ituuz-x</a>
+          
+            <a href="/tags/cocos框架/" rel="tag"># cocos框架</a>
+          
+            <a href="/tags/mvc/" rel="tag"># mvc</a>
           
         </div>
       
@@ -610,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/22/20171122_项目架构和管理/" rel="next" title="游戏项目架构及管理 序">
-                <i class="fa fa-chevron-left"></i> 游戏项目架构及管理 序
+              <a href="/2019/09/21/fire-emblem-path/" rel="next" title="cocos creator实现战旗类游戏移动范围效果">
+                <i class="fa fa-chevron-left"></i> cocos creator实现战旗类游戏移动范围效果
               </a>
             
           </div>
@@ -619,10 +643,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/14/20171214_项目架构和管理_网络通信/" rel="prev" title="游戏项目架构及管理：网络通信">
-                游戏项目架构及管理：网络通信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -922,7 +942,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎选择"><span class="nav-number">1.</span> <span class="nav-text">引擎选择</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装框架初始化接口"><span class="nav-number">1.</span> <span class="nav-text">封装框架初始化接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GameMediator基类"><span class="nav-number">2.</span> <span class="nav-text">GameMediator基类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GameScene和GameView基类"><span class="nav-number">3.</span> <span class="nav-text">GameScene和GameView基类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View模块自动加载图集功能"><span class="nav-number">4.</span> <span class="nav-text">View模块自动加载图集功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>

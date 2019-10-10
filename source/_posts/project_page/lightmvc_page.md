@@ -11,24 +11,20 @@ ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具
 <!--more-->
 
 ### 入门介绍
-[lightMVC模块介绍:轻量级游戏开发mvc框架](http://ituuz.com/2019/07/15/lightMVC-1/)
+[core-mvc模块介绍:轻量级游戏开发mvc框架](http://ituuz.com/2019/07/15/lightMVC-1/)
+[mvc_ex模块介绍:mvc拓展模块](http://ituuz.com/2019/10/09/mvc-ex/)
 
 ### 近期版本内容
 #### v2.0新增功能（lightMVC_ex）
-> v2.0主要对核心模块中的lightMVC进行了拓展，增加了更多接口和功能，方便更大规模项目使用。
-> 相关文档：待补充
+> v2.0主要对核心模块中的lightMVC进行了拓展，增加了更多接口和功能，方便更大规模项目使用
 - 框架全局可调用的接口
-    - 框架初始化
-    - initScene：初始化第一个场景
 - 新增GameMediator基类
-    - runScene
-    - popView
-    - addLayer
 - 新增GameView基类，对应GameMediator，暂无新增功能。
 - 图集自动加载功能
-
 
 #### v1.0版本
 > 轻量级的mvc框架，相关文档[lightMVC模块介绍:轻量级游戏开发mvc框架](http://ituuz.com/2019/07/15/lightMVC-1/)
 - lightMVC核心模块基本功能
+
+[github地址：https://github.com/yue19870813/ituuz-x](https://github.com/yue19870813/ituuz-x)
 
