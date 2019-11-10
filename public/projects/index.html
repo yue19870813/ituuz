@@ -108,19 +108,18 @@
 </script>
 </div>
 
-  <meta name="description" content="开源项目 ituuz-x: 基于cocos creator的游戏开发框架  欢迎关注我的公众号:">
+  <meta name="description" content="ituuz-x项目主页ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心core是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。">
+<meta name="keywords" content="typescript,ituuz-x,cocos框架,creator">
 <meta property="og:type" content="website">
-<meta property="og:title" content="我的开源项目">
+<meta property="og:title" content="游戏开发框架：ituuz-x">
 <meta property="og:url" content="http://ituuz.com/projects/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="开源项目 ituuz-x: 基于cocos creator的游戏开发框架  欢迎关注我的公众号:">
+<meta property="og:description" content="ituuz-x项目主页ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心core是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ituuz.com/uploads/wechat-qcode.jpg">
-<meta property="og:updated_time" content="2019-10-10T16:56:27.641Z">
+<meta property="og:updated_time" content="2019-11-10T13:44:12.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的开源项目">
-<meta name="twitter:description" content="开源项目 ituuz-x: 基于cocos creator的游戏开发框架  欢迎关注我的公众号:">
-<meta name="twitter:image" content="http://ituuz.com/uploads/wechat-qcode.jpg">
+<meta name="twitter:title" content="游戏开发框架：ituuz-x">
+<meta name="twitter:description" content="ituuz-x项目主页ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心core是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。">
 
 
 
@@ -139,7 +138,7 @@
 </script>
 
   
-  <title>我的开源项目 | ituuz</title>
+  <title>游戏开发框架：ituuz-x | ituuz</title>
   
 
 
@@ -401,7 +400,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">我的开源项目
+<h1 class="post-title" itemprop="name headline">游戏开发框架：ituuz-x
 
 </h1>
 
@@ -421,10 +420,41 @@
       <div class="post-body">
         
         
-          <h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul>
-<li><a href="http://ituuz-x.ituuz.com" target="_blank" rel="noopener">ituuz-x: 基于cocos creator的游戏开发框架</a></li>
+          <h2 id="ituuz-x项目主页"><a href="#ituuz-x项目主页" class="headerlink" title="ituuz-x项目主页"></a>ituuz-x项目主页</h2><p>ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心<code>core</code>是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。<br><a id="more"></a></p>
+<h3 id="入门介绍"><a href="#入门介绍" class="headerlink" title="入门介绍"></a>入门介绍</h3><p><a href="http://ituuz.com/2019/07/15/lightMVC-1/">core-mvc模块介绍:轻量级游戏开发mvc框架</a><br><a href="http://ituuz.com/2019/10/09/mvc-ex/">mvc_ex模块介绍:mvc拓展模块</a><br><a href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">ituuz-x游戏框架v2.1新特性介绍</a></p>
+<h3 id="近期版本内容"><a href="#近期版本内容" class="headerlink" title="近期版本内容"></a>近期版本内容</h3><h4 id="v2-1版本功能列表"><a href="#v2-1版本功能列表" class="headerlink" title="v2.1版本功能列表"></a>v2.1版本功能列表</h4><blockquote>
+<p>v2.1版本主要是修复bug，以及对之前的功能进行了优化。</p>
+<ul>
+<li>[<code>new</code>]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持</li>
+<li>[<code>new</code>]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口</li>
+<li>[<code>new</code>]ViewEvent增加注册点击事件，方便静态事件注册</li>
+<li>[<code>new</code>]Mediator增加customInit接口，该接口会在Mediator的init接口之前调用，通过该接口可对初始化过程进行干预</li>
+<li>[<code>new</code>]Mediator增加sceneContent属性，该属性是场景共享数据，在当前场景的所有Mediator中都可以读取该对象</li>
+<li>[<code>new</code>]Mediator的addView接口增加parent可选属性，可以自定义设置该view添加到的父节点</li>
+<li>[<code>new</code>]Mediator的addView接口增加useCache可选属性，来设置是否复用同类节点，默认false不复用</li>
+<li>[<code>bug</code>]修复android真机引起崩溃的问题</li>
+<li>[<code>bug</code>]修复Mediator的init和viewDidAppear接口调用顺序错误问题</li>
+<li>[<code>bug</code>]修改场景初始化生命周期异常问题</li>
+<li>[<code>bug</code>]修复全局场景层级缓存错误问题</li>
+<li>[<code>ts</code>]优化代码，增加注释，统一编码风格等</li>
 </ul>
-<p>欢迎关注我的公众号:<br><img src="/uploads/wechat-qcode.jpg" alt="wechat"></p>
+</blockquote>
+<h4 id="v2-0新增功能（lightMVC-ex）"><a href="#v2-0新增功能（lightMVC-ex）" class="headerlink" title="v2.0新增功能（lightMVC_ex）"></a>v2.0新增功能（lightMVC_ex）</h4><blockquote>
+<p>v2.0主要对核心模块中的lightMVC进行了拓展，增加了更多接口和功能，方便更大规模项目使用</p>
+<ul>
+<li>框架全局可调用的接口</li>
+<li>新增GameMediator基类</li>
+<li>新增GameView基类，对应GameMediator，暂无新增功能。</li>
+<li>图集自动加载功能</li>
+</ul>
+</blockquote>
+<h4 id="v1-0版本"><a href="#v1-0版本" class="headerlink" title="v1.0版本"></a>v1.0版本</h4><blockquote>
+<p>轻量级的mvc框架，相关文档<a href="http://ituuz.com/2019/07/15/lightMVC-1/">lightMVC模块介绍:轻量级游戏开发mvc框架</a></p>
+<ul>
+<li>lightMVC核心模块基本功能</li>
+</ul>
+</blockquote>
+<p><a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">github地址：https://github.com/yue19870813/ituuz-x</a></p>
 
         
       </div>
@@ -505,7 +535,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -631,7 +661,9 @@
         
           
         
-        <span class="site-state-item-count">34</span>
+          
+        
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -723,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开源项目"><span class="nav-number">1.</span> <span class="nav-text">开源项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ituuz-x项目主页"><span class="nav-number">1.</span> <span class="nav-text">ituuz-x项目主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入门介绍"><span class="nav-number">1.1.</span> <span class="nav-text">入门介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近期版本内容"><span class="nav-number">1.2.</span> <span class="nav-text">近期版本内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-1版本功能列表"><span class="nav-number">1.2.1.</span> <span class="nav-text">v2.1版本功能列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-0新增功能（lightMVC-ex）"><span class="nav-number">1.2.2.</span> <span class="nav-text">v2.0新增功能（lightMVC_ex）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v1-0版本"><span class="nav-number">1.2.3.</span> <span class="nav-text">v1.0版本</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
