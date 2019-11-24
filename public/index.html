@@ -380,6 +380,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/11/14/ituuz-x-net/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/14/ituuz-x-net/" class="post-title-link" itemprop="url">ituuz-x游戏框架v2.2--网络核心模块</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-14 20:45:25" itemprop="dateCreated datePublished" datetime="2019-11-14T20:45:25+08:00">2019-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-24 18:20:09" itemprop="dateModified" datetime="2019-11-24T18:20:09+08:00">2019-11-24</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cocos-creator/" itemprop="url" rel="index"><span itemprop="name">cocos creator</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/11/14/ituuz-x-net/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/ituuz-x-net/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2019/11/14/ituuz-x-net/" class="post-meta-item leancloud_visitors" data-flag-title="ituuz-x游戏框架v2.2--网络核心模块">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。</p>
+</blockquote>
+<hr>
+<h2 id="v2-2版本功能列表"><a href="#v2-2版本功能列表" class="headerlink" title="v2.2版本功能列表"></a>v2.2版本功能列表</h2><ul>
+<li>[<code>new</code>]网络核心模块<code>net</code></li>
+<li>[<code>new</code>]GameModel增加网络通信相关接口</li>
+<li>[<code>plug-in</code>]增加creator插件pb-generator</li>
+<li>[<code>bug</code>]修改Mediator销毁接口destroy有时不会调用的bug</li>
+<li>[<code>bug</code>]修改场景切换时，部分数据没有销毁的bug</li>
+</ul>
+<h2 id="主要功能详细介绍"><a href="#主要功能详细介绍" class="headerlink" title="主要功能详细介绍"></a>主要功能详细介绍</h2><h3 id="网络核心模块介绍"><a href="#网络核心模块介绍" class="headerlink" title="网络核心模块介绍"></a>网络核心模块介绍</h3><p>框架中的网络模块意在于让网络的层的具体实现脱离与业务层，在业务层的开发人员无需关心是http、websocket还是其他连接方式，也不需要关心网络层的数据格式，协议解析及映射关系等，甚至于使用起来都不知道在做网络操作，最终表现就是发送一个对象或者接收到一个对象来使用。框架目前支持Websocket、http、local以及自定义连接实现。没错，本地存储local这里也作为网络层来封装，就像上面说的一样，框架可以让开发人员脱离数据层具体实现来进行开发。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/14/ituuz-x-net/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,13 +640,23 @@
                 
               
 
-              <time title="创建时间：2019-11-10 20:36:42 / 修改时间：21:34:24" itemprop="dateCreated datePublished" datetime="2019-11-10T20:36:42+08:00">2019-11-10</time>
+              <time title="创建时间：2019-11-10 20:36:42" itemprop="dateCreated datePublished" datetime="2019-11-10T20:36:42+08:00">2019-11-10</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-14 20:52:57" itemprop="dateModified" datetime="2019-11-14T20:52:57+08:00">2019-11-14</time>
+              </span>
             
           
 
@@ -995,6 +1220,12 @@
 
 
       
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4273582562110179" data-ad-slot="2400787159"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      
     
       
 
@@ -1198,12 +1429,6 @@
   </article>
 
 
-      
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4273582562110179" data-ad-slot="2400787159"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
       
     
       
@@ -1604,6 +1829,12 @@
 
 
       
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4273582562110179" data-ad-slot="2400787159"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      
     
       
 
@@ -1800,12 +2031,6 @@
   </article>
 
 
-      
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4273582562110179" data-ad-slot="2400787159"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
       
     
       
@@ -2216,210 +2441,6 @@
 
 
       
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/12/14/20171214_项目架构和管理_网络通信/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ituuz">
-      <meta itemprop="description" content="积土而为山，积水而为海。">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ituuz">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/12/14/20171214_项目架构和管理_网络通信/" class="post-title-link" itemprop="url">游戏项目架构及管理：网络通信</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-12-14 11:18:36" itemprop="dateCreated datePublished" datetime="2017-12-14T11:18:36+08:00">2017-12-14</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/12/14/20171214_项目架构和管理_网络通信/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/14/20171214_项目架构和管理_网络通信/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-            <span id="/2017/12/14/20171214_项目架构和管理_网络通信/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：网络通信">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="网络通信"><a href="#网络通信" class="headerlink" title="网络通信"></a>网络通信</h2><p>在项目最开始阶段主要需要考虑的还有网络通信模块，当然如果你做的是单机游戏就可以跳过这部分了。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/12/14/20171214_项目架构和管理_网络通信/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4273582562110179" data-ad-slot="2400787159"></ins>
       <script>
@@ -2482,7 +2503,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2610,7 +2631,17 @@
         
           
         
-        <span class="site-state-item-count">35</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

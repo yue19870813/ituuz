@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="ituuz-x项目主页ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心core是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-10T13:44:12.886Z">
+<meta property="og:updated_time" content="2019-11-24T10:20:12.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="游戏开发框架：ituuz-x">
 <meta name="twitter:description" content="ituuz-x项目主页ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心core是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。">
@@ -421,9 +421,19 @@
         
         
           <h2 id="ituuz-x项目主页"><a href="#ituuz-x项目主页" class="headerlink" title="ituuz-x项目主页"></a>ituuz-x项目主页</h2><p>ituuz-x是一个cocos creator游戏开发一个集成框架，也是一个工具集。其包括常用用的项目管理的mvc架构，以及静态数据、本地化、资源管理、网络等模块，后续还会不断拓展新的模块或工具，除核心<code>core</code>是必须引用外，其他模块都可以根据需求选择引用，后续会增加模块剔除配置功能。框架后续功能可以参考下面的Planned计划表。<br><a id="more"></a></p>
-<h3 id="入门介绍"><a href="#入门介绍" class="headerlink" title="入门介绍"></a>入门介绍</h3><p><a href="http://ituuz.com/2019/07/15/lightMVC-1/">core-mvc模块介绍:轻量级游戏开发mvc框架</a><br><a href="http://ituuz.com/2019/10/09/mvc-ex/">mvc_ex模块介绍:mvc拓展模块</a><br><a href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">ituuz-x游戏框架v2.1新特性介绍</a></p>
-<h3 id="近期版本内容"><a href="#近期版本内容" class="headerlink" title="近期版本内容"></a>近期版本内容</h3><h4 id="v2-1版本功能列表"><a href="#v2-1版本功能列表" class="headerlink" title="v2.1版本功能列表"></a>v2.1版本功能列表</h4><blockquote>
-<p>v2.1版本主要是修复bug，以及对之前的功能进行了优化。</p>
+<h3 id="入门介绍"><a href="#入门介绍" class="headerlink" title="入门介绍"></a>入门介绍</h3><p><a href="http://ituuz.com/2019/07/15/lightMVC-1/">core-mvc模块介绍:轻量级游戏开发mvc框架</a><br><a href="http://ituuz.com/2019/10/09/mvc-ex/">mvc_ex模块介绍:mvc拓展模块</a><br><a href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">ituuz-x游戏框架v2.1:新特性介绍</a><br><a href="http://ituuz.com/2019/11/14/ituuz-x-net/">ituuz-x游戏框架v2.2:网络核心模块</a></p>
+<h3 id="近期版本内容"><a href="#近期版本内容" class="headerlink" title="近期版本内容"></a>近期版本内容</h3><h4 id="v2-2版本功能"><a href="#v2-2版本功能" class="headerlink" title="v2.2版本功能"></a>v2.2版本功能</h4><blockquote>
+<p>v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。相关文档：<a href="http://ituuz.com/2019/11/14/ituuz-x-net/">ituuz-x游戏框架v2.2:网络核心模块</a></p>
+<ul>
+<li>[<code>new</code>]网络核心模块<code>net</code></li>
+<li>[<code>new</code>]GameModel增加网络通信相关接口</li>
+<li>[<code>plug-in</code>]增加creator插件pb-generator</li>
+<li>[<code>bug</code>]修改Mediator销毁接口destroy有时不会调用的bug</li>
+<li>[<code>bug</code>]修改场景切换时，部分数据没有销毁的bug</li>
+</ul>
+</blockquote>
+<h4 id="v2-1版本功能列表"><a href="#v2-1版本功能列表" class="headerlink" title="v2.1版本功能列表"></a>v2.1版本功能列表</h4><blockquote>
+<p>v2.1版本主要是修复bug，以及对之前的功能进行了优化。相关文档：<a href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">ituuz-x游戏框架v2.1:新特性介绍</a></p>
 <ul>
 <li>[<code>new</code>]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持</li>
 <li>[<code>new</code>]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口</li>
@@ -440,7 +450,7 @@
 </ul>
 </blockquote>
 <h4 id="v2-0新增功能（lightMVC-ex）"><a href="#v2-0新增功能（lightMVC-ex）" class="headerlink" title="v2.0新增功能（lightMVC_ex）"></a>v2.0新增功能（lightMVC_ex）</h4><blockquote>
-<p>v2.0主要对核心模块中的lightMVC进行了拓展，增加了更多接口和功能，方便更大规模项目使用</p>
+<p>v2.0主要对核心模块中的lightMVC进行了拓展，增加了更多接口和功能，方便更大规模项目使用。相关文档<a href="http://ituuz.com/2019/10/09/mvc-ex/">mvc_ex模块介绍:mvc拓展模块</a></p>
 <ul>
 <li>框架全局可调用的接口</li>
 <li>新增GameMediator基类</li>
@@ -535,7 +545,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -663,7 +673,17 @@
         
           
         
-        <span class="site-state-item-count">35</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -755,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ituuz-x项目主页"><span class="nav-number">1.</span> <span class="nav-text">ituuz-x项目主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入门介绍"><span class="nav-number">1.1.</span> <span class="nav-text">入门介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近期版本内容"><span class="nav-number">1.2.</span> <span class="nav-text">近期版本内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-1版本功能列表"><span class="nav-number">1.2.1.</span> <span class="nav-text">v2.1版本功能列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-0新增功能（lightMVC-ex）"><span class="nav-number">1.2.2.</span> <span class="nav-text">v2.0新增功能（lightMVC_ex）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v1-0版本"><span class="nav-number">1.2.3.</span> <span class="nav-text">v1.0版本</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ituuz-x项目主页"><span class="nav-number">1.</span> <span class="nav-text">ituuz-x项目主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入门介绍"><span class="nav-number">1.1.</span> <span class="nav-text">入门介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近期版本内容"><span class="nav-number">1.2.</span> <span class="nav-text">近期版本内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-2版本功能"><span class="nav-number">1.2.1.</span> <span class="nav-text">v2.2版本功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-1版本功能列表"><span class="nav-number">1.2.2.</span> <span class="nav-text">v2.1版本功能列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v2-0新增功能（lightMVC-ex）"><span class="nav-number">1.2.3.</span> <span class="nav-text">v2.0新增功能（lightMVC_ex）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v1-0版本"><span class="nav-number">1.2.4.</span> <span class="nav-text">v1.0版本</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

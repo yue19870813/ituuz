@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4273582562110179",
+    enable_page_level_ads: true
+  });
+</script>
+<div align="center">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-header -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="8660795947" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  <meta name="description" content="v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。   v2.2版本功能列表 [new]网络核心模块net [new]GameModel增加网络通信相关接口 [plug-in]增加creator插件pb-generator [bug]修改Mediator销毁接口destroy有时不会调用的bug [bug]修改场景切换时，">
+<meta name="keywords" content="cocos creator,pb,protobuf,protobufjs,http,网络,框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ituuz-x游戏框架v2.2--网络核心模块">
+<meta property="og:url" content="http://ituuz.com/2019/11/14/ituuz-x-net/index.html">
+<meta property="og:site_name" content="ituuz">
+<meta property="og:description" content="v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。   v2.2版本功能列表 [new]网络核心模块net [new]GameModel增加网络通信相关接口 [plug-in]增加creator插件pb-generator [bug]修改Mediator销毁接口destroy有时不会调用的bug [bug]修改场景切换时，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ituuz.com/images/ituuzx_net.png">
+<meta property="og:updated_time" content="2019-11-24T10:20:09.206Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ituuz-x游戏框架v2.2--网络核心模块">
+<meta name="twitter:description" content="v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。   v2.2版本功能列表 [new]网络核心模块net [new]GameModel增加网络通信相关接口 [plug-in]增加creator插件pb-generator [bug]修改Mediator销毁接口destroy有时不会调用的bug [bug]修改场景切换时，">
+<meta name="twitter:image" content="http://ituuz.com/images/ituuzx_net.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://ituuz.com/2019/11/14/ituuz-x-net/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>ituuz-x游戏框架v2.2--网络核心模块 | ituuz</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ituuz</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">专注于游戏开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-projects">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/projects/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>开源项目</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/11/14/ituuz-x-net/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ituuz">
+      <meta itemprop="description" content="积土而为山，积水而为海。">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ituuz">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ituuz-x游戏框架v2.2--网络核心模块
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-14 20:45:25" itemprop="dateCreated datePublished" datetime="2019-11-14T20:45:25+08:00">2019-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-24 18:20:09" itemprop="dateModified" datetime="2019-11-24T18:20:09+08:00">2019-11-24</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cocos-creator/" itemprop="url" rel="index"><span itemprop="name">cocos creator</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/11/14/ituuz-x-net/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/ituuz-x-net/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2019/11/14/ituuz-x-net/" class="post-meta-item leancloud_visitors" data-flag-title="ituuz-x游戏框架v2.2--网络核心模块">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>v2.2版本主要是对网络核心模块进行了封装，完善了框架体系。这个版本中目前只对http进行了实现，其他类型都是未实现的接口。</p>
+</blockquote>
+<hr>
+<h2 id="v2-2版本功能列表"><a href="#v2-2版本功能列表" class="headerlink" title="v2.2版本功能列表"></a>v2.2版本功能列表</h2><ul>
+<li>[<code>new</code>]网络核心模块<code>net</code></li>
+<li>[<code>new</code>]GameModel增加网络通信相关接口</li>
+<li>[<code>plug-in</code>]增加creator插件pb-generator</li>
+<li>[<code>bug</code>]修改Mediator销毁接口destroy有时不会调用的bug</li>
+<li>[<code>bug</code>]修改场景切换时，部分数据没有销毁的bug</li>
+</ul>
+<h2 id="主要功能详细介绍"><a href="#主要功能详细介绍" class="headerlink" title="主要功能详细介绍"></a>主要功能详细介绍</h2><h3 id="网络核心模块介绍"><a href="#网络核心模块介绍" class="headerlink" title="网络核心模块介绍"></a>网络核心模块介绍</h3><p>框架中的网络模块意在于让网络的层的具体实现脱离与业务层，在业务层的开发人员无需关心是http、websocket还是其他连接方式，也不需要关心网络层的数据格式，协议解析及映射关系等，甚至于使用起来都不知道在做网络操作，最终表现就是发送一个对象或者接收到一个对象来使用。框架目前支持Websocket、http、local以及自定义连接实现。没错，本地存储local这里也作为网络层来封装，就像上面说的一样，框架可以让开发人员脱离数据层具体实现来进行开发。<a id="more"></a></p>
+<h3 id="网络核心模块架构图"><a href="#网络核心模块架构图" class="headerlink" title="网络核心模块架构图"></a>网络核心模块架构图</h3><p><img src="/images/ituuzx_net.png" alt="网络核心模块架构图"></p>
+<h3 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h3><ul>
+<li><p>最下面的数据层：是指各种网络连接的功能实现，这里定义了Websocket、http、local三种常用的数据交互方式，当然框架也提供了接口来注册自定义的网络数据实现类。这层主要实现的功能接口主要是创建连接和发送数据，稍后会介绍Http的实现类HttpClient，先看基类的接口定义如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 网络客户端基类</span></span><br><span class="line"><span class="comment"> * @author ituuz</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> abstract <span class="class"><span class="keyword">class</span> <span class="title">NetClientBase</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** 连接地址 */</span></span><br><span class="line">    public addr: string;</span><br><span class="line">    <span class="comment">/** 端口 */</span></span><br><span class="line">    public port: number;</span><br><span class="line">    <span class="comment">/** 构造函数 */</span></span><br><span class="line">    public <span class="keyword">constructor</span>(addr: string, port: number) &#123;</span><br><span class="line">        <span class="keyword">this</span>.addr = addr;</span><br><span class="line">        <span class="keyword">this</span>.port = port;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** 发送消息 */</span></span><br><span class="line">    public abstract sendReq(msg: MessageBase): <span class="keyword">void</span>;</span><br><span class="line">    <span class="comment">/** 创建连接 */</span></span><br><span class="line">    public abstract connect(succCB: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">void</span>, <span class="attr">faultCB</span>: <span class="function">(<span class="params">code: NetFailCode</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>中间的数据支持层：数据支持层主要是工具类接口，网络核心层数据格式主要为protobuf，所以主要提供protobuf相关接口支持。同时MessageBase也是这层的一个重要基类。在网络核心层进行数据交互的对象都是继承MessageBase的Message对象，我们发送数据时就是new一个或者create一个Message对象然后发送出去，接收数据也是会接收到一个Message对象，然后直接读取该对象的属性。下面看一下MessageBase的几个主要接口:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 消息协议基类，声明的pb文件会生成对应的message类文件供业务使用。</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MessageBase</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 静态的创建Message接口，是一个异步接口，在我们没有提前预加载proto文件时使用这种异步的方法创建Message。</span></span><br><span class="line">    public <span class="keyword">static</span> create(cb: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 加载pb文件接口该接口提供了加载该Message的proto原型对象的实现</span></span><br><span class="line">    <span class="comment">// 预加载pb时需要调用该接口，预加载后就不需要调用create异步创建了，直接new就可以创建了。</span></span><br><span class="line">    public <span class="keyword">static</span> loadPbFile(cb: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将Message转成ArrayBuffer接口，用于发送二进制数据。</span></span><br><span class="line">    public toBuffer(): <span class="built_in">ArrayBuffer</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解析ArrayBuffer数据为Message对象</span></span><br><span class="line">    public parseBuffer(buffer): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 该Message的协议pid</span></span><br><span class="line">    public <span class="keyword">get</span> PID(): number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最上层是业务层：业务层中我们处理数据主要放在MVC的Model层来处理，所以对数据的操作的接口封装在GameModel中，重要的几个接口如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加新回调消息，该接口用于添加注册要监听的消息。</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; id 消息id</span></span><br><span class="line"><span class="comment"> * @param &#123;(msg: MessageBase) =&gt; void&#125; cb 消息回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public addRS(pid: number, <span class="attr">cb</span>: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 移除消息注册</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; id 消息id</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public removeRS(pid: number): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 发送消息</span></span><br><span class="line"><span class="comment"> * @param &#123;MessageBase&#125; msg 消息对象 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public sendRQ(msg: MessageBase): <span class="keyword">void</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置注册的PB消息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public protobuf(): <span class="built_in">Array</span>&lt;&#123;<span class="attr">pid</span>: number, <span class="attr">cb</span>: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>&#125;&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他节点：日志记录和状态切换控制，后续会增加日志记录接口和网络状态控制接口。网络状态控制主要是控制切换网络地址，以及切换网络类型，比如长短连接之间的切换，待实现。</p>
+</li>
+</ul>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ul>
+<li><p>定义proto文件：proto协议语法遵循标准的的protobuf语法，除语法外，需要指定亮点格式声明，只有遵循这两点格式才能使用后面提供的代码生成工具，下面我们声明一个简单的proto文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">syntax = <span class="string">"proto3"</span>;</span><br><span class="line">package msg;</span><br><span class="line"><span class="comment">// 登陆请求 </span></span><br><span class="line"><span class="comment">// PID_KEY:10000</span></span><br><span class="line">message LoginSend &#123;</span><br><span class="line">    string userId = <span class="number">1</span>;</span><br><span class="line">    string token = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 登陆回复 </span></span><br><span class="line"><span class="comment">// PID_KEY:20001</span></span><br><span class="line">message LoginBack &#123;</span><br><span class="line">    string userId = <span class="number">1</span>;</span><br><span class="line">    string nickname = <span class="number">2</span>; <span class="comment">// 昵称</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --------- 以下为说明内容 ---------</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 上面的协议声明遵循了protobuf的标准格式声明。</span></span><br><span class="line"><span class="comment"> * 除标准格式外，这里需要特别注意两点：</span></span><br><span class="line"><span class="comment"> * 1. PID_KEY的声明，在每个message协议体的上面都必须声明协议id：”PID_KEY:10000“，</span></span><br><span class="line"><span class="comment"> *    协议号10000是自定义的，可以按照自己的规则来声明，"// PID_KEY:xxxx"这是固定格式，</span></span><br><span class="line"><span class="comment"> *    message协议上面第一行必须是PID_KEY的声明，中间不能插入其他注释，注释可以卸载PID_KEY声明上面。</span></span><br><span class="line"><span class="comment"> * 2. message协议体内不能有换行注释，可以将注释放在字段声明的后面，就像上面的例子一样，</span></span><br><span class="line"><span class="comment"> *    因为插件工具解析协议时是按照换行解析协议体的，所以空行或者纯注释行会报错，这里暂时没有优化。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 以上两点就是声明协议需要注意的地方。pb代码生成工具还不是很完善，所以有bug在所难免，望大家指出。</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用插件生成json文件和ts代码：pb-generator插件（参考下面的<code>协议生成工具介绍</code>）可以根据proto生成对应的json配置文件和ts代码文件，proto里定义的每个message都会对应生成一个类，在使用时直接new这个类然后send发送出去就可以了，接收到的也是一个对象，直接读取使用这个对象的属性就可以了。例如上面的登陆协议在代码里就像下面这样处理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> msg = <span class="keyword">new</span> LoginSendMessage();</span><br><span class="line">msg.userId = <span class="string">"1001"</span>;</span><br><span class="line"><span class="comment">// 直接将msg发送出去就可以了，具体方式下面介绍。</span></span><br><span class="line"><span class="comment">// 接收到的数据对象直接就是LoginBackMessage对象。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化网络管理器及创建连接</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化网络链接</span></span><br><span class="line"><span class="comment"> * @param &#123;NetType&#125; type 链接类型，目前只实现了HTTP类型，其他类型待实现。</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; addr 链接地址url</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; port 端口，当为http和local网络类型时端口参数无效，custom依赖于实现方式</span></span><br><span class="line"><span class="comment"> * @param &#123;rsMap: Map&lt;number, &#123;new(): MessageBase&#125;&gt;&#125; rsMap 协议映射关系表，协议id对应对象关系表</span></span><br><span class="line"><span class="comment"> * @param &#123;new() =&gt; NetClientBase&#125; customClient 自定义client网络类型，后面会介绍如何自定义网络实现</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">NetHelper.init(NetType.HTTP, <span class="string">"http://10.194.6.66:10000/ituuz/"</span>, <span class="number">0</span>, MessageType.rsMap);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建网络连接，当类型为http和local时必定成功，custom依赖实现</span></span><br><span class="line">NetHelper.connect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    it.log(<span class="string">"链接成功"</span>);</span><br><span class="line">&#125;, (code) =&gt; &#123;</span><br><span class="line">    it.log(<span class="string">"创建连接失败:"</span>, code);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缓存pb协议</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 加载pb文件，建议在创建连接connect之前调用。</span></span><br><span class="line"><span class="comment"> * 这个接口是提供加载在init接口中注册的pb协议，可选，影响的是后续消息创建的方式</span></span><br><span class="line"><span class="comment"> * 如果没有提前调用此接口那么创建消息时就是异步创建的，反之则是使用缓存同步创建，建议提前加载；</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">NetHelper.loadPbFiles(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    it.log(<span class="string">"pb协议缓存成功"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发送和接收网络消息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 消息收发主要逻辑控制都在NetHelper中提供接口</span></span><br><span class="line"><span class="comment">// 首先是注册消息监听，注册后，收到服务器对应的消息后就会调用注册的接口cb</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * NetHelper 注册回调消息</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; id 消息id，是NetHelper.init接口中初始化的映射关系中的key值</span></span><br><span class="line"><span class="comment"> * @param &#123;(msg: MessageBase) =&gt; void&#125; cb 注册的回调，在回调中可直接读取message的属性</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> registerRS(id: number, <span class="attr">cb</span>: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>；</span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后是发送消息，发送消息首先要创建一个消息，然后发送；</span></span><br><span class="line"><span class="comment">// 创建消息分两种方式，没有提前缓存(loadPbFiles)的情况下只能异步创建，缓存过可以同步创建；</span></span><br><span class="line"><span class="comment">// 1.先看异步创建</span></span><br><span class="line">LoginSendMessage.create(<span class="function">(<span class="params">msg: LoginSendMessage</span>) =&gt;</span> &#123;</span><br><span class="line">    msg.userId = <span class="string">"ituuz"</span>;</span><br><span class="line">    msg.token = <span class="string">"xxxx"</span>;</span><br><span class="line">    <span class="comment">// 然后就可以将msg发送给服务器了</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2.然后同步创建，前提是有提前加载缓存，否则创建的message可能会无效。</span></span><br><span class="line"><span class="keyword">let</span> msg = <span class="keyword">new</span> LoginSendMessage();</span><br><span class="line">msg.userId = <span class="string">"ituuz"</span>;</span><br><span class="line">msg.token = <span class="string">"xxxx"</span>;</span><br><span class="line"><span class="comment">// 然后就可以将msg发送给服务器了</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在MVC中使用网络模块:在ituuz-x框架中核心的mvc模块中集成了数据模块Model，数据的交互都在Model中进行，所以消息的收发都集成在了Model中，主要接口如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 发送消息</span></span><br><span class="line"><span class="comment"> * @param &#123;MessageBase&#125; msg 消息对象 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public sendRQ(msg: MessageBase): <span class="keyword">void</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置注册的PB消息</span></span><br><span class="line"><span class="comment"> * 该接口需要在自己实现的model中进行重写，并返回该model中注册的消息监听。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public protobuf(): <span class="built_in">Array</span>&lt;&#123;<span class="attr">pid</span>: number, <span class="attr">cb</span>: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>&#125;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 除上面两个必须的接口外，还提供了更为灵活的注册方式：</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加新回调消息</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; id 消息id</span></span><br><span class="line"><span class="comment"> * @param &#123;(msg: MessageBase) =&gt; void&#125; cb 回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public addRS(pid: number, <span class="attr">cb</span>: <span class="function">(<span class="params">msg: MessageBase</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 移除消息注册</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; id 消息id</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public removeRS(pid: number): <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="协议生成工具-pb-generator-介绍"><a href="#协议生成工具-pb-generator-介绍" class="headerlink" title="协议生成工具(pb-generator)介绍"></a>协议生成工具(pb-generator)介绍</h3><h4 id="该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。"><a href="#该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。" class="headerlink" title="该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。"></a>该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。</h4><h4 id="工具配置，插件在plug-in目录下，在插件目录下的config-js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config-js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。"><a href="#工具配置，插件在plug-in目录下，在插件目录下的config-js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config-js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。" class="headerlink" title="工具配置，插件在plug-in目录下，在插件目录下的config.js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config.js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。"></a>工具配置，插件在plug-in目录下，在插件目录下的config.js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config.js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。</h4><h3 id="自定义网络类型"><a href="#自定义网络类型" class="headerlink" title="自定义网络类型"></a>自定义网络类型</h3><h4 id="上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。"><a href="#上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。" class="headerlink" title="上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。"></a>上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。</h4><h4 id="在框架中提供的协议解析方式不能满足需求时可以自己实现拓展"><a href="#在框架中提供的协议解析方式不能满足需求时可以自己实现拓展" class="headerlink" title="在框架中提供的协议解析方式不能满足需求时可以自己实现拓展"></a>在框架中提供的协议解析方式不能满足需求时可以自己实现拓展</h4><ul>
+<li><p>继承NetClientBase并实现必要的几个接口：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 发送协议接口</span></span><br><span class="line"><span class="comment"> * @param &#123;MessageBase&#125; msg pb消息对象，该对象提供了将Message对象进行序列化和反序列化的接口提供使用</span></span><br><span class="line"><span class="comment"> * 实现该接口可以自定义数据结构以及发送方式。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public abstract sendReq(msg: MessageBase): <span class="keyword">void</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建连接接口，需要实现连接的功能，如websocket可以在这里处理创建的成功和失败，如果自定义的网络类型不需要</span></span><br><span class="line"><span class="comment"> * 创建连接的阶段，那么直接返回成功回调即可。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public abstract connect(succCB: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">void</span>, <span class="attr">faultCB</span>: <span class="function">(<span class="params">code: NetFailCode</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义NetClientBase例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpClient</span> <span class="keyword">extends</span> <span class="title">NetClientBase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> readonly DATA_TOTAL_LEN = <span class="number">4</span>;	<span class="comment">// 数据总长度</span></span><br><span class="line">    public <span class="keyword">static</span> readonly PROTOCOLTYPE_LEN = <span class="number">4</span>;	<span class="comment">// 协议号长度</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 发送消息协议</span></span><br><span class="line"><span class="comment">     * @param &#123;MessageBase&#125; msg 消息对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public sendReq(msg: MessageBase): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>)) &#123;</span><br><span class="line">                <span class="keyword">let</span> response: <span class="built_in">ArrayBuffer</span> = xhr.response;</span><br><span class="line">                <span class="keyword">this</span>.encode(response);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.open(<span class="string">"POST"</span>, <span class="keyword">this</span>.addr, <span class="literal">true</span>);</span><br><span class="line">        xhr.responseType = <span class="string">"arraybuffer"</span>;</span><br><span class="line">        <span class="keyword">let</span> buffer = <span class="keyword">this</span>.decode(msg);</span><br><span class="line">        xhr.send(buffer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对消息体进行压包</span></span><br><span class="line"><span class="comment">     * @param &#123;MessageBase&#125; msg 消息对象</span></span><br><span class="line"><span class="comment">     * @return &#123;ArrayBuffer&#125; 压包后的而进行数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    private decode(msg: MessageBase): <span class="built_in">ArrayBuffer</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> buffer = msg.toBuffer();</span><br><span class="line">        <span class="keyword">let</span> dataView = <span class="keyword">new</span> <span class="built_in">DataView</span>(buffer);</span><br><span class="line">        <span class="keyword">let</span> dataLen = buffer.byteLength;</span><br><span class="line">        <span class="keyword">let</span> sendBuf = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(HttpClient.DATA_TOTAL_LEN + HttpClient.PROTOCOLTYPE_LEN + dataLen);</span><br><span class="line">        <span class="keyword">let</span> sendView = <span class="keyword">new</span> <span class="built_in">DataView</span>(sendBuf);</span><br><span class="line">        sendView.setInt32(<span class="number">0</span>, msg.PID);</span><br><span class="line">        sendView.setInt32(HttpClient.PROTOCOLTYPE_LEN, dataLen);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; dataLen; i++) &#123;</span><br><span class="line">            sendView.setInt8(HttpClient.PROTOCOLTYPE_LEN + HttpClient.DATA_TOTAL_LEN + i, dataView.getInt8(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sendBuf;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对二进制数据进行解包</span></span><br><span class="line"><span class="comment">     * @param &#123;ArrayBuffer&#125; recvBuf 接收到的二进制数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    private encode(recvBuf: <span class="built_in">ArrayBuffer</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> recvView = <span class="keyword">new</span> <span class="built_in">DataView</span>(recvBuf);</span><br><span class="line">        <span class="keyword">let</span> PID = recvView.getInt32(<span class="number">0</span>);</span><br><span class="line">        <span class="comment">// let len = recvView.getInt32(HttpClient.PROTOCOLTYPE_LEN);</span></span><br><span class="line">        <span class="keyword">let</span> data = recvBuf.slice(HttpClient.DATA_TOTAL_LEN + HttpClient.PROTOCOLTYPE_LEN, recvBuf.byteLength);</span><br><span class="line">        <span class="keyword">let</span> cls = NetHelper.getMessageCls(PID);</span><br><span class="line">        <span class="keyword">let</span> msg: MessageBase = <span class="function">(<span class="params">cls <span class="keyword">as</span> any</span>).<span class="params">create</span>(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">            msg.parseBuffer(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public connect(succCB: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">void</span>, <span class="attr">faultCB</span>: <span class="function">(<span class="params">code: NetFailCode</span>) =&gt;</span> <span class="keyword">void</span>): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (succCB) &#123;</span><br><span class="line">            succCB();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。"><a href="#最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。" class="headerlink" title="最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。"></a>最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。</h2>
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
+  <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/wechat_charge.jpg" alt="ituuz 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/alipay_charge.jpg" alt="ituuz 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/cocos-creator/" rel="tag"># cocos creator</a>
+          
+            <a href="/tags/pb/" rel="tag"># pb</a>
+          
+            <a href="/tags/protobuf/" rel="tag"># protobuf</a>
+          
+            <a href="/tags/protobufjs/" rel="tag"># protobufjs</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+            <a href="/tags/框架/" rel="tag"># 框架</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/10/ituuz-x-v2-1特性介绍/" rel="next" title="ituuz-x游戏框架v2.1特性介绍">
+                <i class="fa fa-chevron-left"></i> ituuz-x游戏框架v2.1特性介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-comments -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="5165434330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ituuz">
+  
+  <p class="site-author-name" itemprop="name">ituuz</p>
+  <div class="site-description motion-element" itemprop="description">积土而为山，积水而为海。</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/yue19870813" title="GitHub &rarr; https://github.com/yue19870813" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yue19870813@163.com" title="E-Mail &rarr; mailto:yue19870813@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://weibo.com/208379888" title="Weibo &rarr; http://weibo.com/208379888" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://ituuz.com/" title="http://ituuz.com/">ituuz</a>
+        </li>
+      
+    </ul>
+  </div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ituuz-sidebar -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="9107289598" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#v2-2版本功能列表"><span class="nav-number">1.</span> <span class="nav-text">v2.2版本功能列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要功能详细介绍"><span class="nav-number">2.</span> <span class="nav-text">主要功能详细介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络核心模块介绍"><span class="nav-number">2.1.</span> <span class="nav-text">网络核心模块介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络核心模块架构图"><span class="nav-number">2.2.</span> <span class="nav-text">网络核心模块架构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点介绍"><span class="nav-number">2.3.</span> <span class="nav-text">节点介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">2.4.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议生成工具-pb-generator-介绍"><span class="nav-number">2.5.</span> <span class="nav-text">协议生成工具(pb-generator)介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。"><span class="nav-number">2.5.1.</span> <span class="nav-text">该工具是由nodejs实现，根据上面我们声明的pb文件，自动生成pb目标文件，和根据代码模版生成的ts代码，也就是对应的Message对象，可以在业务中直接使用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具配置，插件在plug-in目录下，在插件目录下的config-js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config-js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。"><span class="nav-number">2.5.2.</span> <span class="nav-text">工具配置，插件在plug-in目录下，在插件目录下的config.js文件就是插件的配置文件，使用时直接将插件目录copy到项目的插件目录下，然后修改config.js中的配置，最后重启creator就可以看见拓展选项中的插件了，点击生成就可以生成代码了。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义网络类型"><span class="nav-number">2.6.</span> <span class="nav-text">自定义网络类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。"><span class="nav-number">2.6.1.</span> <span class="nav-text">上面讲到初始化网络时有个类型是自定义类型，这里讲以下如何使用自定义网络类型。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在框架中提供的协议解析方式不能满足需求时可以自己实现拓展"><span class="nav-number">2.6.2.</span> <span class="nav-text">在框架中提供的协议解析方式不能满足需求时可以自己实现拓展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。"><span class="nav-number">3.</span> <span class="nav-text">最后有任何问题都可以给我留言，通过关注我的公众号留言或者网站留言都可以。</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ituuz</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
+    appKey: '69E2dOAap1HDttCnug7ReKzn',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
