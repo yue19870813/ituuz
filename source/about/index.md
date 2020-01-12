@@ -10,3 +10,6 @@ Email: yue19870813@163.com
 
 还可以关注我的公众号:
 ![wechat](/uploads/wechat-qcode.jpg)
+  
+域名证书：
+![zhengshu](/uploads/ituuz.com.png)
