@@ -53,6 +53,11 @@
   #}{{ __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
   #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
 #}</div>
+<div class="BbeiAn-info">
+  {{ __('京ICP备') }} -
+  <a href="http://www.beian.miit.gov.cn/">15035961号-1</a>
+  </a>
+</div>
 {% endif %}
 
 {% for inject_item in theme.injects.footer %}

@@ -92,6 +92,7 @@
     }
   };
 </script>
+<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -101,15 +102,23 @@
 </script>
 <div align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+-->
 <!-- ituuz-header -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="8660795947" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<!--
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4273582562110179"
+     data-ad-slot="8660795947"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
+-->
+
 
   <meta name="description" content="对于使用过基于类的语言 (如 Java 或 C++) 的开发人员来说，JavaScript 有点令人困惑，因为它是动态的，并且本身不提供一个 class 实现。（在 ES2015/ES6 中引入了 class 关键字，但那只是语法糖，JavaScript 仍然是基于原型的）。   当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（ object ）都有一个私有属性（称之为 pr">
-<meta name="keywords" content="javascript,prototype">
+<meta name="keywords" content="prototype,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript原型与继承">
 <meta property="og:url" content="http://ituuz.com/2019/07/01/javascript-propertype/index.html">
@@ -454,31 +463,9 @@
           
             
             
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/01/javascript-propertype/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/01/javascript-propertype/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-            <span id="/2019/07/01/javascript-propertype/" class="post-meta-item leancloud_visitors" data-flag-title="javascript原型与继承">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -607,9 +594,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
             <a href="/tags/prototype/" rel="tag"># prototype</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -654,17 +641,18 @@
 
 
           </div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 <!-- ituuz-comments -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="5165434330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<!-- <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4273582562110179"
+     data-ad-slot="5165434330"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script>-->
 
-
-  
-    <div class="comments" id="comments">
-    </div>
 
   
 
@@ -925,10 +913,17 @@
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ituuz-sidebar -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="9107289598" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<!--
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4273582562110179"
+     data-ad-slot="9107289598"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+-->
 
           
           
@@ -967,7 +962,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -988,6 +983,11 @@
 
 
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.2.0</div>
+<div class="BbeiAn-info">
+  京ICP备 -
+  <a href="http://www.beian.miit.gov.cn/">15035961号-1</a>
+  
+</div>
 
 
 
@@ -1101,32 +1101,6 @@
   
 
   
-  
-
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-<script>
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
-    appKey: '69E2dOAap1HDttCnug7ReKzn',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: '' || 'zh-cn'
-  });
-</script>
-
-
 
 
   

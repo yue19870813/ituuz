@@ -1,6 +1,6 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 <!-- ituuz-comments -->
-<ins class="adsbygoogle"
+<!-- <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4273582562110179"
      data-ad-slot="5165434330"
@@ -8,7 +8,7 @@
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script>-->
 {% if page.comments %}
 
   {% if theme.facebook_sdk.enable and theme.facebook_comments_plugin.enable %}

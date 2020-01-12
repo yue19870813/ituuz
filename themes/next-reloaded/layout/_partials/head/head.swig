@@ -116,6 +116,7 @@
     }
   };
 </script>
+<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -125,7 +126,9 @@
 </script>
 <div align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+-->
 <!-- ituuz-header -->
+<!--
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4273582562110179"
@@ -135,4 +138,5 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+-->
 </div>

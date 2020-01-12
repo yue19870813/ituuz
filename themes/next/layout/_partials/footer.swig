@@ -18,3 +18,9 @@
     NexT.{{ theme.scheme }}
   </a>
 </div>
+
+<div class="BbeiAn-info">
+  {{ __('京ICP备') }} -
+  <a href="http://www.miitbeian.gov.cn/">15035961号-1</a>
+  </a>
+</div>

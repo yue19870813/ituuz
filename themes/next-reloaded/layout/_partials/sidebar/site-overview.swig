@@ -138,6 +138,7 @@
 {% endif %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ituuz-sidebar -->
+<!--
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4273582562110179"
@@ -147,3 +148,4 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+-->
