@@ -92,7 +92,6 @@
     }
   };
 </script>
-<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -102,20 +101,12 @@
 </script>
 <div align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
--->
 <!-- ituuz-header -->
-<!--
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4273582562110179"
-     data-ad-slot="8660795947"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="8660795947" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
--->
-
+</div>
 
   <meta name="description" content="项目结构提到项目结构这点，其实它的重要程度很多人都忽视掉了，清晰合理的项目结构可以让多人开发更高效，越大的项目效果越明显；优秀的项目结构可以让人更好的沟通，让其它模块的人迅速熟悉和了解另一模块，还可以让新加入团队的人快速了解和掌握项目。">
 <meta name="keywords" content="编程规范">
@@ -473,9 +464,31 @@
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
+          
+            <span id="/2017/12/19/20171219_项目架构和管理_项目结构及编程规范/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：项目结构及编程规范">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -738,18 +751,17 @@
 
 
           </div>
-          <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ituuz-comments -->
-<!-- <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4273582562110179"
-     data-ad-slot="5165434330"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="5165434330" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>-->
+</script>
 
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -1198,6 +1210,32 @@
   
 
   
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
+    appKey: '69E2dOAap1HDttCnug7ReKzn',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
   

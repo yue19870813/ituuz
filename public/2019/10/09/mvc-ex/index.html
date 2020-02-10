@@ -92,7 +92,6 @@
     }
   };
 </script>
-<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -102,23 +101,15 @@
 </script>
 <div align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
--->
 <!-- ituuz-header -->
-<!--
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4273582562110179"
-     data-ad-slot="8660795947"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="8660795947" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
--->
-
+</div>
 
   <meta name="description" content="本节内容是基于ituuz-x框架core中的mvc做的拓展，对mvc中基本接口进行了封装，更加方便规模较大项目进行开发和维护，v2.0中新增加的内容如下：    框架全局可调用的接口 框架初始化 initScene：初始化第一个场景   新增GameMediator基类 gotoScene：运行新场景 addView：打开新UI界面   新增GameScene和GameView基类，对应GameM">
-<meta name="keywords" content="javascript,js,typescript,ituuz-x,cocos框架,mvc">
+<meta name="keywords" content="js,typescript,javascript,mvc,ituuz-x,cocos框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
 <meta property="og:url" content="http://ituuz.com/2019/10/09/mvc-ex/index.html">
@@ -473,9 +464,31 @@
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/10/09/mvc-ex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/mvc-ex/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
+          
+            <span id="/2019/10/09/mvc-ex/" class="post-meta-item leancloud_visitors" data-flag-title="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -598,17 +611,17 @@
         
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
             <a href="/tags/js/" rel="tag"># js</a>
           
             <a href="/tags/typescript/" rel="tag"># typescript</a>
           
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/mvc/" rel="tag"># mvc</a>
+          
             <a href="/tags/ituuz-x/" rel="tag"># ituuz-x</a>
           
             <a href="/tags/cocos框架/" rel="tag"># cocos框架</a>
-          
-            <a href="/tags/mvc/" rel="tag"># mvc</a>
           
         </div>
       
@@ -653,18 +666,17 @@
 
 
           </div>
-          <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ituuz-comments -->
-<!-- <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4273582562110179"
-     data-ad-slot="5165434330"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4273582562110179" data-ad-slot="5165434330" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>-->
+</script>
 
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -1113,6 +1125,32 @@
   
 
   
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'WABuVh4s7rpNGQ5uKl1U5U4q-gzGzoHsz',
+    appKey: '69E2dOAap1HDttCnug7ReKzn',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
   
