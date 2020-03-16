@@ -13,7 +13,6 @@
     {% for post in page.posts %}
       {{ post_template.render(post, true) }}
       {% if loop.index0 >= 3 && loop.index0 % 3 == 0 %}
-      <!--
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
           style="display:block; text-align:center;"
@@ -24,7 +23,6 @@
       <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-      -->
       {% endif %}
     {% endfor %}
   </section>
