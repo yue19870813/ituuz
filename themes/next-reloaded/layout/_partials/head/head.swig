@@ -116,6 +116,8 @@
     }
   };
 </script>
+<div align="center">
+<!-- test text -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -123,8 +125,6 @@
     enable_page_level_ads: true
   });
 </script>
-<div align="center">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ituuz-header -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -135,4 +135,5 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
 </div>

@@ -75,7 +75,7 @@ baidu_analytics: f8f404eab4896771d7002e461ae69012
 deploy:
   type: git
   repository: 
-    - https://git.coding.net/ituuz/ituuz.coding.me.git
+    - https://e.coding.net/ituuz/ituuz.coding.me.git
     - https://github.com/yue19870813/yue19870813.github.io.git
   branch: master
 
