@@ -109,18 +109,18 @@
 
 </div>
 
-  <meta name="description" content="v2.1版本主要是修复bug，以及对之前的功能进行了优化。   v2.1版本功能列表 [new]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持 [new]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口 [new]ViewEvent增加注册点击事件，方便静态事件注册 [new]Mediator增加custo">
-<meta name="keywords" content="cocos creator,框架,typescript,js">
+  <meta name="description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
+<meta name="keywords" content="cocos creator,typescript,js,单例,Single">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ituuz-x游戏框架v2.1特性介绍">
-<meta property="og:url" content="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/index.html">
+<meta property="og:title" content="SingleFactory-TypeScript中实现单例工厂">
+<meta property="og:url" content="http://ituuz.com/2020/04/23/single_factory/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="v2.1版本主要是修复bug，以及对之前的功能进行了优化。   v2.1版本功能列表 [new]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持 [new]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口 [new]ViewEvent增加注册点击事件，方便静态事件注册 [new]Mediator增加custo">
+<meta property="og:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-23T11:49:09.226Z">
+<meta property="og:updated_time" content="2020-04-23T12:08:59.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ituuz-x游戏框架v2.1特性介绍">
-<meta name="twitter:description" content="v2.1版本主要是修复bug，以及对之前的功能进行了优化。   v2.1版本功能列表 [new]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持 [new]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口 [new]ViewEvent增加注册点击事件，方便静态事件注册 [new]Mediator增加custo">
+<meta name="twitter:title" content="SingleFactory-TypeScript中实现单例工厂">
+<meta name="twitter:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
 
 
 
@@ -128,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">
+  <link rel="canonical" href="http://ituuz.com/2020/04/23/single_factory/">
 
 
 
@@ -139,7 +139,7 @@
 </script>
 
   
-  <title>ituuz-x游戏框架v2.1特性介绍 | ituuz</title>
+  <title>SingleFactory-TypeScript中实现单例工厂 | ituuz</title>
   
 
 
@@ -382,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2019/11/10/ituuz-x-v2-1特性介绍/">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2020/04/23/single_factory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ituuz">
@@ -399,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ituuz-x游戏框架v2.1特性介绍
+          <h1 class="post-title" itemprop="name headline">SingleFactory-TypeScript中实现单例工厂
 
               
             
@@ -425,23 +425,13 @@
                 
               
 
-              <time title="创建时间：2019-11-10 20:36:42" itemprop="dateCreated datePublished" datetime="2019-11-10T20:36:42+08:00">2019-11-10</time>
+              <time title="创建时间：2020-04-23 15:46:47 / 修改时间：20:08:59" itemprop="dateCreated datePublished" datetime="2020-04-23T15:46:47+08:00">2020-04-23</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-23 19:49:09" itemprop="dateModified" datetime="2020-04-23T19:49:09+08:00">2020-04-23</time>
-              </span>
             
           
 
@@ -454,7 +444,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cocos-creator/" itemprop="url" rel="index"><span itemprop="name">cocos creator</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TpyeScript/" itemprop="url" rel="index"><span itemprop="name">TpyeScript</span></a></span>
 
                 
                 
@@ -472,8 +462,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/11/10/ituuz-x-v2-1特性介绍/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/10/ituuz-x-v2-1特性介绍/" itemprop="commentCount"></span>
+                <a href="/2020/04/23/single_factory/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/23/single_factory/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -481,7 +471,7 @@
 
           
           
-            <span id="/2019/11/10/ituuz-x-v2-1特性介绍/" class="post-meta-item leancloud_visitors" data-flag-title="ituuz-x游戏框架v2.1特性介绍">
+            <span id="/2020/04/23/single_factory/" class="post-meta-item leancloud_visitors" data-flag-title="SingleFactory-TypeScript中实现单例工厂">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -516,43 +506,24 @@
       
 
       
-        <blockquote>
-<p>v2.1版本主要是修复bug，以及对之前的功能进行了优化。</p>
-</blockquote>
-<hr>
-<h2 id="v2-1版本功能列表"><a href="#v2-1版本功能列表" class="headerlink" title="v2.1版本功能列表"></a>v2.1版本功能列表</h2><ul>
-<li>[<code>new</code>]增加GameModel基类，目前增加了一些数据接口封装，是为了下个版本数据管理增加支持</li>
-<li>[<code>new</code>]View层的GameView增加onShow接口，该接口是view其他初始化结束后最终会调用的接口</li>
-<li>[<code>new</code>]ViewEvent增加注册点击事件，方便静态事件注册</li>
-<li>[<code>new</code>]Mediator增加customInit接口，该接口会在Mediator的init接口之前调用，通过该接口可对初始化过程进行干预</li>
-<li>[<code>new</code>]Mediator增加sceneContent属性，该属性是场景共享数据，在当前场景的所有Mediator中都可以读取该对象</li>
-<li>[<code>new</code>]Mediator的addView接口增加parent可选属性，可以自定义设置该view添加到的父节点</li>
-<li>[<code>new</code>]Mediator的addView接口增加useCache可选属性，来设置是否复用同类节点，默认false不复用</li>
-<li>[<code>bug</code>]修复android真机引起崩溃的问题</li>
-<li>[<code>bug</code>]修复Mediator的init和viewDidAppear接口调用顺序错误问题</li>
-<li>[<code>bug</code>]修改场景初始化生命周期异常问题</li>
-<li>[<code>bug</code>]修复全局场景层级缓存错误问题</li>
-<li>[<code>ts</code>]优化代码，增加注释，统一编码风格等  <a id="more"></a>  
+        <h2 id="SingleFactory"><a href="#SingleFactory" class="headerlink" title="SingleFactory"></a>SingleFactory</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。<br><a id="more"></a> </p>
+<h3 id="接口介绍"><a href="#接口介绍" class="headerlink" title="接口介绍"></a>接口介绍</h3><ul>
+<li><p>getInstance: 获取单例接口，传入继承SingleBase的类，则会返回该类的单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建接口</span></span><br><span class="line"><span class="comment"> * @param &#123;new() =&gt; T&#125; type T是要求继承自SingleBase的类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> getInstance&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): T;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>clear: 清理指定的单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 释放指定的单例对象</span></span><br><span class="line"><span class="comment"> * @param &#123;new() =&gt; T&#125; type T是要求继承自SingleBase的类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> clear&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>clearAll: 清理所有单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> clearAll: <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="主要功能详细介绍"><a href="#主要功能详细介绍" class="headerlink" title="主要功能详细介绍"></a>主要功能详细介绍</h2><ul>
-<li><p>[<code>new</code>]ViewEvent增加注册点击事件，方便静态事件注册</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// v2.0之前注册点击事件如下：</span></span><br><span class="line"><span class="keyword">let</span> closeBtn = <span class="keyword">this</span>.ui.getNode(<span class="string">"close_button"</span>);</span><br><span class="line">closeBtn.on(cc.Node.EventType.TOUCH_END, ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">this</span>.closeView();</span><br><span class="line">&#125;, <span class="keyword">this</span>);</span><br><span class="line"><span class="comment">// v2.1中增加了快捷注册方法：</span></span><br><span class="line"><span class="comment">// 只需要传入，节点名称，事件名称。和事件参数就可以了</span></span><br><span class="line"><span class="comment">// 需要注意的是，这种是静态注册，也就是说注册的时候参数就已经固定了，不能动态修改注册参数</span></span><br><span class="line"><span class="comment">// 如果需要在点击的时候动态传入参数，还需要用上面的那种方式</span></span><br><span class="line"><span class="keyword">this</span>.ui.addClickEvent(<span class="string">"close_button"</span>, cc.Node.EventType.TOUCH_END, <span class="string">"close"</span>);</span><br><span class="line"><span class="comment">// 当然这种静态注册除了传入节点名称外，也可以直接把节点传入进行注册：</span></span><br><span class="line"><span class="keyword">this</span>.ui.addClickEvent(closeBtn, cc.Node.EventType.TOUCH_END, <span class="string">"close"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>[<code>new</code>]Mediator增加sceneContent属性，该属性是场景共享数据，在当前场景的所有Mediator中都可以读取该对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例如我们在DefaultSceneMediator场景中设置数据myName</span></span><br><span class="line">public init(data?: any): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.sceneContent.data.myName = <span class="string">"ituuz"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 然后我们在DefaultSceneMediator场景的FirstMediator层可以获取该共享数据：</span></span><br><span class="line">public viewDidAppear(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="comment">// 获取当前场景的共享数据</span></span><br><span class="line">    <span class="keyword">let</span> myName = <span class="keyword">this</span>.sceneContent.data.myName;</span><br><span class="line">    <span class="comment">// 设置给view在ui上显示出来</span></span><br><span class="line">    <span class="keyword">this</span>.view.setData(myName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>[<code>new</code>]Mediator的addView接口增加parent可选属性，可以自定义设置该view添加到的父节点</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大多时候我们不需要关心弹出界面的父节点，这时我们直接调用addView即可：</span></span><br><span class="line"><span class="keyword">this</span>.addView(ViewCfg.POP_A_VIEW);</span><br><span class="line"><span class="comment">// 当你明确的想将打开的view界面添加到指定的节点时，则可以传入该节点，如下：</span></span><br><span class="line"><span class="keyword">this</span>.addView(ViewCfg.POP_A_VIEW, <span class="literal">null</span>, <span class="keyword">this</span>.view.node);</span><br><span class="line"><span class="comment">// 上面就是将POP_A_VIEW打开并且设置其父节点为this.view.node</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>[<code>new</code>]Mediator的addView接口增加useCache可选属性，来设置是否复用同类节点，默认false不复用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打开界面B，并且设置第四个参数为true，意思是其节点复用，只会存在一个实例，而上面的界面B会存在多个实例</span></span><br><span class="line"><span class="keyword">this</span>.addView(ViewCfg.POP_B_VIEW, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 可以在例子demo中尝试，可以反复打开多个界面A，但是界面B只有一个实例</span></span><br><span class="line"><span class="comment">// 当已经有个界面B在界面A的下面时，你再次打开界面B，则会复用这个实例，并将其移动到界面A的前面</span></span><br><span class="line"><span class="comment">// 而界面A会存在多个实例，打开几次就需要关闭几次</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>[<code>bug</code>]修改场景初始化生命周期异常问题  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public init(data?: any): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="comment">// 此时view还没有初始化，不能对view进行操作</span></span><br><span class="line">    <span class="comment">// 在此处可以做mediator相关的初始化</span></span><br><span class="line">&#125;    </span><br><span class="line">public viewDidAppear(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="comment">// 对view的操作需要在view初始化后才能进行，包括view的事件绑定</span></span><br><span class="line">    <span class="keyword">this</span>.view.setData(<span class="string">"99999"</span>);</span><br><span class="line">    <span class="keyword">this</span>.bindEvent(FirstView.OPEN_A, (str: string)=&gt;&#123;</span><br><span class="line">        <span class="keyword">this</span>.addView(ViewCfg.POP_A_VIEW);</span><br><span class="line">    &#125;, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="用法实例"><a href="#用法实例" class="headerlink" title="用法实例"></a>用法实例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目标类要求继承SingleBase</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">SingleBase</span> </span>&#123;</span><br><span class="line">    public test() &#123;</span><br><span class="line">        it.log(<span class="string">"我是单例对象"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取单例对象</span></span><br><span class="line"><span class="keyword">let</span> t = SingleFactory.getInstance(Test);</span><br><span class="line">t.test();</span><br></pre></td></tr></table></figure>
+<h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><ul>
+<li>主要是通过js可以用字符串调用属性的特性来实现单例对象的创建和赋值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入继承自SingleBase的类型，返回对应的实例对象</span></span><br><span class="line">public <span class="keyword">static</span> getInstance&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): T &#123;</span><br><span class="line">    <span class="keyword">if</span> (!type[<span class="string">"_instance"</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> target = <span class="keyword">new</span> type();</span><br><span class="line">        type[<span class="string">"_instance"</span>] = target;</span><br><span class="line">        <span class="comment">// 单例对象可以重写init接口来实现初始化逻辑</span></span><br><span class="line">        target.init();</span><br><span class="line">        <span class="comment">// 缓存单例对象的引用，方便管理，用于后期释放</span></span><br><span class="line">        SingleFactory._instanceList.set(type, target);</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> type[<span class="string">"_instance"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>以上就是本次版本更新的主要内容，详细使用可以参考例子demo，demo下载地址是:<a href="https://github.com/yue19870813/ituuz-x/blob/develop/samples/LightmvcDemo_v2.1.zip" target="_blank" rel="noopener">https://github.com/yue19870813/ituuz-x/blob/develop/samples/LightmvcDemo_v2.1.zip</a></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>改SingleFactory工具类整合在我开源的一个cocos creator游戏开发框架中，欢迎关注：<a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">https://github.com/yue19870813/ituuz-x</a></p>
 
       
     </div>
@@ -624,11 +595,13 @@
           
             <a href="/tags/cocos-creator/" rel="tag"># cocos creator</a>
           
-            <a href="/tags/框架/" rel="tag"># 框架</a>
-          
             <a href="/tags/typescript/" rel="tag"># typescript</a>
           
             <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/单例/" rel="tag"># 单例</a>
+          
+            <a href="/tags/Single/" rel="tag"># Single</a>
           
         </div>
       
@@ -641,8 +614,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/09/mvc-ex/" rel="next" title="ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]">
-                <i class="fa fa-chevron-left"></i> ituuz-x框架v2.0新增mvc拓展模块[mvc_ex]
+              <a href="/2019/11/14/ituuz-x-net/" rel="next" title="ituuz-x游戏框架v2.2--网络核心模块">
+                <i class="fa fa-chevron-left"></i> ituuz-x游戏框架v2.2--网络核心模块
               </a>
             
           </div>
@@ -650,10 +623,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/14/ituuz-x-net/" rel="prev" title="ituuz-x游戏框架v2.2--网络核心模块">
-                ituuz-x游戏框架v2.2--网络核心模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -970,7 +939,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#v2-1版本功能列表"><span class="nav-number">1.</span> <span class="nav-text">v2.1版本功能列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要功能详细介绍"><span class="nav-number">2.</span> <span class="nav-text">主要功能详细介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SingleFactory"><span class="nav-number">1.</span> <span class="nav-text">SingleFactory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口介绍"><span class="nav-number">1.2.</span> <span class="nav-text">接口介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法实例"><span class="nav-number">1.3.</span> <span class="nav-text">用法实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现细节"><span class="nav-number">1.4.</span> <span class="nav-text">实现细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">1.5.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
             
 
           </div>

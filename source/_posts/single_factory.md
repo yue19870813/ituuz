@@ -1,6 +1,6 @@
 ---
 title: SingleFactory-TypeScript中实现单例工厂
-date: 2020-04-09 15:46:47
+date: 2020-04-23 15:46:47
 tags: [cocos creator,js,typescript,单例,Single]
 categories: TpyeScript
 ---
