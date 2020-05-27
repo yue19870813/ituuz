@@ -113,11 +113,11 @@
 <meta name="keywords" content="cocos creator,js,typescript,单例,Single">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SingleFactory-TypeScript中实现单例工厂">
-<meta property="og:url" content="http://ituuz.com/2020/04/09/TEST/index.html">
+<meta property="og:url" content="http://ituuz.com/2020/04/24/Single/index.html">
 <meta property="og:site_name" content="ituuz">
 <meta property="og:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-23T11:58:09.273Z">
+<meta property="og:updated_time" content="2020-04-24T02:56:13.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SingleFactory-TypeScript中实现单例工厂">
 <meta name="twitter:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
@@ -128,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://ituuz.com/2020/04/09/TEST/">
+  <link rel="canonical" href="http://ituuz.com/2020/04/24/Single/">
 
 
 
@@ -382,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2020/04/09/TEST/">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2020/04/24/Single/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ituuz">
@@ -425,23 +425,13 @@
                 
               
 
-              <time title="创建时间：2020-04-09 15:46:47" itemprop="dateCreated datePublished" datetime="2020-04-09T15:46:47+08:00">2020-04-09</time>
+              <time title="创建时间：2020-04-24 10:53:54 / 修改时间：10:56:13" itemprop="dateCreated datePublished" datetime="2020-04-24T10:53:54+08:00">2020-04-24</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-23 19:58:09" itemprop="dateModified" datetime="2020-04-23T19:58:09+08:00">2020-04-23</time>
-              </span>
             
           
 
@@ -472,8 +462,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2020/04/09/TEST/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/09/TEST/" itemprop="commentCount"></span>
+                <a href="/2020/04/24/Single/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/24/Single/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -481,7 +471,7 @@
 
           
           
-            <span id="/2020/04/09/TEST/" class="post-meta-item leancloud_visitors" data-flag-title="SingleFactory-TypeScript中实现单例工厂">
+            <span id="/2020/04/24/Single/" class="post-meta-item leancloud_visitors" data-flag-title="SingleFactory-TypeScript中实现单例工厂">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -533,7 +523,7 @@
 <li>主要是通过js可以用字符串调用属性的特性来实现单例对象的创建和赋值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入继承自SingleBase的类型，返回对应的实例对象</span></span><br><span class="line">public <span class="keyword">static</span> getInstance&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): T &#123;</span><br><span class="line">    <span class="keyword">if</span> (!type[<span class="string">"_instance"</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> target = <span class="keyword">new</span> type();</span><br><span class="line">        type[<span class="string">"_instance"</span>] = target;</span><br><span class="line">        <span class="comment">// 单例对象可以重写init接口来实现初始化逻辑</span></span><br><span class="line">        target.init();</span><br><span class="line">        <span class="comment">// 缓存单例对象的引用，方便管理，用于后期释放</span></span><br><span class="line">        SingleFactory._instanceList.set(type, target);</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> type[<span class="string">"_instance"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>改工具类整合在我开源的一个cocos creator游戏开发框架中，欢迎关注：<a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">https://github.com/yue19870813/ituuz-x</a></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>改SingleFactory工具类整合在我开源的一个cocos creator游戏开发框架中，欢迎关注：<a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">https://github.com/yue19870813/ituuz-x</a></p>
 
       
     </div>
@@ -624,8 +614,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/14/ituuz-x-net/" rel="next" title="ituuz-x游戏框架v2.2--网络核心模块">
-                <i class="fa fa-chevron-left"></i> ituuz-x游戏框架v2.2--网络核心模块
+              <a href="/2020/04/23/single_factory/" rel="next" title="SingleFactory-TypeScript中实现单例工厂">
+                <i class="fa fa-chevron-left"></i> SingleFactory-TypeScript中实现单例工厂
               </a>
             
           </div>
@@ -715,7 +705,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
