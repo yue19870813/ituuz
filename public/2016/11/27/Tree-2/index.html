@@ -541,7 +541,7 @@
     
       <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
   <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="ituuz wechat" style="width: 200px; max-width: 100%;">
-  <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+  <div>欢迎您扫一扫上面的微信公众号，订阅我的博客，关注我就是给我最大的支持！</div>
 </div>
 
     
@@ -692,7 +692,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -834,7 +834,11 @@
         
           
         
-        <span class="site-state-item-count">42</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1096,6 +1100,35 @@
 
 
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '1795daef4cebf9e5ff32',
+    clientSecret: 'f158d9998271fc94ae199fdf5489ab74a242bf9f',
+    repo: 'ituuz_gitalk',
+    owner: 'yue19870813',
+    admin: ['yue19870813'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
 
   
 

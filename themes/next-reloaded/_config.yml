@@ -327,7 +327,7 @@ tag_icon: false
 wechat_subscriber:
   enable: true
   qcode: /uploads/wechat-qcode.jpg
-  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客，关注我就是给我最大的支持！
 
 # Reward (Donate)
 reward_settings:
@@ -642,12 +642,12 @@ livere_uid: # <your_uid>
 # Gitalk
 # Demo: https://gitalk.github.io
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: yue19870813
+  repo: ituuz_gitalk # Repository name to store issues
+  client_id: 1795daef4cebf9e5ff32 # GitHub Application Client ID
+  client_secret: f158d9998271fc94ae199fdf5489ab74a242bf9f # GitHub Application Client Secret
+  admin_user: yue19870813 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
