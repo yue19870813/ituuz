@@ -17,6 +17,6 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "highlight.js": "^9.15.8"
+    "highlight.js": "^10.1.2"
   }
 }
